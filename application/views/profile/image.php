@@ -1,3 +1,4 @@
+<br>
 <a class="th [radius]">
 	<img data-src="holder.js/120x100"></img>
 </a>
