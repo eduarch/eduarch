@@ -24,7 +24,7 @@
 				<li><h5><strong>Management</strong></h5></li>
 				<li>
 					<div class="accordion" data-accordion><dd>
-					    <a href="#user_account" 
+					    <a href="#user_account" class="click-icon"
 					    	style="background: white; padding: 0;">
 					    	<label style="color: #00aaff">
 					    		<strong>
@@ -47,7 +47,7 @@
 
 				<li>
 					<div class="accordion" data-accordion><dd>
-					    <a href="#courses" 
+					    <a href="#courses" class="click-icon"
 					    	style="background: white; padding: 0;">
 					    	<label style="color: #00aaff">
 					    		<strong>
@@ -70,7 +70,7 @@
 				
 				<li>
 					<div class="accordion" data-accordion><dd>
-					    <a href="#classes" 
+					    <a href="#classes" class="click-icon"
 					    	style="background: white; padding: 0;">
 					    	<label style="color: #00aaff">
 					    		<strong>
@@ -93,7 +93,7 @@
 
 				<li>
 					<div class="accordion" data-accordion><dd>
-					    <a href="#rates" 
+					    <a href="#rates" class="click-icon"
 					    	style="background: white; padding: 0;">
 					    	<label style="color: #00aaff">
 					    		<strong>
@@ -114,7 +114,7 @@
 
 				<li>
 					<div class="accordion" data-accordion><dd>
-					    <a href="#sessions" 
+					    <a href="#sessions" class="click-icon"
 					    	style="background: white; padding: 0;">
 					    	<label style="color: #00aaff">
 					    		<strong>
@@ -138,7 +138,7 @@
 
 				<li>
 					<div class="accordion" data-accordion><dd>
-					    <a href="#contents" 
+					    <a href="#contents" class="click-icon"
 					    	style="background: white; padding: 0;">
 					    	<label style="color: #00aaff">
 					    		<strong>
@@ -160,7 +160,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="medium-9 columns">
+		<div class="medium-9 columns" id="page_content">
 			<?php $this->layout->view_content(); ?>
 		</div>
 	</div>
@@ -172,6 +172,7 @@
 	$(document).foundation();
 	</script>
 	<script src="js/holder.js"></script>
+	<script src="js/admin.js"></script>
 <?php $this->layout->optional_view('assets_bottom'); ?>
 </body>
 </html>

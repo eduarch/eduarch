@@ -5,7 +5,7 @@ class Admin_user extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->layout->page_info(array(
-			'directory' => 'home_admin',
+			'directory' => 'admin_user',
 			'title' => 'Home Admin',
 			'template' => 'admin',
 			'header' => 'admin',
@@ -14,6 +14,14 @@ class Admin_user extends CI_Controller {
 	}
 
 	function create() {
-		
+		$this->layout->template();
+	}
+
+	function search_update() {
+
+	}
+
+	function logs() {
+
 	}
 }
