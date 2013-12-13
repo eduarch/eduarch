@@ -1,0 +1,10 @@
+.social-media-button {
+	width: 60px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+.alert-box.radius.warning.tag-error {
+	background: red;
+	margin: 2px;
+}
