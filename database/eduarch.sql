@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 13, 2013 at 05:24 AM
+-- Generation Time: Dec 13, 2013 at 10:06 AM
 -- Server version: 5.5.20-log
 -- PHP Version: 5.3.10
 
@@ -30,9 +30,9 @@ USE `eduarch`;
 
 CREATE TABLE IF NOT EXISTS `classes` (
   `class_no` int(11) NOT NULL AUTO_INCREMENT,
-  `class_name` int(11) NOT NULL,
-  `class_desc` int(11) NOT NULL,
-  `class_image` int(11) NOT NULL,
+  `class_name` varchar(50) NOT NULL,
+  `class_desc` longtext NOT NULL,
+  `class_image` varchar(255) NOT NULL,
   `class_pts` int(11) NOT NULL,
   `class_users` int(11) NOT NULL,
   `user_no` int(11) NOT NULL,
@@ -42,7 +42,15 @@ CREATE TABLE IF NOT EXISTS `classes` (
   UNIQUE KEY `class_no` (`class_no`),
   KEY `user_no` (`user_no`,`course_no`),
   KEY `course_no` (`course_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `classes`
+--
+
+INSERT INTO `classes` (`class_no`, `class_name`, `class_desc`, `class_image`, `class_pts`, `class_users`, `user_no`, `course_no`, `status_no`) VALUES
+(1, 'PHP Programming', 'Web Design and Server Scripting', '', 0, 1, 2, 1, 1),
+(2, 'The Discovering of the Wild', 'Breaking the binds that transcends our true nature', '', 0, 1, 3, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -52,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `classes` (
 
 CREATE TABLE IF NOT EXISTS `courses` (
   `course_no` int(11) NOT NULL AUTO_INCREMENT,
-  `course_name` int(11) NOT NULL,
+  `course_name` varchar(50) NOT NULL,
   `course_desc` longtext NOT NULL,
   `course_image` varchar(255) NOT NULL,
   `course_pts` int(11) NOT NULL,
@@ -61,7 +69,15 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `status_no` int(11) NOT NULL,
   PRIMARY KEY (`course_no`),
   KEY `user_no` (`user_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`course_no`, `course_name`, `course_desc`, `course_image`, `course_pts`, `course_classes`, `user_no`, `status_no`) VALUES
+(1, 'Information Technology', 'Computer stuff, Programming and Computer Related Technologies', '', 0, 0, 1, 1),
+(2, 'Photography', 'Photos Photos Photos..', '', 0, 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -121,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `user_id_3` (`user_email`),
   KEY `user_type_no` (`user_type_no`),
   KEY `user_type_no_2` (`user_type_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `users`
@@ -136,7 +152,8 @@ INSERT INTO `users` (`user_no`, `user_email`, `user_pass`, `user_lname`, `user_f
 (6, 'rage@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'rage', 'rage', '2013-12-12', '', 1, '', 1),
 (7, 'korona@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'korona', 'korona', '2013-12-13', '', 1, '', 1),
 (8, 'axe@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'axe', 'axe', '2013-12-13', '', 1, '', 1),
-(9, 'all@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'all', 'all', '2013-12-13', '', 1, '', 1);
+(9, 'all@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'all', 'all', '2013-12-13', '', 1, '', 1),
+(10, 'envycherubim@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Eballar', 'Ryan', '2013-12-13', '', 1, '', 1);
 
 -- --------------------------------------------------------
 
