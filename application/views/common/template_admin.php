@@ -19,7 +19,7 @@
 <?php $this->layout->message(); ?>
 
 	<div class="row">
-		<div class="medium-4 columns">
+		<div class="medium-3 columns">
 			<ul class="side-nav">
 				<li><h5><strong>Management</strong></h5></li>
 				<li>
@@ -37,9 +37,9 @@
 					    	style="padding: 0; margin-left: 10px;">
 					    	<!-- menu here -->
 					    	<ul class="side-nav" style="padding: 0px;">
-					    		<li><a>Create User Account</a></li>
-					    		<li><a>Search / Update Users</a></li>
-					    		<li><a>User Logs</a></li>
+					    		<li><a href="admin_user/create">Create User Account</a></li>
+					    		<li><a href="admin_user/search_update">Search / Update Users</a></li>
+					    		<li><a href="admin_user/logs">User Logs</a></li>
 					    	</ul>
 					    </div>
 					</dd></div>
@@ -70,7 +70,7 @@
 				
 				<li>
 					<div class="accordion" data-accordion><dd>
-					    <a href="#classses" 
+					    <a href="#classes" 
 					    	style="background: white; padding: 0;">
 					    	<label style="color: #00aaff">
 					    		<strong>
@@ -82,6 +82,11 @@
 					    <div id="classes" class="content" 
 					    	style="padding: 0; margin-left: 10px;">
 					    	<!-- menu here -->
+					    	<ul class="side-nav" style="padding: 0px;">
+					    		<li><a>Create Classes</a></li>
+					    		<li><a>Search / Update Classes</a></li>
+					    		<li><a>Course Logs</a></li>
+					    	</ul>
 					    </div>
 					</dd></div>
 				</li>
@@ -99,6 +104,10 @@
 					    <div id="rates" class="content" 
 					    	style="padding: 0; margin-left: 10px;">
 					    	<!-- menu here -->
+					    	<ul class="side-nav" style="padding: 0px;">
+					    		<li><a>Set Rate Standards</a></li>
+					    		<li><a>View Rate Equivalents</a></li>
+					    	</ul>
 					    </div>
 					</dd></div>
 				</li>
@@ -114,33 +123,44 @@
 					    		</strong>
 					    	</label>
 					    </a>
-					    <div id="courses" class="content" 
+					    <div id="sessions" class="content" 
 					    	style="padding: 0; margin-left: 10px;">
 					    	<!-- menu here -->
+					    	<ul class="side-nav" style="padding: 0px;">
+					    		<li><a>Schedule Sessions</a></li>
+					    		<li><a>Search / Update Sessions</a></li>
+					    		<li><a>Filter Sessions</a></li>
+					    		<li><a>Session Logs</a></li>
+					    	</ul>
 					    </div>
 					</dd></div>
 				</li>
 
 				<li>
 					<div class="accordion" data-accordion><dd>
-					    <a href="#filters" 
+					    <a href="#contents" 
 					    	style="background: white; padding: 0;">
 					    	<label style="color: #00aaff">
 					    		<strong>
 					    			<i class="glyphicon glyphicon-chevron-down"></i>
-					    			Filters
+					    			Contents
 					    		</strong>
 					    	</label>
 					    </a>
-					    <div id="courses" class="content" 
+					    <div id="contents" class="content" 
 					    	style="padding: 0; margin-left: 10px;">
 					    	<!-- menu here -->
+					    	<ul class="side-nav" style="padding: 0px;">
+					    		<li><a>Search Update Contents</a></li>
+					    		<li><a>Filter Contents</a></li>
+					    		<li><a>Session Logs</a></li>
+					    	</ul>
 					    </div>
 					</dd></div>
 				</li>
 			</ul>
 		</div>
-		<div class="medium-8 columns">
+		<div class="medium-9 columns">
 			<?php $this->layout->view_content(); ?>
 		</div>
 	</div>
