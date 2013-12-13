@@ -5,13 +5,14 @@ class Landing extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 
+		$this->layout->refresh_in('home');
+
 		$this->layout->page_info(array(
 			'directory' => 'landing',
 			'title' => 'Landing Page',
 			'template' => 'default',
 			'header' => 'default',
 			'footer' => 'default',
-			'in' => $this->session->userdata('in')
 		));
 		
 		$this->load->library('form_validation');

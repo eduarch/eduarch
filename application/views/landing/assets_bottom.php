@@ -35,19 +35,6 @@ form.submit(function(event) {
     		pass.val('');
     	}
     });
-
-	/*posting.done(function(data) {
-		if(data.valid == false) {
-			login_msg = $('#login_message');
-			for(var index in data.errors) {
-				var div = '<div class="alert-box radius warning tag-error">' +
-					data.errors[index] + '</div>';
-				login_msg.append(div);
-			}
-		} else {
-			window.location.href = data.redirect;
-		}
-	});*/
 });
 
 })();

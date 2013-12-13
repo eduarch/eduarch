@@ -15,7 +15,7 @@ class Sign_out extends CI_Controller {
 
 	function index() {
 		$this->session->sess_destroy();
-		redirect('', 'refresh');
+		redirect(base_url(''), 'refresh');
 	}
 
 }

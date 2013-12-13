@@ -4,6 +4,9 @@ class Sign_up extends CI_Controller {
 	
 	function __construct() {
 		parent::__construct();
+
+		$this->layout->refresh_in('home');
+
 		$this->layout->page_info(array(
 			'directory' => 'landing',
 			'title' => 'Sign Up',
@@ -21,10 +24,9 @@ class Sign_up extends CI_Controller {
 			unset($user['user_pass_conf']);
 			if($this->user_model->sign_up($user)) {
 				$user = $this->user_model->get_last_user();
-				$user['in'] = $this->user_model->decide_home(GENERAL_USER);
 				$this->session->set_userdata($user);
 				$this->layout->success('Sign Up Successful');
-				redirect('home', 'refresh');
+				redirect(base_url('home'), 'refresh');
 			} else
 				$this->layout->warning('System Error: Sign Up Failed');
 		} 

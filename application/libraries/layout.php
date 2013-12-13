@@ -9,7 +9,7 @@ class Layout {
 	const HEADER_LOCATION = 'common/header_';
 	const TEMPLATE_LOCATION = 'common/template_';
 
-	const SESSION_REFRESHER = 'in';
+	const SESSION_REFRESHER = 'user_email';
 
 	private $CI;
 
@@ -30,12 +30,6 @@ class Layout {
 		$this->template = self::TEMPLATE_LOCATION . $data['template'];
 		$this->header = self::HEADER_LOCATION . $data['header'];
 		$this->footer = self::FOOTER_LOCATION . $data['footer'];
-
-		if(isset($data['in'])) 
-			$this->refresh_in($data['in']);
-
-		if(isset($data['out']) && $this->CI->session->userdata('in'))
-			$this->refresh_out($data['out']);
 	}
 
 	function template($data = null) {
@@ -105,12 +99,12 @@ class Layout {
 	}
 
 	function refresh_in($url) {
-		if($this->CI->session->userdata(self::SESSION_REFRESHER))
+		if($this->CI->session->userdata('user_no'))
 			redirect(base_url($url), 'refresh');
 	}
 
 	function refresh_out($url) {
-		if($this->CI->session->userdata(self::SESSION_REFRESHER) == false)
+		if($this->CI->session->userdata('user_no') == false)
 			redirect(base_url($url), 'refresh');
 	}
 

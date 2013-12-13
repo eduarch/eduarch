@@ -11,7 +11,6 @@
 
     <section class="top-bar-section">
       <ul class="left">
-        <li><a href="#">Classes</a></li>
         <li><a href="#">Suggestion Board</a></li>
         <li><a href="#">Getting Started</a></li>
       </ul>

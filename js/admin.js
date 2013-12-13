@@ -22,10 +22,6 @@
 			type: 'post'
 		});
 
-		req.fail(function(res, stat, err) {
-			console.log(err);
-		});
-
 		req.done(function(data) {
 			content.html(data);
 		});

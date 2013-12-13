@@ -11,15 +11,16 @@
 
     <section class="top-bar-section">
       <ul class="left">
-        <li><a href="#">Classes</a></li>
         <li><a href="#">Suggestion Board</a></li>
         <li><a href="#">Getting Started</a></li>
       </ul>
 
       <ul class="right">
         <li class="has-dropdown">
-          <a href=""><span class="glyphicon glyphicon-user"></span> User</a>
+          <a href=""><span class="glyphicon glyphicon-user"></span> 
+            <?php echo $this->session->userdata('user_fname') ?></a>
           <ul class="dropdown">
+            <li><a href="profile">Profile</a></li>
             <li><a href="sign_out">Sign Out</a></li>
           </ul>
         </li>
