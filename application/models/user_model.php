@@ -19,7 +19,7 @@ class User_model extends Base_model {
 		return $this->db->insert('users', $user) > 0;
 	}
 
-	function sign_in($user) {
+	function login($user) {
 		$this->db->where($user);
 		return $this->select_single();
 	}

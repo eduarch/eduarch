@@ -32,13 +32,13 @@ $config['sign_up'] = array(
 		'rules' => 'max_length[32]|md5'
 	),
 	array(
-		'field' => 'user[user_pass_conf]',
+		'field' => 'user[user_pass_confirm]',
 		'label' => 'Confirm Password',
 		'rules' => 'max_length[32]|md5|callback__validate_password'
 	)
 );
 
-$config['sign_in'] = array(
+$config['login'] = array(
 	array(
 		'field' => 'user[user_email]',
 		'label' => 'Email Address',

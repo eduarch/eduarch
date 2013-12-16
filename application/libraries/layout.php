@@ -2,110 +2,93 @@
 
 class Layout {
 
-	const OPEN_TAG_ERROR = '<div data-alert class="alert-box radius warning tag-error">';
-	const CLOSE_TAG_ERROR = '</div>';
+	const ERROR_DELIMITER_OPEN = '<div data-alert class="alert-box radius warning" style="margin-bottom: 5px;">';
+	const ERROR_DELIMITER_CLOSE = '<a class="close right">&times;</a></div>';
 
-	const FOOTER_LOCATION = 'common/footer_';
-	const HEADER_LOCATION = 'common/header_';
-	const TEMPLATE_LOCATION = 'common/template_';
-
-	const SESSION_REFRESHER = 'user_email';
+	const TEMPLATE_PREFIX = 'common/template_';
+	const HEADER_PREFIX = 'common/header_';
+	const FOOTER_PREFIX = 'common/footer_';
+	const MESSAGE_PREFIX = 'common/message_';
 
 	private $CI;
 
-	public $template;
-	public $directory;
-	public $title;
-	public $header;
-	public $footer;
+	private $template;
+	private $directory;
+	private $header;
+	private $title;
 
 	function __construct() {
 		$this->CI = & get_instance();
-		$this->page_info = array();
 	}
 
-	function page_info($data) {
-		$this->directory = $data['directory'].'/';
-		$this->title = $data['title'];
-		$this->template = self::TEMPLATE_LOCATION . $data['template'];
-		$this->header = self::HEADER_LOCATION . $data['header'];
-		$this->footer = self::FOOTER_LOCATION . $data['footer'];
+	function set($template, $directory, $header, $title) {
+		$this->template = $template;
+		$this->directory = $directory.'/';
+		$this->header = $header;
+		$this->title = $title;
 	}
 
-	function template($data = null) {
-		$this->CI->load->view($this->template);
+	function view_top() {
+		$this->optional_view('assets_top');
+	}
+
+	function view_bottom() {
+		$this->optional_view('assets_bottom');
 	}
 
 	function view_header() {
-		$this->CI->load->view($this->header);
-	}
-
-	function view_content() {
-		$this->CI->load->view($this->directory.'view');
+		$this->CI->load->view(self::HEADER_PREFIX.$this->header);
 	}
 
 	function view_footer() {
-		$this->CI->load->view($this->footer);
+		$this->CI->load->view(self::FOOTER_PREFIX.'default');
 	}
 
-	function view($view, $data = null) {
-		$this->CI->load->view($this->directory.$view, $data);
+	function view_contents() {
+		$this->CI->load->view($this->directory.'view');
 	}
 
-	function optional_view($view, $data = null) {
-		$view = $this->directory.$view;
-		if(file_exists('application/views/'.$view.'.php')) {
-			$this->CI->load->view($view, $data);
-		}
+	function view_title() {
+		return $this->title;
 	}
 
-	function form_errors($return = false) {
-		$errors = validation_errors();
-		if($errors != '') {
-			if($return)
-				return $errors;
-			else {
-				$this->CI->form_validation->set_error_delimiters(self::OPEN_TAG_ERROR, self::CLOSE_TAG_ERROR);
-				echo $errors;
-			}
-		}
-	}
-
-	function message() {
-		$data['page_message'] = $this->CI->session->userdata('page_message');
-		if($data['page_message']) {
+	function view_message() {
+		$page_message = $this->CI->session->userdata('page_message');
+		if($page_message) {
+			$this->CI->load->view(self::MESSAGE_PREFIX.'default', array(
+				'page_message' => $page_message));
 			$this->CI->session->unset_userdata('page_message');
-			$this->CI->load->view('common/template_message', $data);
 		}
 	}
 
-	function success($message) {
-		$this->set_message('success', $message);
+	function show($data = null) {
+		$this->CI->load->view(self::TEMPLATE_PREFIX.$this->template, $data);
 	}
 
-	function warning($message) {
-		$this->set_message('warning', $message);
+	function view($view) {
+		$this->CI->load->view($this->directory.$view);
 	}
 
-	function info($message) {
-		$this->set_message('info', $message);
+	function optional_view($view) {
+		$view = $this->directory.$view;
+		if(file_exists('application/views/'.$view.'.php'))
+			$this->CI->load->view($view);
 	}
 
-	private function set_message($type, $content) {
+	function form_errors() {
+		$this->CI->form_validation->set_error_delimiters(
+			self::ERROR_DELIMITER_OPEN, self::ERROR_DELIMITER_CLOSE);
+		echo validation_errors();
+	}
+
+	function success($content) { $this->page_message('success', $content); }
+	function warning($content) { $this->page_message('warning', $content); }
+	function info($content) { $this->page_message('info', $content); }
+
+	private function page_message($type, $content) {
 		$this->CI->session->set_userdata('page_message', array(
 			'type' => $type,
 			'content' => $content
 		));
 	}
-
-	function refresh_in($url) {
-		if($this->CI->session->userdata('user_no'))
-			redirect(base_url($url), 'refresh');
-	}
-
-	function refresh_out($url) {
-		if($this->CI->session->userdata('user_no') == false)
-			redirect(base_url($url), 'refresh');
-	}
-
 }
