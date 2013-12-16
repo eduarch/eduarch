@@ -47,5 +47,9 @@ define('INACTIVE_STATUS', 2);
 define('OPEN_STATUS', 3);
 define('CLOSE_STATUS', 4);
 
+define('JOHN_DOE_IMAGE', 'img/john_doe.jpg');
+define('UPLOAD_PATH', './uploads/');
+define('UPLOAD_AVATAR', UPLOAD_PATH.'/user/avatar/');
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

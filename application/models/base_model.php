@@ -22,6 +22,14 @@ class Base_model extends CI_Model {
 		return null;
 	}
 
+	function insert($data) {
+		return $this->db->insert($this->table, $data);
+	}
+
+	function update($data) {
+		return $this->db->update($this->table, $data);
+	}
+
 	function select_multiple() {
 		$query = $this->db->get($this->table);
 		if($query->num_rows() > 0) {

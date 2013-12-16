@@ -81,6 +81,17 @@ class Layout {
 		echo validation_errors();
 	}
 
+	function patch_avatar(&$user) {
+		if($user['user_image'] == null)
+			$user['user_image'] = JOHN_DOE_IMAGE;
+		else
+			$user['user_image'] = UPLOAD_AVATAR.$user['user_image'];
+	}
+
+	function upload_errors() {
+	    echo $this->CI->upload->display_errors(self::ERROR_DELIMITER_OPEN, self::ERROR_DELIMITER_CLOSE);
+	}
+
 	function success($content) { $this->page_message('success', $content); }
 	function warning($content) { $this->page_message('warning', $content); }
 	function info($content) { $this->page_message('info', $content); }

@@ -1,9 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
-function get_non_null() {
-	foreach(func_get_args() as $value) {
-		if($value)
-			return $value;
-	}
-	return '';
+function text_limiter($string, $limit) {
+	$length = strlen($string);
+	if($length > $limit)
+		return substr($string, 0, $limit).'....';
+	return $string;
 }
