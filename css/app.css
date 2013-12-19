@@ -9,6 +9,23 @@
 	margin: 2px;
 }
 
-/*.row {
-	max-width: 100%;
-}*/
+.sticky-label .label {
+	width: 150px;
+	margin-bottom: 0;
+	text-align: left;
+	text-indent: 10px;
+}
+
+.entry-form {
+	box-shadow: 0px 0px 25px; 
+	padding: 20px; 
+	border-radius: 25px;
+}
+
+.required-label {
+	color: red;
+}
+
+.glyphicon-white, .glyphicon-white a {
+  color: #fff;
+}

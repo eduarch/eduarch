@@ -12,17 +12,28 @@ class Layout {
 
 	private $CI;
 
-	private $template;
-	private $directory;
-	private $header;
-	private $title;
+	public $template;
+	public $directory;
+	public $header;
+	public $title;
 
 	function __construct() {
 		$this->CI = & get_instance();
 	}
 
-	function set($template, $directory, $header, $title) {
+	function set($data) {
+		$this->template($data['template']);
+		$this->page(
+			$data['directory'].'/',
+			$data['header'], 
+			$data['title']);
+	}
+
+	function template($template) {
 		$this->template = $template;
+	}
+
+	function page($directory, $header, $title) {
 		$this->directory = $directory.'/';
 		$this->header = $header;
 		$this->title = $title;
@@ -102,4 +113,5 @@ class Layout {
 			'content' => $content
 		));
 	}
+
 }

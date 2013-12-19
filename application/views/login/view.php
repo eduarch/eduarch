@@ -1,9 +1,5 @@
-<section class="row">
+<div class="row">
 	<div class="medium-6 medium-centered columns">
-		<h2>Login</h2>
-		<?php
-			$this->layout->view('form');
-			$this->layout->form_errors();
-		?>
+		<?php $this->layout->view('form'); ?>
 	</div>
-</section>
+</div>

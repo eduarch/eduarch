@@ -1,83 +1,26 @@
-<?php
+<?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-	/*
-	array(
-		'field' => '',
-		'label' => '',
-		'rules' => ''
-	)
-	*/
+function rule($field, $label,$rule) {
+	return array(
+		'field' => $field,
+		'label' => $label,
+		'rules' => $rule
+	);
+}
 
 $config = array();
 
 $config['sign_up'] = array(
-	array(
-		'field' => 'user[user_fname]',
-		'label' => 'First Name',
-		'rules' => 'trim|required|xss_clean|max_length[50]'
-	),
-	array(
-		'field' => 'user[user_lname]',
-		'label' => 'Last Name',
-		'rules' => 'trim|required|xss_clean|max_length[50]'
-	),
-	array(
-		'field' => 'user[user_email]',
-		'label' => 'Email Address',
-		'rules' => 'trim|required|xss_clean|max_length[50]|valid_email|callback__validate_email'
-	),
-	array(
-		'field' => 'user[user_pass]',
-		'label' => 'Password',
-		'rules' => 'max_length[32]|md5'
-	),
-	array(
-		'field' => 'user[user_pass_confirm]',
-		'label' => 'Confirm Password',
-		'rules' => 'max_length[32]|md5|callback__validate_password'
-	)
+	rule('user[first_name]', 'First Name', 'trim|required|xss_clean|max_length[50]'),
+	rule('user[last_name]', 'Last Name', 'trim|required|xss_clean|max_length[50]'),
+	rule('user[gender]', 'Gender', 'required'),
+	rule('user[country_id]', 'Country', 'required'),
+	rule('user[email]', 'Email Address', 'trim|required|xss_clean|valid_email|callback__check_email'),
+	rule('user[password]', 'Password', 'required|max_length[32]|md5'),
+	rule('user[confirm_password]', 'Confirm Password', 'required|max_length[32]|md5|callback__check_password')
 );
 
 $config['login'] = array(
-	array(
-		'field' => 'user[user_email]',
-		'label' => 'Email Address',
-		'rules' => 'trim|required|xss_clean|valid_email'
-	),
-	array(
-		'field' => 'user[user_pass]',
-		'label' => 'Password',
-		'rules' => 'required|md5|callback__validate_login'
-	)
-);
-
-$config['edit_name'] = array(
-	array(
-		'field' => 'user[user_fname]',
-		'label' => 'First Name',
-		'rules' => 'trim|required|xss_clean|max_length[50]'
-	),
-	array(
-		'field' => 'user[user_lname]',
-		'label' => 'Last Name',
-		'rules' => 'trim|required|xss_clean|max_length[50]'
-	)
-);
-
-$config['edit_password'] = array(
-	array(
-		'field' => 'user[user_pass_current]',
-		'label' => 'Current Password',
-		'rules' => 'required|max_length[32]|md5|callback__validate_current_password'
-	),
-	array(
-		'field' => 'user[user_pass_new]',
-		'label' => 'New Password',
-		'rules' => 'required|max_length[32]|md5'
-	),
-	array(
-		'field' => 'user[user_pass_retype]',
-		'label' => 'Re-type New Password',
-		'rules' => 'required|max_length[32]|md5|callback__validate_password_equal'
-	)
+	rule('user[email]', 'Email Address', 'trim|required|xss_clean|valid_email'),
+	rule('user[password]', 'Password', 'required|max_length[32]|md5|callback__check_login')
 );

@@ -41,6 +41,8 @@
 $route['default_controller'] = "landing";
 $route['404_override'] = '';
 
-$route['avatar/(:any)'] = UPLOAD_AVATAR.'$1';
+$route['sign_up'] = 'user_general/sign_up';
+$route['login'] = 'user_general/login';
+$route['logout'] = 'user_general/logout';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

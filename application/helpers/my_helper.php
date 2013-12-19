@@ -1,8 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
-function text_limiter($string, $limit) {
-	$length = strlen($string);
-	if($length > $limit)
-		return substr($string, 0, $limit).'....';
-	return $string;
+function refresh_in($url = '', $is_logged = true) {
+	$ci = & get_instance();
+	if($ci->session->userdata('logged') == $is_logged)
+		refresh($url);
+}
+
+function refresh($url = '') {
+	redirect(base_url($url), 'refresh');
+}
+
+function whence($condition, $display1, $display2 = false) {
+	echo $condition? $display1: $display2;
 }

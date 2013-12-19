@@ -1,49 +1,26 @@
-<?php 
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
-class User_model extends Base_model {
-	
+require_once 'abstract_model.php';
+
+class User_Model extends Abstract_Model {
 	function __construct() {
-		parent::__construct();
-		$this->set_table('users');
+		parent::__construct('users');
 	}
 
-	function email_exists($email) {
-		$this->db->where('user_email', $email);
-		return $this->select_single() != null;
+	function get_by_email($email) {
+		return $this->where('email', $email)->get_single();
+	}
+
+	function get_by_credentials($email, $password) {
+		return $this->where('email', $email, 'password', $password)->get_single();
 	}
 
 	function sign_up($user) {
-		$user['user_reg_date'] = date('Y-m-d H:i:s');
-		$user['user_type_no'] = GENERAL_USER;
-		$user['status_no'] = ACTIVE_STATUS;
-		return $this->insert($user) > 0;
+		$user['created_at'] = date('Y-m-d H:i:s');
+		$user['updated_at'] = $user['created_at'];
+		$user['user_type_id'] = GENERAL_USER;
+		$user['status_id'] = ACTIVE_STATUS;
+		$this->insert($user);
 	}
 
-	function login($user) {
-		$this->db->where($user);
-		return $this->select_single();
-	}
-
-	function get_user($user_no, $fields = null) {
-		if($fields != null)
-			$this->db->select($fields);
-		$this->db->where('user_no', $user_no);
-		return $this->select_single();
-	}
-
-	function get_last_user() {
-		return $this->get_user($this->db->insert_id());
-	}
-
-	function get_profile_image($user_no) {
-		$this->db->select('user_image')->where('user_no', $user_no);
-		$user = $this->select_single();
-		$image = $user['user_image'];
-		return $image;
-	}
-
-	function update_field($user_no, $data) {
-		$this->db->where('user_no', $user_no);
-		return $this->update($data);
-	}
 }
