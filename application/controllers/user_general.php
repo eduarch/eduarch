@@ -9,11 +9,8 @@ class user_general extends CI_Controller {
 	function sign_up() {
 		refresh_in('home');
 		
-
 		if($this->form_validation->run('sign_up')) {
-			$user = $this->input->post('user');
-			unset($user['confirm_password']);
-			$this->user_model->sign_up($user);
+			$user = $this->user_model->get_last_insert();
 			$user['logged'] = true;
 			$this->session->set_userdata($user);
 			$this->layout->success('Signed Up Successfully');
@@ -41,7 +38,16 @@ class user_general extends CI_Controller {
 
 	function logout() {
 		$this->session->sess_destroy();
-		refresh();
+		$this->layout->success('Logout Successful');
+		$this->layout->page('landing', 'default', 'Landing Page');
+		$this->layout->show();
+	}
+
+	function account_settings() {
+		$id = $this->session->userdata('id');
+		$user = $this->user_model->get_by_id($id);
+		$this->layout->page('account_settings', 'signed', 'Account Settings');
+		$this->layout->show($user);
 	}
 
 	/* CallBacks */

@@ -17,7 +17,7 @@ $config['sign_up'] = array(
 	rule('user[country_id]', 'Country', 'required'),
 	rule('user[email]', 'Email Address', 'trim|required|xss_clean|valid_email|callback__check_email'),
 	rule('user[password]', 'Password', 'required|max_length[32]|md5'),
-	rule('user[confirm_password]', 'Confirm Password', 'required|max_length[32]|md5|callback__check_password')
+	rule('confirm_password', 'Confirm Password', 'required|max_length[32]|md5|callback__check_password')
 );
 
 $config['login'] = array(

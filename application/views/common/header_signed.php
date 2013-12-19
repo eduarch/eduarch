@@ -1,4 +1,4 @@
-<nav class="top-bar" data-topbar data-options="is_hover: false">
+<nav class="top-bar" data-topbar><!--   data-options="is_hover: false" -->
 	<ul class="title-area">
 		<li class="name">
 			<h1><a href="home"><i class="glyphicon glyphicon-home"></i> EduArch</a></h1>
@@ -7,19 +7,17 @@
 	</ul>
 
 	<section class="top-bar-section">
-		<ul>
-			<li><a href="classes">Classes</a></li>
-			<li class="divider"></li>
-			<li><a>Works</a></li>
-			<li class="divider"></li>
-			<li><a>Suggestion Board</a></li>
-			<li class="divider"></li>
-			<li><a>Getting Started</a></li>
-			<li class="divider"></li>
+		<ul class="left">
+			<li><a href="classes"><i class="glyphicon glyphicon-book"></i> Classes</a></li>
+			<li><a><i class="glyphicon glyphicon-fire"></i> Works</a></li>
+			<li><a><i class="glyphicon glyphicon-pushpin"></i> Suggestion Board</a></li>
+		</ul>
+		<ul class="right">
 			<li class="has-dropdown">
-				<a>Account</a>
+				<a><i class="glyphicon glyphicon-user"></i></a>
 				<ul class="dropdown">
-					<li><a href="profile">Profile</a></li>
+					<li><a>Dashboard</a></li>
+					<li><a href="account_settings">Account Settings</a></li>
 					<li class="divider"></li>
 					<li><a href="logout">Logout</a></li>
 				</ul>

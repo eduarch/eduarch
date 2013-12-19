@@ -11,7 +11,7 @@ abstract class Abstract_Model extends CI_Model {
 	}
 
 	function get_by_id($id) {
-		return $this->where($this->field_id, $id)->get();
+		return $this->where($this->field_id, $id)->get_single();
 	}
 
 	function get() {
@@ -34,6 +34,12 @@ abstract class Abstract_Model extends CI_Model {
 			return $result;
 		}
 		return null;
+	}
+
+	function get_last_insert() {
+		$id = $this->db->insert_id();
+		$this->where($this->field_id, $id);
+		return $this->get_single();
 	}
 
 	function insert($data = null) {

@@ -7,15 +7,12 @@
 	</ul>
 
 	<section class="top-bar-section">
+		<ul class="left">
+			<li><a href="classes"><i class="glyphicon glyphicon-book"></i> Classes</a></li>
+			<li><a><i class="glyphicon glyphicon-fire"></i> Works</a></li>
+			<li><a><i class="glyphicon glyphicon-pushpin"></i> Suggestion Board</a></li>
+		</ul>
 		<ul class="right">
-			<li><a href="classes">Classes</a></li>
-			<li class="divider"></li>
-			<li><a>Works</a></li>
-			<li class="divider"></li>
-			<li><a>Suggestion Board</a></li>
-			<li class="divider"></li>
-			<li><a>Getting Started</a></li>
-			<li class="divider"></li>
 			<li><a href="sign_up" class="success button">Sign up</a></li>
 			<li><a href="login" class="button">Login</a></li>
 		</ul>
