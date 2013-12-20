@@ -4,4 +4,5 @@ class country_model extends Abstract_Model {
 	function __construct() {
 		parent::__construct('countries');
 	}
+
 }

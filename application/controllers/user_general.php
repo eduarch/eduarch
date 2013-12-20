@@ -44,8 +44,11 @@ class user_general extends CI_Controller {
 	}
 
 	function account_settings() {
+		$this->load->model('country_model');
+
 		$id = $this->session->userdata('id');
 		$user = $this->user_model->get_by_id($id);
+		$user['country'] = $this->country_model->get_by_id($user['country_id']);
 		$this->layout->page('account_settings', 'signed', 'Account Settings');
 		$this->layout->show($user);
 	}
