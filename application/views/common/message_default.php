@@ -1,4 +1,4 @@
 <div data-alert class="alert-box <?php echo $page_message['type'] ?>">
-	<strong><?php echo $page_message['content'] ?></strong>
+	<strong><i class="<?php echo $page_message['icon'] ?>"></i> <?php echo $page_message['content'] ?></strong>
 	<a href="#" class="close right">&times;</a>
 </div>

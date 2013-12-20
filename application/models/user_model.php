@@ -20,7 +20,19 @@ class User_Model extends Abstract_Model {
 		$user['updated_at'] = $user['created_at'];
 		$user['user_type_id'] = GENERAL_USER;
 		$user['status_id'] = ACTIVE_STATUS;
-		$this->insert($user);
+		return $this->insert($user);
+	}
+
+	function update_image($id, $image) {
+		return $this->set('image', $image)->where_id($id)->update();
+	}
+
+	function update_password($id, $password) {
+		return $this->set('password', $password)->where_id($id)->update();
+	}
+
+	function update_info($id, $data) {
+		return $this->where_id($id)->update($data);
 	}
 
 }

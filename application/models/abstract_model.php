@@ -79,6 +79,20 @@ abstract class Abstract_Model extends CI_Model {
 		return $this;
 	}
 
+	function where_id($id) {
+		return $this->where($this->field_id, $id);
+	}
+
+	function where_ids() {
+		$count = func_num_args();
+		if($count > 0) {
+			$ids = func_get_args();
+			for($i = 0; $i < $count; $i++)
+				$this->where($this->field_id[$i], $ids[$i]);
+		}
+		return $this;
+	}
+
 	function join(Abstract_Model $model) {
 		$this->db->join($model->table, $this->table.$this->field_id.' = '.$model->table.$this->field_id);
 		return $this;

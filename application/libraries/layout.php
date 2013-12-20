@@ -103,14 +103,15 @@ class Layout {
 	    echo $this->CI->upload->display_errors(self::ERROR_DELIMITER_OPEN, self::ERROR_DELIMITER_CLOSE);
 	}
 
-	function success($content) { $this->page_message('success', $content); }
-	function warning($content) { $this->page_message('warning', $content); }
-	function info($content) { $this->page_message('info', $content); }
+	function success($content) { $this->page_message('success', $content, 'glyphicon glyphicon-ok-sign'); }
+	function warning($content) { $this->page_message('warning', $content, 'glyphicon glyphicon-warning-sign'); }
+	function info($content) { $this->page_message('info', $content, 'glyphicon glyphicon-flag'); }
 
-	private function page_message($type, $content) {
+	private function page_message($type, $content, $icon) {
 		$this->CI->session->set_userdata('page_message', array(
 			'type' => $type,
-			'content' => $content
+			'content' => $content,
+			'icon' => $icon
 		));
 	}
 

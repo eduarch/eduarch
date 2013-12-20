@@ -46,5 +46,7 @@ $route['login'] = 'user_general/login';
 $route['logout'] = 'user_general/logout';
 $route['account_settings'] = 'user_general/account_settings';
 $route['upload_avatar'] = 'user_general/upload_avatar';
+$route['change_password'] = 'user_general/change_password';
+$route['change_info'] = 'user_general/change_info';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

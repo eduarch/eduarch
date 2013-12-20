@@ -16,11 +16,24 @@ $config['sign_up'] = array(
 	rule('user[gender]', 'Gender', 'required'),
 	rule('user[country_id]', 'Country', 'required'),
 	rule('user[email]', 'Email Address', 'trim|required|xss_clean|valid_email|callback__check_email'),
-	rule('user[password]', 'Password', 'required|max_length[32]|md5'),
+	rule('user[password]', 'Password', 'required|min_length[5]|max_length[32]|md5'),
 	rule('confirm_password', 'Confirm Password', 'required|max_length[32]|md5|callback__check_password')
 );
 
 $config['login'] = array(
 	rule('user[email]', 'Email Address', 'trim|required|xss_clean|valid_email'),
-	rule('user[password]', 'Password', 'required|max_length[32]|md5|callback__check_login')
+	rule('user[password]', 'Password', 'required|md5|callback__check_login')
+);
+
+$config['change_password'] = array(
+	rule('current_password', 'Current Password', 'required|min_length[5]|max_length[32]|md5|callback__check_current_password'),
+	rule('user[password]', 'New Password', 'required|min_length[5]|max_length[32]|md5'),
+	rule('retyped_password', 'Retyped Password', 'required|min_length[5]|max_length[32]|md5|callback_check_password')
+);
+
+$config['change_info'] = array(
+	rule('user[first_name]', 'First Name', 'trim|required|xss_clean|max_length[50]'),
+	rule('user[last_name]', 'Last Name', 'trim|required|xss_clean|max_length[50]'),
+	rule('user[gender]', 'Gender', 'required'),
+	rule('user[country_id]', 'Country', 'required')
 );
