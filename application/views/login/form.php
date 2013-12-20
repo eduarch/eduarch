@@ -6,7 +6,15 @@
 		value="<?php echo set_value('user[email]', '') ?>">
 	<label class="label">Password</label>
 	<input type="password" name="user[password]" id="password" placeholder="5 - 32 Characters" maxlength="32" pattern=".{5,32}" required>
-	<input type="checkbox" name="remember_me"> Remember me
-	<button type="submit">Login</button>
+	
+	<div class="row">
+		<div class="medium-6 columns">
+			<label class="label"><input type="checkbox" name="remember_me"> Remember me?</label>
+		</div>
+		<div class="medium-2 columns"><br></div>
+		<div class="medium-4 columns">
+			<button type="submit">Login</button>
+		</div>
+	</div>
 	<?php $this->layout->form_errors() ?>
 </form>

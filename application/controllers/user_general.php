@@ -4,6 +4,14 @@ class user_general extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->layout->template('default');
+
+		$config['upload_path'] = './uploads/user/avatar/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '1024';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '768';
+
+		$this->load->library('upload', $config);
 	}
 
 	function sign_up() {
@@ -37,6 +45,7 @@ class user_general extends CI_Controller {
 	}
 
 	function logout() {
+		refresh_in('', false);
 		$this->session->sess_destroy();
 		$this->layout->success('Logout Successful');
 		$this->layout->page('landing', 'default', 'Landing Page');
@@ -44,6 +53,7 @@ class user_general extends CI_Controller {
 	}
 
 	function account_settings() {
+		refresh_in('', false);
 		$this->load->model('country_model');
 
 		$id = $this->session->userdata('id');
@@ -51,6 +61,22 @@ class user_general extends CI_Controller {
 		$user['country'] = $this->country_model->get_by_id($user['country_id']);
 		$this->layout->page('account_settings', 'signed', 'Account Settings');
 		$this->layout->show($user);
+	}
+
+	function upload_avatar() {
+		if($this->upload->do_upload()) {
+			
+			$this->layout->success('Image Uploaded Successfully');
+		}
+
+		$this->account_settings();
+	}
+
+	function change_info() {
+
+	}
+
+	function change_password() {
 	}
 
 	/* CallBacks */

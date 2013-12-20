@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Dec 13, 2013 at 10:06 AM
--- Server version: 5.5.20-log
--- PHP Version: 5.3.10
+-- Host: 127.0.0.1
+-- Generation Time: Dec 20, 2013 at 05:20 AM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -25,94 +25,269 @@ USE `eduarch`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `classes`
+-- Table structure for table `countries`
 --
 
-CREATE TABLE IF NOT EXISTS `classes` (
-  `class_no` int(11) NOT NULL AUTO_INCREMENT,
-  `class_name` varchar(50) NOT NULL,
-  `class_desc` longtext NOT NULL,
-  `class_image` varchar(255) NOT NULL,
-  `class_pts` int(11) NOT NULL,
-  `class_users` int(11) NOT NULL,
-  `user_no` int(11) NOT NULL,
-  `course_no` int(11) NOT NULL,
-  `status_no` int(11) NOT NULL,
-  PRIMARY KEY (`class_no`),
-  UNIQUE KEY `class_no` (`class_no`),
-  KEY `user_no` (`user_no`,`course_no`),
-  KEY `course_no` (`course_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `classes`
---
-
-INSERT INTO `classes` (`class_no`, `class_name`, `class_desc`, `class_image`, `class_pts`, `class_users`, `user_no`, `course_no`, `status_no`) VALUES
-(1, 'PHP Programming', 'Web Design and Server Scripting', '', 0, 1, 2, 1, 1),
-(2, 'The Discovering of the Wild', 'Breaking the binds that transcends our true nature', '', 0, 1, 3, 2, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `courses`
---
-
-CREATE TABLE IF NOT EXISTS `courses` (
-  `course_no` int(11) NOT NULL AUTO_INCREMENT,
-  `course_name` varchar(50) NOT NULL,
-  `course_desc` longtext NOT NULL,
-  `course_image` varchar(255) NOT NULL,
-  `course_pts` int(11) NOT NULL,
-  `course_classes` int(11) NOT NULL,
-  `user_no` int(11) NOT NULL,
-  `status_no` int(11) NOT NULL,
-  PRIMARY KEY (`course_no`),
-  KEY `user_no` (`user_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `courses`
---
-
-INSERT INTO `courses` (`course_no`, `course_name`, `course_desc`, `course_image`, `course_pts`, `course_classes`, `user_no`, `status_no`) VALUES
-(1, 'Information Technology', 'Computer stuff, Programming and Computer Related Technologies', '', 0, 0, 1, 1),
-(2, 'Photography', 'Photos Photos Photos..', '', 0, 0, 1, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `course_registry`
---
-
-CREATE TABLE IF NOT EXISTS `course_registry` (
-  `course_no` int(11) NOT NULL,
-  `user_no` int(11) NOT NULL,
-  `course_lnr_pts` int(11) NOT NULL,
-  `course_mtr_pts` int(11) NOT NULL,
-  `course_ftr_pts` int(11) NOT NULL,
-  `course_reg_date` int(11) NOT NULL,
-  `status_no` int(11) NOT NULL,
-  PRIMARY KEY (`course_no`,`user_no`),
-  KEY `user_no` (`user_no`)
+CREATE TABLE IF NOT EXISTS `countries` (
+  `id` int(11) NOT NULL,
+  `name` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `tutorials`
+-- Dumping data for table `countries`
 --
 
-CREATE TABLE IF NOT EXISTS `tutorials` (
-  `tl_no` int(11) NOT NULL AUTO_INCREMENT,
-  `tl_name` int(11) NOT NULL,
-  `tl_desc` int(11) NOT NULL,
-  `tl_pts` int(11) NOT NULL,
-  `class_no` int(11) NOT NULL,
-  `status_no` int(11) NOT NULL,
-  PRIMARY KEY (`tl_no`),
-  KEY `class_no` (`class_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+INSERT INTO `countries` (`id`, `name`) VALUES
+(1, 'Afghanistan'),
+(2, 'Albania'),
+(3, 'Algeria'),
+(4, 'American Samoa'),
+(5, 'Andorra'),
+(6, 'Angola'),
+(7, 'Anguilla'),
+(8, 'Antarctica'),
+(9, 'Antigua and Barbuda'),
+(10, 'Argentina'),
+(11, 'Armenia'),
+(12, 'Armenia'),
+(13, 'Aruba'),
+(14, 'Australia'),
+(15, 'Austria'),
+(16, 'Azerbaijan'),
+(17, 'Azerbaijan'),
+(18, 'Bahamas'),
+(19, 'Bahrain'),
+(20, 'Bangladesh'),
+(21, 'Barbados'),
+(22, 'Belarus'),
+(23, 'Belgium'),
+(24, 'Belize'),
+(25, 'Benin'),
+(26, 'Bermuda'),
+(27, 'Bhutan'),
+(28, 'Bolivia'),
+(29, 'Bosnia and Herzegovina'),
+(30, 'Botswana'),
+(31, 'Bouvet Island'),
+(32, 'Brazil'),
+(33, 'British Indian Ocean Terr'),
+(34, 'Brunei Darussalam'),
+(35, 'Bulgaria'),
+(36, 'Burkina Faso'),
+(37, 'Burundi'),
+(38, 'Cambodia'),
+(39, 'Cameroon'),
+(40, 'Canada'),
+(41, 'Cape Verde'),
+(42, 'Cayman Islands'),
+(43, 'Central African Republic'),
+(44, 'Chad'),
+(45, 'Chile'),
+(46, 'China'),
+(47, 'Christmas Island'),
+(48, 'Cocos (Keeling) Islands'),
+(49, 'Colombia'),
+(50, 'Comoros'),
+(51, 'Congo'),
+(52, 'Congo, The Democratic Rep'),
+(53, 'Cook Islands'),
+(54, 'Costa Rica'),
+(55, 'Cote D''ivoire'),
+(56, 'Croatia'),
+(57, 'Cuba'),
+(58, 'Cyprus'),
+(60, 'Czech Republic'),
+(61, 'Denmark'),
+(62, 'Djibouti'),
+(63, 'Dominica'),
+(64, 'Dominican Republic'),
+(65, 'Easter Island'),
+(66, 'Ecuador'),
+(67, 'Egypt'),
+(68, 'El Salvador'),
+(69, 'Equatorial Guinea'),
+(70, 'Eritrea'),
+(71, 'Estonia'),
+(72, 'Ethiopia'),
+(73, 'Falkland Islands (Malvina'),
+(74, 'Faroe Islands'),
+(75, 'Fiji'),
+(76, 'Finland'),
+(77, 'France'),
+(78, 'French Guiana'),
+(79, 'French Polynesia'),
+(80, 'French Southern Territori'),
+(81, 'Gabon'),
+(82, 'Gambia'),
+(83, 'Georgia'),
+(85, 'Germany'),
+(86, 'Ghana'),
+(87, 'Gibraltar'),
+(88, 'Greece'),
+(89, 'Greenland'),
+(91, 'Grenada'),
+(92, 'Guadeloupe'),
+(93, 'Guam'),
+(94, 'Guatemala'),
+(95, 'Guinea'),
+(96, 'Guinea-bissau'),
+(97, 'Guyana'),
+(98, 'Haiti'),
+(99, 'Heard Island and Mcdonald'),
+(100, 'Honduras'),
+(101, 'Hong Kong'),
+(102, 'Hungary'),
+(103, 'Iceland'),
+(104, 'India'),
+(105, 'Indonesia'),
+(106, 'Indonesia'),
+(107, 'Iran'),
+(108, 'Iraq'),
+(109, 'Ireland'),
+(110, 'Israel'),
+(111, 'Italy'),
+(112, 'Jamaica'),
+(113, 'Japan'),
+(114, 'Jordan'),
+(115, 'Kazakhstan'),
+(116, 'Kazakhstan'),
+(117, 'Kenya'),
+(118, 'Kiribati'),
+(119, 'Korea, North'),
+(120, 'Korea, South'),
+(121, 'Kosovo'),
+(122, 'Kuwait'),
+(123, 'Kyrgyzstan'),
+(124, 'Laos'),
+(125, 'Latvia'),
+(126, 'Lebanon'),
+(127, 'Lesotho'),
+(128, 'Liberia'),
+(129, 'Libyan Arab Jamahiriya'),
+(130, 'Liechtenstein'),
+(131, 'Lithuania'),
+(132, 'Luxembourg'),
+(133, 'Macau'),
+(134, 'Macedonia'),
+(135, 'Madagascar'),
+(136, 'Malawi'),
+(137, 'Malaysia'),
+(138, 'Maldives'),
+(139, 'Mali'),
+(140, 'Malta'),
+(141, 'Marshall Islands'),
+(142, 'Martinique'),
+(143, 'Mauritania'),
+(144, 'Mauritius'),
+(145, 'Mayotte'),
+(146, 'Mexico'),
+(147, 'Micronesia, Federated Sta'),
+(148, 'Moldova, Republic of'),
+(149, 'Monaco'),
+(150, 'Mongolia'),
+(151, 'Montenegro'),
+(152, 'Montserrat'),
+(153, 'Morocco'),
+(154, 'Mozambique'),
+(155, 'Myanmar'),
+(156, 'Namibia'),
+(157, 'Nauru'),
+(158, 'Nepal'),
+(159, 'Netherlands'),
+(160, 'Netherlands Antilles'),
+(161, 'New Caledonia'),
+(162, 'New Zealand'),
+(163, 'Nicaragua'),
+(164, 'Niger'),
+(165, 'Nigeria'),
+(166, 'Niue'),
+(167, 'Norfolk Island'),
+(168, 'Northern Mariana Islands'),
+(169, 'Norway'),
+(170, 'Oman'),
+(171, 'Pakistan'),
+(172, 'Palau'),
+(173, 'Palestinian Territory'),
+(174, 'Panama'),
+(175, 'Papua New Guinea'),
+(176, 'Paraguay'),
+(177, 'Peru'),
+(178, 'Philippines'),
+(179, 'Pitcairn'),
+(180, 'Poland'),
+(181, 'Portugal'),
+(182, 'Puerto Rico'),
+(183, 'Qatar'),
+(184, 'Reunion'),
+(185, 'Romania'),
+(186, 'Russia'),
+(187, 'Russia'),
+(188, 'Rwanda'),
+(189, 'Saint Helena'),
+(190, 'Saint Kitts and Nevis'),
+(191, 'Saint Lucia'),
+(192, 'Saint Pierre and Miquelon'),
+(193, 'Saint Vincent and The Gre'),
+(194, 'Samoa'),
+(195, 'San Marino'),
+(196, 'Sao Tome and Principe'),
+(197, 'Saudi Arabia'),
+(198, 'Senegal'),
+(199, 'Serbia and Montenegro'),
+(200, 'Seychelles'),
+(201, 'Sierra Leone'),
+(202, 'Singapore'),
+(203, 'Slovakia'),
+(204, 'Slovenia'),
+(205, 'Solomon Islands'),
+(206, 'Somalia'),
+(207, 'South Africa'),
+(208, 'South Georgia and The Sou'),
+(209, 'Spain'),
+(210, 'Sri Lanka'),
+(211, 'Sudan'),
+(212, 'Suriname'),
+(213, 'Svalbard and Jan Mayen'),
+(214, 'Swaziland'),
+(215, 'Sweden'),
+(216, 'Switzerland'),
+(217, 'Syria'),
+(218, 'Taiwan'),
+(219, 'Tajikistan'),
+(220, 'Tanzania, United Republic'),
+(221, 'Thailand'),
+(222, 'Timor-leste'),
+(223, 'Togo'),
+(224, 'Tokelau'),
+(225, 'Tonga'),
+(226, 'Trinidad and Tobago'),
+(227, 'Tunisia'),
+(228, 'Turkey'),
+(229, 'Turkey'),
+(230, 'Turkmenistan'),
+(231, 'Turks and Caicos Islands'),
+(232, 'Tuvalu'),
+(233, 'Uganda'),
+(234, 'Ukraine'),
+(235, 'United Arab Emirates'),
+(236, 'United Kingdom'),
+(237, 'United States'),
+(238, 'United States Minor Outly'),
+(239, 'Uruguay'),
+(240, 'Uzbekistan'),
+(241, 'Vanuatu'),
+(242, 'Vatican City'),
+(243, 'Venezuela'),
+(244, 'Vietnam'),
+(245, 'Virgin Islands, British'),
+(246, 'Virgin Islands, U.S.'),
+(247, 'Wallis and Futuna'),
+(248, 'Western Sahara'),
+(249, 'Yemen'),
+(250, 'Yemen'),
+(251, 'Zambia'),
+(252, 'Zimbabwe');
 
 -- --------------------------------------------------------
 
@@ -121,95 +296,64 @@ CREATE TABLE IF NOT EXISTS `tutorials` (
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `user_no` int(11) NOT NULL AUTO_INCREMENT,
-  `user_email` char(50) NOT NULL,
-  `user_pass` char(32) NOT NULL,
-  `user_lname` varchar(50) NOT NULL,
-  `user_fname` varchar(50) NOT NULL,
-  `user_reg_date` date NOT NULL,
-  `user_other_info` text NOT NULL,
-  `user_type_no` int(11) NOT NULL,
-  `user_image` varchar(255) NOT NULL,
-  `status_no` int(11) NOT NULL,
-  PRIMARY KEY (`user_no`),
-  UNIQUE KEY `user_id` (`user_email`),
-  UNIQUE KEY `user_id_2` (`user_email`),
-  UNIQUE KEY `user_id_3` (`user_email`),
-  KEY `user_type_no` (`user_type_no`),
-  KEY `user_type_no_2` (`user_type_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(40) NOT NULL,
+  `password` char(32) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `gender` enum('Male','Female') NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL,
+  `country_id` int(11) NOT NULL,
+  `user_type_id` int(11) NOT NULL,
+  `status_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  KEY `user_type_id` (`user_type_id`,`status_id`),
+  KEY `country_id` (`country_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_no`, `user_email`, `user_pass`, `user_lname`, `user_fname`, `user_reg_date`, `user_other_info`, `user_type_no`, `user_image`, `status_no`) VALUES
-(1, 'super_admin@eduarch.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Super', 'Admin', '2013-12-06', '', 2, '', 1),
-(2, 'ryeballar@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Eballar', 'Ryan', '2013-12-12', '', 1, '', 1),
-(3, 'suddencatharsis@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Catharsis', 'Sudden', '2013-12-12', '', 1, '', 1),
-(4, 'haha@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'haha', 'haha', '2013-12-12', '', 1, '', 1),
-(5, 'halo@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Halo', 'Halo', '2013-12-12', '', 1, '', 1),
-(6, 'rage@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'rage', 'rage', '2013-12-12', '', 1, '', 1),
-(7, 'korona@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'korona', 'korona', '2013-12-13', '', 1, '', 1),
-(8, 'axe@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'axe', 'axe', '2013-12-13', '', 1, '', 1),
-(9, 'all@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'all', 'all', '2013-12-13', '', 1, '', 1),
-(10, 'envycherubim@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Eballar', 'Ryan', '2013-12-13', '', 1, '', 1);
+INSERT INTO `users` (`id`, `email`, `password`, `last_name`, `first_name`, `gender`, `image`, `created_at`, `updated_at`, `country_id`, `user_type_id`, `status_id`) VALUES
+(6, 'ryeballar@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Eballar', 'Ryan', 'Male', '', '2013-12-19', '2013-12-19', 178, 1, 1),
+(7, 'suddencatharsis@gmail.com', 'bda21f8aff383d86d0a776e615df2881', 'Eballar', 'Ryan', 'Male', '', '2013-12-19', '2013-12-19', 178, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_types`
+-- Table structure for table `user_type`
 --
 
-CREATE TABLE IF NOT EXISTS `user_types` (
-  `user_type_no` int(11) NOT NULL AUTO_INCREMENT,
-  `user_type_name` varchar(50) NOT NULL,
-  PRIMARY KEY (`user_type_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+CREATE TABLE IF NOT EXISTS `user_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data for table `user_types`
+-- Dumping data for table `user_type`
 --
 
-INSERT INTO `user_types` (`user_type_no`, `user_type_name`) VALUES
-(1, 'General User'),
-(2, 'Admin User');
+INSERT INTO `user_type` (`id`, `name`) VALUES
+(1, 'Active'),
+(2, 'Inactive'),
+(3, 'Open'),
+(4, 'Close');
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `classes`
---
-ALTER TABLE `classes`
-  ADD CONSTRAINT `classes_ibfk_1` FOREIGN KEY (`user_no`) REFERENCES `users` (`user_no`),
-  ADD CONSTRAINT `classes_ibfk_2` FOREIGN KEY (`course_no`) REFERENCES `courses` (`course_no`);
-
---
--- Constraints for table `courses`
---
-ALTER TABLE `courses`
-  ADD CONSTRAINT `courses_ibfk_1` FOREIGN KEY (`user_no`) REFERENCES `users` (`user_no`);
-
---
--- Constraints for table `course_registry`
---
-ALTER TABLE `course_registry`
-  ADD CONSTRAINT `course_registry_ibfk_1` FOREIGN KEY (`course_no`) REFERENCES `courses` (`course_no`),
-  ADD CONSTRAINT `course_registry_ibfk_2` FOREIGN KEY (`user_no`) REFERENCES `users` (`user_no`);
-
---
--- Constraints for table `tutorials`
---
-ALTER TABLE `tutorials`
-  ADD CONSTRAINT `tutorials_ibfk_1` FOREIGN KEY (`class_no`) REFERENCES `classes` (`class_no`);
-
---
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`user_type_no`) REFERENCES `user_types` (`user_type_no`);
+  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`user_type_id`) REFERENCES `user_type` (`id`),
+  ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
