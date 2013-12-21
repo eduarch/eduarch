@@ -105,7 +105,7 @@ class Layout {
 
 	function success($content) { $this->page_message('success', $content, 'glyphicon glyphicon-ok-sign'); }
 	function warning($content) { $this->page_message('warning', $content, 'glyphicon glyphicon-warning-sign'); }
-	function info($content) { $this->page_message('info', $content, 'glyphicon glyphicon-flag'); }
+	function info($content) { $this->page_message('info', $content, 'glyphicon glyphicon-info-sign'); }
 
 	private function page_message($type, $content, $icon) {
 		$this->CI->session->set_userdata('page_message', array(

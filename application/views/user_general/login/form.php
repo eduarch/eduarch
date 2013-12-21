@@ -15,7 +15,7 @@
 		</div>
 		<div class="medium-2 columns"><br></div>
 		<div class="medium-4 columns">
-			<button type="submit">Login</button>
+			<button type="submit"><i class="glyphicon glyphicon-log-in"></i> Login</button>
 		</div>
 	</div>
 	<?php $this->layout->form_errors() ?>

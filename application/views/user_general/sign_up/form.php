@@ -18,11 +18,11 @@
 	<div class="row">
 		<div class="medium-4 large-4 columns">
 			<label class="label">Gender</label><br>
-			<input type="radio" name="user[gender]" value="0" required
-				<?php whence(set_value('user[gender]', '') == 0, 'checked') ?>
+			<input type="radio" name="user[gender]" value="Male" required
+				<?php whence(set_value('user[gender]', '') == 'Male', 'checked') ?>
 				style="margin-left: 5px; width: 10px; height: 10px;"><span style="font-size: 13px;"> Male</span>
-			<input type="radio" name="user[gender]" value="1" 
-				<?php whence(set_value('user[gender]', '') == 1, 'checked') ?>
+			<input type="radio" name="user[gender]" value="Female" 
+				<?php whence(set_value('user[gender]', '') == 'Female', 'checked') ?>
 				style="margin-left: 10px; width: 10px; height: 10px;"><span style="font-size: 13px;"> Female</span>
 		</div>
 		<div class="medium-7 large-8 columns">
@@ -56,6 +56,6 @@
 		<input type="password" name="confirm_password" id="confirm_password"
 			title="confirm_password" placeholder="5 - 32 Characters" maxlength="32" pattern=".{5,32}" required>
 	</div></div>
-	<button type="submit" class="success">Sign Up</button>
+	<button type="submit" class="success"><i class="glyphicon glyphicon-pencil"></i> Sign Up</button>
 	<?php $this->layout->form_errors() ?>
 </form>

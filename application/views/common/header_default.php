@@ -13,8 +13,8 @@
 			<li><a><i class="glyphicon glyphicon-pushpin"></i> Suggestion Board</a></li>
 		</ul>
 		<ul class="right">
-			<li><a href="sign_up" class="success button">Sign up</a></li>
-			<li><a href="login" class="button">Login</a></li>
+			<li><a href="sign_up" class="success button"><i class="glyphicon glyphicon-pencil"></i> Sign up</a></li>
+			<li><a href="login" class="button"><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
 		</ul>
 	</section>
 </nav>

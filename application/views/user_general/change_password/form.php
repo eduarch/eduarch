@@ -10,6 +10,7 @@
 	<label class="label">Retype Password</label>
 	<input type="password" name="retyped_password" id="retype_password" placeholder="5 - 32 Characters" 
 		title="5 - 32 Characters" maxlength="32" pattern=".{5,32}" required>
-	<button type="submit">Change Password</button>
+	<button type="submit" class="tiny radius"><i class="glyphicon glyphicon-save"></i> Save New Passord</button>
+	<a href="account_settings" class="button tiny radius" style="background: orange;"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
 	<?php $this->layout->form_errors() ?>
 </form>

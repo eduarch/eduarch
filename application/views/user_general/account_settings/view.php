@@ -4,8 +4,8 @@
 		<hr>
 		
 		<div class="row">
-			<div class="medium-4 columns text-center">
-				<div class="show-for-small-only" style="background: black; color: white; text-align: right; height: 40px; padding: 10px 20px 10px 10px">Profile Image</div><br class="show-for-small-only">
+			<div class="large-4 columns text-center">
+				<div class="show-for-medium show-for-small" style="background: black; color: white; text-align: right; height: 40px; padding: 10px 20px 10px 10px">Profile Image</div><br class="show-for-small-only">
 				<a class="th">
 					<img src="<?php whence($image == null, 'img/john_doe.jpg', $image) ?>" 
 						style="width: 210px; height: 150px"><!-- data-src="holder.js/210x150/text:Profile Image" -->
@@ -22,7 +22,7 @@
 				</form>
 			</div>
 
-			<div class="medium-8 columns hr-flatten">
+			<div class="large-8 columns hr-flatten">
 				<div style="background: black; color: white; text-align: right; height: 40px; padding: 10px 20px 10px 10px">User Information</div><br>
 				<div class="row">
 					<div class="small-4 columns">First Name</div>
@@ -48,7 +48,7 @@
 				</div><hr>
 				<div class="row">
 					<div class="small-4 columns">Password</div>
-					<div class="small-6 columns">********************************</div>
+					<div class="small-6 columns">*****</div>
 				</div><br><br>
 				<a class="button tiny radius" href="change_password"><i class="glyphicon glyphicon-edit"></i> Change Password</a>
 

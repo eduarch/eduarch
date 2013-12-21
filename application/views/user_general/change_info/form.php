@@ -19,10 +19,10 @@
 		<div class="medium-4 large-4 columns">
 			<label class="label">Gender</label><br>
 			<input type="radio" name="user[gender]" value="Male" required
-				<?php whence($gender == 0, 'checked') ?>
+				<?php whence($gender == 'Male', 'checked') ?>
 				style="margin-left: 5px; width: 10px; height: 10px;"><span style="font-size: 13px;"> Male</span>
 			<input type="radio" name="user[gender]" value="Female" 
-				<?php whence($gender == 1, 'checked') ?>
+				<?php whence($gender == 'Female', 'checked') ?>
 				style="margin-left: 10px; width: 10px; height: 10px;"><span style="font-size: 13px;"> Female</span>
 		</div>
 		<div class="medium-7 large-8 columns">
@@ -38,6 +38,7 @@
 			</select>
 		</div>
 	</div>
-	<button type="submit" class="success">Edit Information</button>
+	<button type="submit" class="tiny radius"><i class="glyphicon glyphicon-save"></i> Save New Information</button>
+	<a href="account_settings" class="button tiny radius" style="background: orange;"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
 	<?php $this->layout->form_errors() ?>
 </form>
