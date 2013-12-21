@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2013 at 05:20 AM
+-- Generation Time: Dec 21, 2013 at 06:29 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -312,15 +312,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`),
   KEY `user_type_id` (`user_type_id`,`status_id`),
   KEY `country_id` (`country_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `last_name`, `first_name`, `gender`, `image`, `created_at`, `updated_at`, `country_id`, `user_type_id`, `status_id`) VALUES
-(6, 'ryeballar@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Eballar', 'Ryan', 'Male', '', '2013-12-19', '2013-12-19', 178, 1, 1),
-(7, 'suddencatharsis@gmail.com', 'bda21f8aff383d86d0a776e615df2881', 'Eballar', 'Ryan', 'Male', '', '2013-12-19', '2013-12-19', 178, 1, 1);
+(6, 'ryeballar@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'Eballar', 'Ryan', 'Male', './uploads/user/avatar/raizel4.jpg', '2013-12-19', '2013-12-19', 178, 1, 1),
+(7, 'suddencatharsis@gmail.com', 'bda21f8aff383d86d0a776e615df2881', 'Eballar', 'Ryan', 'Male', '', '2013-12-19', '2013-12-19', 178, 1, 1),
+(8, 'exia@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'wankey', 'exia', '', '', '2013-12-20', '2013-12-20', 1, 1, 1),
+(9, 'nhilvs_1989@yahoo.com', '39506d0b9a9ea72a26127b1a6e8b43b5', 'Tesio', 'Neilvyn', '', './uploads/user/avatar/Untitled.png', '2013-12-20', '2013-12-20', 178, 1, 1),
+(10, 'berz_101@yahoo.com', 'c00f36d6f0346fd82ea0da3c90ed9615', 'bermudez', 'leo', '', '', '2013-12-20', '2013-12-20', 178, 1, 1),
+(11, 'dindy@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Eballar', 'Ryan', 'Male', './uploads/user/avatar/raizel5.jpg', '2013-12-20', '2013-12-20', 178, 1, 1);
 
 -- --------------------------------------------------------
 
