@@ -4,7 +4,7 @@
 		<hr>
 		
 		<div class="row">
-			<div class="large-4 columns text-center">
+			<div class="medium-4 columns text-center">
 				<div class="show-for-medium show-for-small" style="background: black; color: white; text-align: right; height: 40px; padding: 10px 20px 10px 10px">Profile Image</div><br class="show-for-small-only">
 				<a class="th">
 					<img src="<?php whence($image == null, 'img/john_doe.jpg', $image) ?>" 
@@ -22,7 +22,7 @@
 				</form>
 			</div>
 
-			<div class="large-8 columns hr-flatten">
+			<div class="medium-8 columns hr-flatten">
 				<div style="background: black; color: white; text-align: right; height: 40px; padding: 10px 20px 10px 10px">User Information</div><br>
 				<div class="row">
 					<div class="small-4 columns">First Name</div>
