@@ -26,6 +26,10 @@
 	$(document).foundation();
 	</script>
 	<script src="js/holder.js"></script>
+	<script src="js/socket.io.min.js"></script>
+
+	<!-- must be the last script to run -->
+	<script src="js/app.js"></script>
 <?php $this->layout->view_bottom()?>
 </body>
 </html>
