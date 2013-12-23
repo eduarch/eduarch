@@ -17,7 +17,7 @@ class User_Model extends Abstract_Model {
 
 	function sign_up($user) {
 		$user['created_on'] = date('Y-m-d H:i:s');
-		$user['updated_on'] = $user['created_at'];
+		$user['updated_on'] = $user['created_on'];
 		$user['user_type_id'] = GENERAL_USER;
 		$user['status_id'] = ACTIVE_STATUS;
 		return $this->insert($user);

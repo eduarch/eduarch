@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 23, 2013 at 05:54 AM
+-- Generation Time: Dec 23, 2013 at 06:04 AM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -679,12 +679,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`),
   KEY `user_type_id` (`user_type_id`,`status_id`),
   KEY `country_id` (`country_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `users`
 --
 
+INSERT INTO `users` (`id`, `email`, `password`, `last_name`, `first_name`, `gender`, `image`, `created_on`, `updated_on`, `country_id`, `user_type_id`, `status_id`) VALUES
+(14, 'ryeballar@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Eballar', 'Ryan', 'Male', './uploads/user/avatar/images.jpg', '2013-12-23', '2013-12-23', 178, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -696,12 +698,15 @@ CREATE TABLE IF NOT EXISTS `user_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `user_types`
 --
 
+INSERT INTO `user_types` (`id`, `name`) VALUES
+(1, 'General User'),
+(2, 'Admin User');
 
 -- --------------------------------------------------------
 
