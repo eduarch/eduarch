@@ -5,6 +5,7 @@ io.sockets.on('connection', function (socket) {
 
   socket.on('private message', function (from, msg) {
     console.log('I received a private message by ', from, ' saying ', msg);
+    console.log('hello world');
   });
 
   socket.on('disconnect', function () {
