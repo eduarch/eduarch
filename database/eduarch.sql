@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 23, 2013 at 05:25 AM
+-- Generation Time: Dec 23, 2013 at 05:46 AM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -37,6 +37,11 @@ CREATE TABLE IF NOT EXISTS `classes` (
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `classes`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +54,11 @@ CREATE TABLE IF NOT EXISTS `class_users` (
   PRIMARY KEY (`user_id`,`class_id`),
   KEY `class_id` (`class_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `class_users`
+--
+
 
 -- --------------------------------------------------------
 
@@ -71,6 +81,11 @@ CREATE TABLE IF NOT EXISTS `contents` (
   KEY `entity_id` (`entity_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `contents`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -83,6 +98,11 @@ CREATE TABLE IF NOT EXISTS `content_types` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `content_types`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -94,6 +114,261 @@ CREATE TABLE IF NOT EXISTS `countries` (
   `name` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `countries`
+--
+
+INSERT INTO `countries` (`id`, `name`) VALUES
+(1, 'Afghanistan'),
+(2, 'Albania'),
+(3, 'Algeria'),
+(4, 'American Samoa'),
+(5, 'Andorra'),
+(6, 'Angola'),
+(7, 'Anguilla'),
+(8, 'Antarctica'),
+(9, 'Antigua and Barbuda'),
+(10, 'Argentina'),
+(11, 'Armenia'),
+(12, 'Armenia'),
+(13, 'Aruba'),
+(14, 'Australia'),
+(15, 'Austria'),
+(16, 'Azerbaijan'),
+(17, 'Azerbaijan'),
+(18, 'Bahamas'),
+(19, 'Bahrain'),
+(20, 'Bangladesh'),
+(21, 'Barbados'),
+(22, 'Belarus'),
+(23, 'Belgium'),
+(24, 'Belize'),
+(25, 'Benin'),
+(26, 'Bermuda'),
+(27, 'Bhutan'),
+(28, 'Bolivia'),
+(29, 'Bosnia and Herzegovina'),
+(30, 'Botswana'),
+(31, 'Bouvet Island'),
+(32, 'Brazil'),
+(33, 'British Indian Ocean Terr'),
+(34, 'Brunei Darussalam'),
+(35, 'Bulgaria'),
+(36, 'Burkina Faso'),
+(37, 'Burundi'),
+(38, 'Cambodia'),
+(39, 'Cameroon'),
+(40, 'Canada'),
+(41, 'Cape Verde'),
+(42, 'Cayman Islands'),
+(43, 'Central African Republic'),
+(44, 'Chad'),
+(45, 'Chile'),
+(46, 'China'),
+(47, 'Christmas Island'),
+(48, 'Cocos (Keeling) Islands'),
+(49, 'Colombia'),
+(50, 'Comoros'),
+(51, 'Congo'),
+(52, 'Congo, The Democratic Rep'),
+(53, 'Cook Islands'),
+(54, 'Costa Rica'),
+(55, 'Cote D''ivoire'),
+(56, 'Croatia'),
+(57, 'Cuba'),
+(58, 'Cyprus'),
+(60, 'Czech Republic'),
+(61, 'Denmark'),
+(62, 'Djibouti'),
+(63, 'Dominica'),
+(64, 'Dominican Republic'),
+(65, 'Easter Island'),
+(66, 'Ecuador'),
+(67, 'Egypt'),
+(68, 'El Salvador'),
+(69, 'Equatorial Guinea'),
+(70, 'Eritrea'),
+(71, 'Estonia'),
+(72, 'Ethiopia'),
+(73, 'Falkland Islands (Malvina'),
+(74, 'Faroe Islands'),
+(75, 'Fiji'),
+(76, 'Finland'),
+(77, 'France'),
+(78, 'French Guiana'),
+(79, 'French Polynesia'),
+(80, 'French Southern Territori'),
+(81, 'Gabon'),
+(82, 'Gambia'),
+(83, 'Georgia'),
+(85, 'Germany'),
+(86, 'Ghana'),
+(87, 'Gibraltar'),
+(88, 'Greece'),
+(89, 'Greenland'),
+(91, 'Grenada'),
+(92, 'Guadeloupe'),
+(93, 'Guam'),
+(94, 'Guatemala'),
+(95, 'Guinea'),
+(96, 'Guinea-bissau'),
+(97, 'Guyana'),
+(98, 'Haiti'),
+(99, 'Heard Island and Mcdonald'),
+(100, 'Honduras'),
+(101, 'Hong Kong'),
+(102, 'Hungary'),
+(103, 'Iceland'),
+(104, 'India'),
+(105, 'Indonesia'),
+(106, 'Indonesia'),
+(107, 'Iran'),
+(108, 'Iraq'),
+(109, 'Ireland'),
+(110, 'Israel'),
+(111, 'Italy'),
+(112, 'Jamaica'),
+(113, 'Japan'),
+(114, 'Jordan'),
+(115, 'Kazakhstan'),
+(116, 'Kazakhstan'),
+(117, 'Kenya'),
+(118, 'Kiribati'),
+(119, 'Korea, North'),
+(120, 'Korea, South'),
+(121, 'Kosovo'),
+(122, 'Kuwait'),
+(123, 'Kyrgyzstan'),
+(124, 'Laos'),
+(125, 'Latvia'),
+(126, 'Lebanon'),
+(127, 'Lesotho'),
+(128, 'Liberia'),
+(129, 'Libyan Arab Jamahiriya'),
+(130, 'Liechtenstein'),
+(131, 'Lithuania'),
+(132, 'Luxembourg'),
+(133, 'Macau'),
+(134, 'Macedonia'),
+(135, 'Madagascar'),
+(136, 'Malawi'),
+(137, 'Malaysia'),
+(138, 'Maldives'),
+(139, 'Mali'),
+(140, 'Malta'),
+(141, 'Marshall Islands'),
+(142, 'Martinique'),
+(143, 'Mauritania'),
+(144, 'Mauritius'),
+(145, 'Mayotte'),
+(146, 'Mexico'),
+(147, 'Micronesia, Federated Sta'),
+(148, 'Moldova, Republic of'),
+(149, 'Monaco'),
+(150, 'Mongolia'),
+(151, 'Montenegro'),
+(152, 'Montserrat'),
+(153, 'Morocco'),
+(154, 'Mozambique'),
+(155, 'Myanmar'),
+(156, 'Namibia'),
+(157, 'Nauru'),
+(158, 'Nepal'),
+(159, 'Netherlands'),
+(160, 'Netherlands Antilles'),
+(161, 'New Caledonia'),
+(162, 'New Zealand'),
+(163, 'Nicaragua'),
+(164, 'Niger'),
+(165, 'Nigeria'),
+(166, 'Niue'),
+(167, 'Norfolk Island'),
+(168, 'Northern Mariana Islands'),
+(169, 'Norway'),
+(170, 'Oman'),
+(171, 'Pakistan'),
+(172, 'Palau'),
+(173, 'Palestinian Territory'),
+(174, 'Panama'),
+(175, 'Papua New Guinea'),
+(176, 'Paraguay'),
+(177, 'Peru'),
+(178, 'Philippines'),
+(179, 'Pitcairn'),
+(180, 'Poland'),
+(181, 'Portugal'),
+(182, 'Puerto Rico'),
+(183, 'Qatar'),
+(184, 'Reunion'),
+(185, 'Romania'),
+(186, 'Russia'),
+(187, 'Russia'),
+(188, 'Rwanda'),
+(189, 'Saint Helena'),
+(190, 'Saint Kitts and Nevis'),
+(191, 'Saint Lucia'),
+(192, 'Saint Pierre and Miquelon'),
+(193, 'Saint Vincent and The Gre'),
+(194, 'Samoa'),
+(195, 'San Marino'),
+(196, 'Sao Tome and Principe'),
+(197, 'Saudi Arabia'),
+(198, 'Senegal'),
+(199, 'Serbia and Montenegro'),
+(200, 'Seychelles'),
+(201, 'Sierra Leone'),
+(202, 'Singapore'),
+(203, 'Slovakia'),
+(204, 'Slovenia'),
+(205, 'Solomon Islands'),
+(206, 'Somalia'),
+(207, 'South Africa'),
+(208, 'South Georgia and The Sou'),
+(209, 'Spain'),
+(210, 'Sri Lanka'),
+(211, 'Sudan'),
+(212, 'Suriname'),
+(213, 'Svalbard and Jan Mayen'),
+(214, 'Swaziland'),
+(215, 'Sweden'),
+(216, 'Switzerland'),
+(217, 'Syria'),
+(218, 'Taiwan'),
+(219, 'Tajikistan'),
+(220, 'Tanzania, United Republic'),
+(221, 'Thailand'),
+(222, 'Timor-leste'),
+(223, 'Togo'),
+(224, 'Tokelau'),
+(225, 'Tonga'),
+(226, 'Trinidad and Tobago'),
+(227, 'Tunisia'),
+(228, 'Turkey'),
+(229, 'Turkey'),
+(230, 'Turkmenistan'),
+(231, 'Turks and Caicos Islands'),
+(232, 'Tuvalu'),
+(233, 'Uganda'),
+(234, 'Ukraine'),
+(235, 'United Arab Emirates'),
+(236, 'United Kingdom'),
+(237, 'United States'),
+(238, 'United States Minor Outly'),
+(239, 'Uruguay'),
+(240, 'Uzbekistan'),
+(241, 'Vanuatu'),
+(242, 'Vatican City'),
+(243, 'Venezuela'),
+(244, 'Vietnam'),
+(245, 'Virgin Islands, British'),
+(246, 'Virgin Islands, U.S.'),
+(247, 'Wallis and Futuna'),
+(248, 'Western Sahara'),
+(249, 'Yemen'),
+(250, 'Yemen'),
+(251, 'Zambia'),
+(252, 'Zimbabwe');
 
 -- --------------------------------------------------------
 
@@ -112,6 +387,11 @@ CREATE TABLE IF NOT EXISTS `courses` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `courses`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -127,6 +407,11 @@ CREATE TABLE IF NOT EXISTS `course_users` (
   KEY `course_id` (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `course_users`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -138,6 +423,11 @@ CREATE TABLE IF NOT EXISTS `entities` (
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `entities`
+--
+
 
 -- --------------------------------------------------------
 
@@ -151,6 +441,11 @@ CREATE TABLE IF NOT EXISTS `facilitators` (
   PRIMARY KEY (`user_id`),
   KEY `course_id` (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `facilitators`
+--
+
 
 -- --------------------------------------------------------
 
@@ -172,6 +467,11 @@ CREATE TABLE IF NOT EXISTS `files` (
   KEY `entity_id` (`entity_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `files`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -189,6 +489,11 @@ CREATE TABLE IF NOT EXISTS `rate` (
   KEY `entity_id` (`entity_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `rate`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -201,6 +506,11 @@ CREATE TABLE IF NOT EXISTS `related_courses` (
   PRIMARY KEY (`class_id`,`course_id`),
   KEY `course_id` (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `related_courses`
+--
+
 
 -- --------------------------------------------------------
 
@@ -219,6 +529,11 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `sessions`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -236,6 +551,11 @@ CREATE TABLE IF NOT EXISTS `session_types` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `session_types`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -247,6 +567,11 @@ CREATE TABLE IF NOT EXISTS `status` (
   `name` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `status`
+--
+
 
 -- --------------------------------------------------------
 
@@ -266,6 +591,11 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
   KEY `suggestion_type_id` (`suggestion_type_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `suggestions`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -277,6 +607,11 @@ CREATE TABLE IF NOT EXISTS `suggestion_types` (
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `suggestion_types`
+--
+
 
 -- --------------------------------------------------------
 
@@ -295,6 +630,11 @@ CREATE TABLE IF NOT EXISTS `tutorials` (
   KEY `class_id` (`class_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+--
+-- Dumping data for table `tutorials`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -310,6 +650,11 @@ CREATE TABLE IF NOT EXISTS `tutorial_pages` (
   PRIMARY KEY (`id`),
   KEY `tutorial_id` (`tutorial_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `tutorial_pages`
+--
+
 
 -- --------------------------------------------------------
 
@@ -336,6 +681,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `country_id` (`country_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
+--
+-- Dumping data for table `users`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -347,6 +697,11 @@ CREATE TABLE IF NOT EXISTS `user_types` (
   `name` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `user_types`
+--
+
 
 -- --------------------------------------------------------
 
@@ -366,6 +721,11 @@ CREATE TABLE IF NOT EXISTS `works` (
   UNIQUE KEY `user_id` (`user_id`),
   KEY `class_id` (`class_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `works`
+--
+
 
 --
 -- Constraints for dumped tables

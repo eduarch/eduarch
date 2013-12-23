@@ -16,7 +16,7 @@ class user_general extends CI_Controller {
 			$user['logged'] = true;
 			$this->session->set_userdata($user);
 			$this->layout->success('Signed Up Successfully');
-			refresh('home');
+			refresh('account_settings');
 		}
 
 		$this->load->model('country_model');
@@ -31,7 +31,7 @@ class user_general extends CI_Controller {
 
 		if($this->form_validation->run('login')) {
 			$this->layout->success('Logged In Successfully');
-			refresh('home');
+			refresh('dashboard');
 		}
 
 		$user = $this->input->post('user');
