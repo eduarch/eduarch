@@ -140,9 +140,12 @@ class user_general extends CI_Controller {
 
 	function _check_login($password) {
 		$email = set_value('user[email]', '');
-		$user = $this->user_model->where('email', $email, 'password', $password)->get_single();
+		$user = $this->user_model->get_by_email($email);
 	
 		if($user == null) {
+			$this->form_validation->set_message('_check_login', 'Email Address does not belong to any Account');
+			return false;
+		} else if($user['password'] != $password) {
 			$this->form_validation->set_message('_check_login', 'Incorrect Email or Password');
 			return false;
 		}
