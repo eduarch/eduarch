@@ -1,5 +1,6 @@
 <form action="login" method="post" accept-charset="utf-8" class="boxed sticky-label">
 	<h4><strong>Login With Your Email</strong></h4>
+	No account yet? <a href="sign_up">Sign up here</a>
 	<hr>
 	<label class="label">Email Address</label>
 	<input type="email" name="user[email]" id="email" placeholder="40 Characters Maximum" 

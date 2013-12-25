@@ -1,5 +1,6 @@
 <form action="sign_up" method="post" accept-charset="utf-8" class="boxed sticky-label">
 	<h4><strong>Setup Free Account</strong></h4>
+	Already signed up? <a href="login">Login here</a>
 	<hr>
 	<div class="row">
 		<div class="large-6 columns">
