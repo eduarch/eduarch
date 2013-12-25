@@ -9,8 +9,8 @@
 	<section class="top-bar-section">
 		<ul class="left">
 			<li><a href="classes"><i class="glyphicon glyphicon-book"></i> Classes</a></li>
-			<li><a><i class="glyphicon glyphicon-fire"></i> Works</a></li>
-			<li><a><i class="glyphicon glyphicon-pushpin"></i> Suggestion Board</a></li>
+			<li><a href="works"><i class="glyphicon glyphicon-fire"></i> Works</a></li>
+			<li><a href="suggestion_board"><i class="glyphicon glyphicon-pushpin"></i> Suggestion Board</a></li>
 		</ul>
 		<ul class="right">
 			<li><a href="dashboard"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</a></li>
