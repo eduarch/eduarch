@@ -37,3 +37,7 @@ $config['change_info'] = array(
 	rule('user[gender]', 'Gender', 'required'),
 	rule('user[country_id]', 'Country', 'required')
 );
+
+$config['forgot_password'] = array(
+	rule('user[email]', 'Email Address', 'trim|required|xss_clean|valid_email|callback__check_email_forgot_password')
+);

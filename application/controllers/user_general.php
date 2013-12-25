@@ -115,6 +115,16 @@ class user_general extends CI_Controller {
 		$this->layout->show();
 	}
 
+	function forgot_password() {
+		if($this->form_validation->run('forgot_password')) {
+			$this->layout->warning('This module has not been fully implemented yet');
+			redirect('home');
+		}
+
+		$this->layout->page('user_general/forgot_password', 'default', 'Forgot Password');
+		$this->layout->show();
+	}
+
 	/* CallBacks */
 	function _check_email($email) {
 		$user = $this->user_model->get_by_email($email);
@@ -167,4 +177,14 @@ class user_general extends CI_Controller {
 		return true;
 	}
 
+	function _check_email_forgot_password($email) {
+		$user = $this->user_model->get_by_email($email);
+		
+		if($user == null) {
+			$this->form_validation->set_message('_check_email_forgot_password', 'Email Address does not exist');
+			return false;
+		}
+		
+		return true;
+	}
 }
