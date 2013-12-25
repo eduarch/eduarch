@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Dec 23, 2013 at 06:09 AM
--- Server version: 5.5.8
--- PHP Version: 5.3.5
+-- Host: 127.0.0.1
+-- Generation Time: Dec 25, 2013 at 12:10 PM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.19
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,6 +19,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `eduarch`
 --
+CREATE DATABASE IF NOT EXISTS `eduarch` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `eduarch`;
 
 -- --------------------------------------------------------
 
@@ -37,11 +40,6 @@ CREATE TABLE IF NOT EXISTS `classes` (
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `classes`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -54,11 +52,6 @@ CREATE TABLE IF NOT EXISTS `class_users` (
   PRIMARY KEY (`user_id`,`class_id`),
   KEY `class_id` (`class_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `class_users`
---
-
 
 -- --------------------------------------------------------
 
@@ -81,11 +74,6 @@ CREATE TABLE IF NOT EXISTS `contents` (
   KEY `entity_id` (`entity_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `contents`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -97,11 +85,6 @@ CREATE TABLE IF NOT EXISTS `content_types` (
   `name` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `content_types`
---
-
 
 -- --------------------------------------------------------
 
@@ -387,11 +370,6 @@ CREATE TABLE IF NOT EXISTS `courses` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `courses`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -407,11 +385,6 @@ CREATE TABLE IF NOT EXISTS `course_users` (
   KEY `course_id` (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `course_users`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -423,11 +396,6 @@ CREATE TABLE IF NOT EXISTS `entities` (
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `entities`
---
-
 
 -- --------------------------------------------------------
 
@@ -441,11 +409,6 @@ CREATE TABLE IF NOT EXISTS `facilitators` (
   PRIMARY KEY (`user_id`),
   KEY `course_id` (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `facilitators`
---
-
 
 -- --------------------------------------------------------
 
@@ -467,10 +430,21 @@ CREATE TABLE IF NOT EXISTS `files` (
   KEY `entity_id` (`entity_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `files`
+-- Table structure for table `logs`
 --
 
+CREATE TABLE IF NOT EXISTS `logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reason` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `entity_id` int(11) NOT NULL,
+  `log_type_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -489,11 +463,6 @@ CREATE TABLE IF NOT EXISTS `rate` (
   KEY `entity_id` (`entity_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `rate`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -506,11 +475,6 @@ CREATE TABLE IF NOT EXISTS `related_courses` (
   PRIMARY KEY (`class_id`,`course_id`),
   KEY `course_id` (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `related_courses`
---
-
 
 -- --------------------------------------------------------
 
@@ -529,11 +493,6 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `sessions`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -551,11 +510,6 @@ CREATE TABLE IF NOT EXISTS `session_types` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `session_types`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -567,11 +521,6 @@ CREATE TABLE IF NOT EXISTS `status` (
   `name` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `status`
---
-
 
 -- --------------------------------------------------------
 
@@ -591,11 +540,6 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
   KEY `suggestion_type_id` (`suggestion_type_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `suggestions`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -607,11 +551,6 @@ CREATE TABLE IF NOT EXISTS `suggestion_types` (
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `suggestion_types`
---
-
 
 -- --------------------------------------------------------
 
@@ -630,11 +569,6 @@ CREATE TABLE IF NOT EXISTS `tutorials` (
   KEY `class_id` (`class_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `tutorials`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -650,11 +584,6 @@ CREATE TABLE IF NOT EXISTS `tutorial_pages` (
   PRIMARY KEY (`id`),
   KEY `tutorial_id` (`tutorial_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `tutorial_pages`
---
-
 
 -- --------------------------------------------------------
 
@@ -679,12 +608,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`),
   KEY `user_type_id` (`user_type_id`,`status_id`),
   KEY `country_id` (`country_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `users`
 --
 
+INSERT INTO `users` (`id`, `email`, `password`, `last_name`, `first_name`, `gender`, `image`, `created_on`, `updated_on`, `country_id`, `user_type_id`, `status_id`) VALUES
+(1, 'ryeballar@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Eballar', 'Ryan', 'Male', '', '2013-12-25', '2013-12-25', 178, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -726,11 +657,6 @@ CREATE TABLE IF NOT EXISTS `works` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Dumping data for table `works`
---
-
-
---
 -- Constraints for dumped tables
 --
 
@@ -744,37 +670,37 @@ ALTER TABLE `classes`
 -- Constraints for table `class_users`
 --
 ALTER TABLE `class_users`
-  ADD CONSTRAINT `class_users_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `classes` (`id`),
-  ADD CONSTRAINT `class_users_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `class_users_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `class_users_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `classes` (`id`);
 
 --
 -- Constraints for table `contents`
 --
 ALTER TABLE `contents`
-  ADD CONSTRAINT `contents_ibfk_3` FOREIGN KEY (`entity_id`) REFERENCES `entities` (`id`),
   ADD CONSTRAINT `contents_ibfk_1` FOREIGN KEY (`content_type_id`) REFERENCES `content_types` (`id`),
-  ADD CONSTRAINT `contents_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `contents_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `contents_ibfk_3` FOREIGN KEY (`entity_id`) REFERENCES `entities` (`id`);
 
 --
 -- Constraints for table `course_users`
 --
 ALTER TABLE `course_users`
-  ADD CONSTRAINT `course_users_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`),
-  ADD CONSTRAINT `course_users_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `course_users_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `course_users_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`);
 
 --
 -- Constraints for table `facilitators`
 --
 ALTER TABLE `facilitators`
-  ADD CONSTRAINT `facilitators_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`),
-  ADD CONSTRAINT `facilitators_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `facilitators_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `facilitators_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`);
 
 --
 -- Constraints for table `files`
 --
 ALTER TABLE `files`
-  ADD CONSTRAINT `files_ibfk_2` FOREIGN KEY (`entity_id`) REFERENCES `entities` (`id`),
-  ADD CONSTRAINT `files_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `files_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `files_ibfk_2` FOREIGN KEY (`entity_id`) REFERENCES `entities` (`id`);
 
 --
 -- Constraints for table `rate`
@@ -786,8 +712,8 @@ ALTER TABLE `rate`
 -- Constraints for table `related_courses`
 --
 ALTER TABLE `related_courses`
-  ADD CONSTRAINT `related_courses_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`),
-  ADD CONSTRAINT `related_courses_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `classes` (`id`);
+  ADD CONSTRAINT `related_courses_ibfk_1` FOREIGN KEY (`class_id`) REFERENCES `classes` (`id`),
+  ADD CONSTRAINT `related_courses_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`);
 
 --
 -- Constraints for table `sessions`
@@ -799,8 +725,8 @@ ALTER TABLE `sessions`
 -- Constraints for table `suggestions`
 --
 ALTER TABLE `suggestions`
-  ADD CONSTRAINT `suggestions_ibfk_3` FOREIGN KEY (`suggestion_type_id`) REFERENCES `suggestion_types` (`id`),
-  ADD CONSTRAINT `suggestions_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `suggestions_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `suggestions_ibfk_3` FOREIGN KEY (`suggestion_type_id`) REFERENCES `suggestion_types` (`id`);
 
 --
 -- Constraints for table `tutorials`
@@ -825,5 +751,9 @@ ALTER TABLE `users`
 -- Constraints for table `works`
 --
 ALTER TABLE `works`
-  ADD CONSTRAINT `works_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `classes` (`id`),
-  ADD CONSTRAINT `works_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `works_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `works_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `classes` (`id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
