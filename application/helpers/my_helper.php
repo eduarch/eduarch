@@ -13,3 +13,13 @@ function refresh($url = '') {
 function whence($condition, $display1, $display2 = false) {
 	echo $condition? $display1: $display2;
 }
+
+function get_header() {
+	$ci = & get_instance();
+	$header = 'default';
+
+	if($ci->session->userdata('logged'))
+		return 'signed';
+
+	return null;
+}

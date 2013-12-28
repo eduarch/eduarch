@@ -56,7 +56,7 @@ class user_general extends CI_Controller {
 		$user = $this->user_model->get_by_id($id);
 		$user['country'] = $this->country_model->get_by_id($user['country_id']);
 
-		$this->layout->page('user_general/account_settings', 'signed', 'Account Settings');
+		$this->layout->page('user_general/account_settings', get_header(), 'Account Settings');
 		$this->layout->show($user);
 	}
 
@@ -98,7 +98,7 @@ class user_general extends CI_Controller {
 		$this->load->model('country_model');
 		$data['country'] = $this->country_model->get_by_id($data['country_id']);
 		$data['countries'] = $this->country_model->get();
-		$this->layout->page('user_general/change_info', 'signed', 'Change Information');
+		$this->layout->page('user_general/change_info', get_header(), 'Change Information');
 		$this->layout->show($data);	
 	}
 
@@ -111,7 +111,7 @@ class user_general extends CI_Controller {
 			refresh('account_settings');
 		}
 
-		$this->layout->page('user_general/change_password', 'signed', 'Change Password');
+		$this->layout->page('user_general/change_password', get_header(), 'Change Password');
 		$this->layout->show();
 	}
 

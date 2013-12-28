@@ -16,10 +16,9 @@
 <body>
 <?php $this->layout->view_header() ?>
 <?php $this->layout->view_message() ?>
-	<section style="margin-top: 20px;">
 <?php $this->layout->view_contents() ?>
-	</section>
 <?php $this->layout->view_footer() ?>
+<?php $this->load->view('common/chat'); ?>
 	<script src="js/jquery.js"></script>
 	<script src="js/foundation.min.js"></script>
 	<script type="text/javascript">

@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="medium-4 columns text-center">
 				<div class="show-for-medium show-for-small" style="background: black; color: white; text-align: right; height: 40px; padding: 10px 20px 10px 10px">Profile Image</div><br class="show-for-small-only">
-				<a class="th">
+				<a class="th" href="<?php whence($image == null, 'img/john_doe.jpg', $image) ?>">
 					<img src="<?php whence($image == null, 'img/john_doe.jpg', $image) ?>" 
 						style="width: 210px; height: 150px"><!-- data-src="holder.js/210x150/text:Profile Image" -->
 				</a><br>

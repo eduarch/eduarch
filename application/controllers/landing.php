@@ -3,6 +3,7 @@
 class landing extends CI_Controller {
 	function __construct() {
 		parent::__construct();
+		refresh_in('dashboard');
 		$this->layout->set(array(
 			'template' => 'default',
 			'directory' => 'landing',

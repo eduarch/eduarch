@@ -1,14 +1,21 @@
 var io = require('socket.io').listen(8080);
 
-io.sockets.on('connection', function (socket) {
-  io.sockets.emit('this', { will: 'be received by everyone'});
-
-  socket.on('private message', function (from, msg) {
-    console.log('I received a private message by ', from, ' saying ', msg);
-    console.log('hello world');
+/*io.sockets.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
   });
+});*/
 
-  socket.on('disconnect', function () {
-    io.sockets.emit('user disconnected');
-  });
+io.sockets.on('connection', function(socket) {
+	var users = [];
+
+	socket.on('connect', function(data) {
+		if(users[socket.id])
+			users[socket.id] = data;
+	});
+
+	socket.on('message', function(data) {
+		
+	});
 });
