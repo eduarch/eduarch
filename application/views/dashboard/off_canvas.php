@@ -1,8 +1,8 @@
 <div class="off-canvas-wrap show-for-small-only">
   <div class="inner-wrap">
     <nav class="tab-bar">
-      <section class="left-small">
-        <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+      <section class="left-small text-center">
+        <a class="left-off-canvas-toggle menu-icon glyphicon glyphicon-asterisk" ><span></span></a>
       </section>
 
       <section class="middle tab-bar-section">
