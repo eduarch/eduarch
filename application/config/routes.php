@@ -50,5 +50,7 @@ $route['change_password'] = 'user_general/change_password';
 $route['change_info'] = 'user_general/change_info';
 $route['forgot_password'] = 'user_general/forgot_password';
 
+$route['create_class'] = 'classes/create_class';
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
