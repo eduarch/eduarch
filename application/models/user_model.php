@@ -4,7 +4,7 @@ require_once 'abstract_model.php';
 
 class User_Model extends Abstract_Model {
 	function __construct() {
-		parent::__construct('users');
+		parent::__construct('users', 'id', 'user_id');
 	}
 
 	function get_by_email($email) {

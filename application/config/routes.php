@@ -50,6 +50,5 @@ $route['change_password'] = 'user_general/change_password';
 $route['change_info'] = 'user_general/change_info';
 $route['forgot_password'] = 'user_general/forgot_password';
 
-$route['dashboard/(:any)'] = 'dashboard/index/$1';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

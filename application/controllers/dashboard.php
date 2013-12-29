@@ -1,5 +1,7 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
+require_once '_dashboard/admin_panel.php';
+
 class dashboard extends CI_Controller {
 
 	private $user;
@@ -17,27 +19,37 @@ class dashboard extends CI_Controller {
 		$this->user = $this->user_model->get_by_id($id);
 	}
 
-	function index($control = '', $title = '') {
-		if($control == '') {
-			if($this->session->userdata('is_facilitator')) {
+	function index() {
+		switch($this->user['user_type_id']) {
+			case ADMIN_USER: $this->admin_panel(); break;
+			case GENERAL_USER:
+				if($this->session->userdata('is_facilitator'))
+					$this->faci_panel();
+				else
+					$this->learning();
+			break;
+		}
+	}
 
-			} else {
-				switch($this->session->userdata('user_type_id')) {
-					case GENERAL_USER:
-						$this->layout->directory = 'dashboard/learning/';
-						$this->layout->title = 'Dashboard | Learning';
-					break;
-					case ADMIN_USER:
-						$this->layout->directory = 'dashboard/admin_panel/';
-						$this->layout->title = 'Dashboard | Learning';
-					break;
-				}
-			}
-		} else if(file_exists('application/views/dashboard/'.$control.'/view.php')) {
-			$this->layout->directory = "dashboard/$control/";
-			$this->layout->title = 'Dashboard | '.$title;
-		} 
+	function admin_panel($module = 'index') {
+		$admin_panel = new admin_panel($this);
 
+		if(method_exists($admin_panel, $module)) {
+			$admin_panel->{$module}($this);
+		} else {
+			show_404();
+		}
+	}
+
+	function faci_panel($module) {
+
+	}
+
+	function learning() {
+		$this->layout->directory = 'dashboard/learning/';
+		$this->layout->title = 'Learning';
 		$this->layout->show();
 	}
 }
+
+

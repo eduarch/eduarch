@@ -2,7 +2,7 @@
 
 class country_model extends Abstract_Model {
 	function __construct() {
-		parent::__construct('countries');
+		parent::__construct('countries', 'id', 'country_id');
 	}
 
 }

@@ -3,11 +3,13 @@
 abstract class Abstract_Model extends CI_Model {
 	private $table;
 	private $field_id;
+	private $ref_id;
 
-	function __construct($table, $field_id = 'id') {
+	function __construct($table, $field_id, $ref_id) {
 		parent::__construct();
 		$this->table = $table;
 		$this->field_id = $field_id;
+		$this->ref_id = $ref_id;
 	}
 
 	function get_by_id($id) {
@@ -54,7 +56,7 @@ abstract class Abstract_Model extends CI_Model {
 
 	function select($fields = null) {
 		if($fields != null)
-			$this->select($fields);
+			$this->db->select($fields);
 		return $this;
 	}
 
@@ -93,8 +95,14 @@ abstract class Abstract_Model extends CI_Model {
 		return $this;
 	}
 
-	function join(Abstract_Model $model) {
-		$this->db->join($model->table, $this->table.$this->field_id.' = '.$model->table.$this->field_id);
+	function join() {
+		foreach(func_get_args() as $model)
+			$this->db->join($model->table, $model->table.'.'.$model->field_id.' = '.$this->table.'.'.$model->ref_id);
+		return $this;
+	}
+
+	function limit($limit, $offset) {
+		$this->db->limit($limit, $offset);
 		return $this;
 	}
 
