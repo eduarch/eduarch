@@ -13,6 +13,6 @@ class suggestion_board extends CI_Controller {
 	}
 
 	function index() {
-		$this->layout->show();
+		$this->load->show();
 	}
 }

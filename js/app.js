@@ -14,6 +14,8 @@ var show_off_canvas = (function() {
 	var left_html = dashboard_left.html();
 	var content_html = dashboard_content.html();
 	//var right_html = dashboard_right.html();
+	
+	var start = false;
 
 	return function() {
 		if(dashboard_left.length > 0) {
@@ -38,11 +40,9 @@ var show_off_canvas = (function() {
 				/*dashboard_right.html(right_html);
 				canvas_right.html('');*/
 			}
-		}
+		} 	
 	};
 })();
-
-show_off_canvas();
 
 $(window).resize((function() {
 	var id ;
@@ -54,5 +54,3 @@ $(window).resize((function() {
 })());
 
 })();
-
-

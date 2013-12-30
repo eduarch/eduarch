@@ -1,3 +1,4 @@
+<div class="show-for-small-only" style="background-color: #777; height: 1px"></div>
 <div class="off-canvas-wrap show-for-small-only">
   <div class="inner-wrap">
     <nav class="tab-bar">

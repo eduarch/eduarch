@@ -16,9 +16,11 @@
 	<div class="small-10 columns">
 		<div id="main_content">
 			<div class="row">
-				<div class="small-12 columns" id="dashboard-content" style="min-height: 600px">
+				<div id="dashboard-content" style="min-height: 600px">
+					
 					<?php $this->load->view('dashboard/admin_panel/default') ?>
 					<div class="admin-menu">
+						
 						<span class="label">Administrator Menu</span>
 						<div style="border-top: 1px solid #99BADD; border-left: 1px solid #99BADD">
 							<a class="label" href="dashboard/admin_panel/classes">Classes</a>
