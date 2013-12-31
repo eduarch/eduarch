@@ -22,7 +22,7 @@
 				</form>
 			</div>
 
-			<div class="medium-8 columns hr-flatten">
+			<div class="medium-8 columns">
 				<div style="background: black; color: white; text-align: right; height: 40px; padding: 10px 20px 10px 10px">User Information</div><br>
 				<div class="row">
 					<div class="small-4 columns">First Name</div>

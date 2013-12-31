@@ -30,7 +30,7 @@ var show_off_canvas = (function() {
 				/*dashboard_right.html('');
 				canvas_right.html(right_html);*/
 
-			} else {
+			} else if(dashboard_left.html().length == 0) {
 				dashboard_left.html(left_html);
 				canvas_left.html('');
 
@@ -43,6 +43,8 @@ var show_off_canvas = (function() {
 		} 	
 	};
 })();
+
+show_off_canvas();
 
 $(window).resize((function() {
 	var id ;

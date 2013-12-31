@@ -8,6 +8,13 @@
 .admin-menu a:hover {color: #007AA5}
 </style>
 
+<div id="myModal" class="reveal-modal" data-reveal>
+  <h2>Awesome. I have it.</h2>
+  <p class="lead">Your couch.  It is mine.</p>
+  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
 <?php $this->load->view('dashboard/off_canvas'); ?>
 <div class="row hide-for-small-only" style="max-width: 100%;" id="large-content">
 	<div class="small-2 columns">
@@ -17,28 +24,26 @@
 		<div id="main_content">
 			<div class="row">
 				<div id="dashboard-content" style="min-height: 600px">
-					
 					<?php $this->load->view('dashboard/admin_panel/default') ?>
 					<div class="admin-menu">
-						
 						<span class="label">Administrator Menu</span>
 						<div style="border-top: 1px solid #99BADD; border-left: 1px solid #99BADD">
-							<a class="label" href="dashboard/admin_panel/classes">Classes</a>
-							<a class="label" href="dashboard/admin_panel/contents">Contents</a>
-							<a class="label" href="dashboard/admin_panel/countries">Countries</a>
-							<a class="label" href="dashboard/admin_panel/courses">Courses</a>
-							<a class="label" href="dashboard/admin_panel/entities">Entities</a>
-							<a class="label" href="dashboard/admin_panel/facilitators">Facilitators</a>
-							<a class="label" href="dashboard/admin_panel/files">Files</a>
-							<a class="label" href="dashboard/admin_panel/logs">Logs</a>
-							<a class="label" href="dashboard/admin_panel/rates">Rates</a>
-							<a class="label" href="dashboard/admin_panel/sessions">Sessions</a>
-							<a class="label" href="dashboard/admin_panel/session_types">Session Types</a>
-							<a class="label" href="dashboard/admin_panel/status">Status</a>
-							<a class="label" href="dashboard/admin_panel/suggestions">Suggestions</a>
-							<a class="label" href="dashboard/admin_panel/suggestion_types">Suggestion Types</a>
-							<a class="label" href="dashboard/admin_panel/tutorials">Tutorials</a>
-							<a class="label" href="dashboard/admin_panel/users">Users</a>
-							<a class="label" href="dashboard/admin_panel/user_types">User Types</a>
+							<a class="label" href="admin/classes">Classes</a>
+							<a class="label" href="admin/contents">Contents</a>
+							<a class="label" href="admin/countries">Countries</a>
+							<a class="label" href="admin/courses">Courses</a>
+							<a class="label" href="admin/entities">Entities</a>
+							<a class="label" href="admin/facilitators">Facilitators</a>
+							<a class="label" href="admin/files">Files</a>
+							<a class="label" href="admin/logs">Logs</a>
+							<a class="label" href="admin/rates">Rates</a>
+							<a class="label" href="admin/sessions">Sessions</a>
+							<a class="label" href="admin/session_types">Session Types</a>
+							<a class="label" href="admin/status">Status</a>
+							<a class="label" href="admin/suggestions">Suggestions</a>
+							<a class="label" href="admin/suggestion_types">Suggestion Types</a>
+							<a class="label" href="admin/tutorials">Tutorials</a>
+							<a class="label" href="admin/users">Users</a>
+							<a class="label" href="admin/user_types">User Types</a>
 						</div>
 					</div>

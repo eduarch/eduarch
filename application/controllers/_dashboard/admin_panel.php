@@ -2,38 +2,61 @@
 
 class admin_panel {
 
-	function __construct(&$ci) {
-		$ci->template = 'default';
-		$ci->header = get_header();
+	private $CI;
+
+	function __construct() {
+		$this->CI = & get_instance();
 	}
 
-	function index(&$ci) {
-		$ci->layout->directory = 'dashboard/admin_panel/';
-		$ci->layout->title = 'Dashboard | Admin Panel';
-		$ci->layout->show();
+	function index() {
+		$this->CI->layout->directory = 'dashboard/admin_panel/';
+		$this->CI->layout->title = 'Dashboard | Admin Panel';
+		$this->CI->layout->show();
 	}
 
-	function countries(&$ci) {
-		$ci->layout->directory = 'dashboard/admin_panel/countries/';
-		$ci->layout->title = 'Dashboard | Admin Panel | Countires';
-		$ci->layout->show();
+	function countries() {
+		$this->CI->layout->directory = 'dashboard/admin_panel/countries/';
+		$this->CI->layout->title = 'Dashboard | Admin Panel | Countires';
+		$this->CI->layout->show();
 	}
 
-	function users(&$ci) {
-		$ci->load->model('user_type_model');
-		$ci->load->model('status_model');
-		$ci->load->model('country_model');
+	function users() {
+		$this->CI->layout->directory = 'dashboard/admin_panel/users/';
+		$this->CI->layout->title = 'Dashboard | Admin Panel | Users';
 
-		$ci->layout->directory = 'dashboard/admin_panel/users/';
-		$ci->layout->title = 'Dashboard | Admin Panel | Users';
+		$data['users'] = $this->CI->user_model->
+			select('
+				users.id, email, last_name, first_name, gender,
+				countries.name as country, user_types.name as user_type, status.name as status')->
+			join('country_model', 'user_type_model', 'status_model')->get();
 
-		$data['users'] = $ci->user_model->
-			select("
-				users.id, users.email, users.last_name, users.first_name, users.gender,
-				countries.name as country, user_types.name as user_type, status.name as status")->
-			join($ci->user_type_model, $ci->country_model, $ci->status_model)->get();
+		$this->CI->layout->show($data);
+	}
 
-		$ci->layout->show($data);
+	function view_user($user_id) {
+		$this->CI->layout->directory = 'dashboard/admin_panel/users_view/';
+		$this->CI->layout->title = 'Dashboard | Admin Panel | View User';
+		$user = $this->CI->user_model->
+			select('
+				users.id, email, last_name, first_name, gender, image, created_on, updated_on,
+				countries.name as country, user_types.name as user_type, status.name as status')->
+			join('country_model', 'user_type_model', 'status_model')->get_by_id($user_id);
+
+		if($user == null) {
+			$this->CI->layout->warning('User does not exist anymore.');
+			refresh('admin/users');
+		}
+
+		$this->CI->layout->show($user);
+	}
+
+	function update_user($user_id) {
+		$this->CI->layout->directory = 'dashboard/admin_panel/users_update/';
+		$this->CI->layout->title = 'Dashboard | Admin Panel | Update User';
+
+		
+
+		$this->CI->layout->show();
 	}
 
 }

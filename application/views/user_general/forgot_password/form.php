@@ -1,4 +1,4 @@
-<form action="forgot_password" method="post" accept-charset="utf-8" class="boxed sticky-label">
+<form action="forgot_password" method="post" accept-charset="utf-8" class="sticky-label">
 	<h4><strong>Forgot Your Password?</strong></h4>
 	We will be sending a temporary password to your email.
 	<hr>

@@ -1,4 +1,4 @@
-<form action="change_info" method="post" accept-charset="utf-8" class="boxed sticky-label">
+<form action="change_info" method="post" accept-charset="utf-8" class="sticky-label">
 	<h4><strong>Change Information</strong></h4>
 	<hr>
 	<div class="row">

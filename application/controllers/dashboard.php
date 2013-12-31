@@ -35,7 +35,9 @@ class dashboard extends CI_Controller {
 		$admin_panel = new admin_panel($this);
 
 		if(method_exists($admin_panel, $module)) {
-			$admin_panel->{$module}($this);
+			$args = func_get_args();
+			array_shift($args);
+			call_user_func_array(array($admin_panel, $module), $args);
 		} else {
 			show_404();
 		}
@@ -49,6 +51,24 @@ class dashboard extends CI_Controller {
 		$this->layout->directory = 'dashboard/learning/';
 		$this->layout->title = 'Learning';
 		$this->layout->show();
+	}
+
+	function teaching() {
+		$this->layout->directory = 'dashboard/teaching/';
+		$this->layout->title = 'Teaching';
+		$this->layout->show();	
+	}
+
+	function sessions() {
+		$this->layout->directory = 'dashboard/sessions/';
+		$this->layout->title = 'Sessions';
+		$this->layout->show();	
+	}
+
+	function notifications() {
+		$this->layout->directory = 'dashboard/notifications/';
+		$this->layout->title = 'Notifications';
+		$this->layout->show();		
 	}
 }
 

@@ -13,7 +13,7 @@ abstract class Abstract_Model extends CI_Model {
 	}
 
 	function get_by_id($id) {
-		return $this->where($this->field_id, $id)->get_single();
+		return $this->where_id($id)->get_single();
 	}
 
 	function get() {
@@ -82,7 +82,7 @@ abstract class Abstract_Model extends CI_Model {
 	}
 
 	function where_id($id) {
-		return $this->where($this->field_id, $id);
+		return $this->where($this->table.'.'.$this->field_id, $id);
 	}
 
 	function where_ids() {
@@ -90,14 +90,18 @@ abstract class Abstract_Model extends CI_Model {
 		if($count > 0) {
 			$ids = func_get_args();
 			for($i = 0; $i < $count; $i++)
-				$this->where($this->field_id[$i], $ids[$i]);
+				$this->where($this->table.'.'.$this->field_id[$i], $ids[$i]);
 		}
 		return $this;
 	}
 
 	function join() {
-		foreach(func_get_args() as $model)
+		foreach(func_get_args() as $model_name) {
+			if(!property_exists($this, $model_name))
+				$this->load->model($model_name);
+			$model = $this->{$model_name};
 			$this->db->join($model->table, $model->table.'.'.$model->field_id.' = '.$this->table.'.'.$model->ref_id);
+		}
 		return $this;
 	}
 

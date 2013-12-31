@@ -12,7 +12,7 @@
 	<?php endif; ?>
 
 	<li class="heading"><label><strong>Personal</strong></label></li>
-	<li><a href="account_settings">Account</a></li>
+	<li><a>Account</a></li>
 	<li><a>Files</a></li>
 	<li><a>Acquaintances</a></li>
 	<li class="divider"></li>

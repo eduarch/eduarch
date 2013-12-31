@@ -46,6 +46,7 @@ define('ACTIVE_STATUS', 1);
 define('INACTIVE_STATUS', 2);
 define('OPEN_STATUS', 3);
 define('CLOSE_STATUS', 4);
+define('BLOCK_STATUS', 5);
 
 define('JOHN_DOE_IMAGE', 'img/john_doe.jpg');
 define('USER_AVATAR_LOCATION', './uploads/user/avatar/');
