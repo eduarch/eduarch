@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2014 at 06:22 AM
+-- Generation Time: Jan 03, 2014 at 06:28 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -511,10 +511,12 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   `name` varchar(50) NOT NULL,
   `desc` text NOT NULL,
   `start_time` datetime NOT NULL,
+  `session_type_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `status_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`)
+  KEY `user_id` (`user_id`),
+  KEY `session_type_id` (`session_type_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -783,6 +785,7 @@ ALTER TABLE `related_courses`
 -- Constraints for table `sessions`
 --
 ALTER TABLE `sessions`
+  ADD CONSTRAINT `sessions_ibfk_2` FOREIGN KEY (`session_type_id`) REFERENCES `session_types` (`id`),
   ADD CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
