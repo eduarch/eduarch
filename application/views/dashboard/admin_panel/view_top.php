@@ -8,13 +8,6 @@
 .admin-menu a:hover {color: #007AA5}
 </style>
 
-<div id="myModal" class="reveal-modal" data-reveal>
-  <h2>Awesome. I have it.</h2>
-  <p class="lead">Your couch.  It is mine.</p>
-  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
-
 <?php $this->load->view('dashboard/off_canvas'); ?>
 <div class="row hide-for-small-only" style="max-width: 100%;" id="large-content">
 	<div class="small-2 columns">

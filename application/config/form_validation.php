@@ -41,3 +41,12 @@ $config['change_info'] = array(
 $config['forgot_password'] = array(
 	rule('user[email]', 'Email Address', 'trim|required|xss_clean|valid_email|callback__check_email_forgot_password')
 );
+
+$config['add_entity'] = array(
+	rule('entity[name]', 'Entity Name', 'trim|required|xss_clean|strtolower|callback__check_entity')
+);
+
+$config['edit_entity'] = array(
+	rule('entity[id]', 'Entity ID', 'required'),
+	rule('entity[name]', 'Entity Name', 'trim|required|xss_clean|strtolower|callback__check_edit_entity')
+);

@@ -152,7 +152,7 @@ class user_general extends CI_Controller {
 		$email = set_value('user[email]', '');
 		$user = $this->user_model->get_by_email($email);
 	
-		if($user == null) {
+		if(empty($user)) {
 			$this->form_validation->set_message('_check_login', 'Email Address does not belong to any Account');
 			return false;
 		} else if($user['password'] != $password) {
@@ -180,7 +180,7 @@ class user_general extends CI_Controller {
 	function _check_email_forgot_password($email) {
 		$user = $this->user_model->get_by_email($email);
 		
-		if($user == null) {
+		if(empty($user)) {
 			$this->form_validation->set_message('_check_email_forgot_password', 'Email Address does not exist');
 			return false;
 		}

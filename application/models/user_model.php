@@ -15,6 +15,14 @@ class User_Model extends Abstract_Model {
 		return $this->where('email', $email, 'password', $password)->get_single();
 	}
 
+	function get_full_info($id) {
+		return $this->user_model->
+			select('
+				users.id, email, last_name, first_name, gender, image, created_on, updated_on,
+				countries.name as country, user_types.name as user_type, status.name as status')->
+			join('country_model', 'user_type_model', 'status_model')->get_by_id($id);
+	}
+
 	function sign_up($user) {
 		$user['created_on'] = date('Y-m-d H:i:s');
 		$user['updated_on'] = $user['created_on'];

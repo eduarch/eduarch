@@ -49,11 +49,9 @@ $route['upload_avatar'] = 'user_general/upload_avatar';
 $route['change_password'] = 'user_general/change_password';
 $route['change_info'] = 'user_general/change_info';
 $route['forgot_password'] = 'user_general/forgot_password';
-
-$route['admin/(:any)'] = 'dashboard/admin_panel/$1';
-
+$route['admin'] = 'dashboard_admin_panel';
+$route['admin/(:any)'] = 'dashboard_admin_panel/$1';
 $route['create_class'] = 'classes/create_class';
-
 $route['create_course'] = 'courses/create_course';
 
 /* End of file routes.php */

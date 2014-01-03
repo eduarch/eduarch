@@ -16,6 +16,11 @@ abstract class Abstract_Model extends CI_Model {
 		return $this->where_id($id)->get_single();
 	}
 
+	function get_by_ids() {
+		call_user_func_array(array($this, 'where_ids'), func_get_args());
+		return $this->get_single();
+	}
+
 	function get() {
 		$this->db->from($this->table);
 		$query = $this->db->get();
@@ -24,7 +29,7 @@ abstract class Abstract_Model extends CI_Model {
 			$query->free_result();
 			return $result;
 		}
-		return null;
+		return array();
 	}
 
 	function get_single() {
@@ -35,7 +40,7 @@ abstract class Abstract_Model extends CI_Model {
 			$query->free_result();
 			return $result;
 		}
-		return null;
+		return array();
 	}
 
 	function get_last_insert() {
@@ -52,6 +57,11 @@ abstract class Abstract_Model extends CI_Model {
 	function update($data = null) {
 		if($data) return $this->db->update($this->table, $data);
 		return $this->db->update($this->table);
+	}
+
+	function delete($data = null) {
+		if($data) return $this->db->delete($this->table, $data);
+		return $this->db->delete($this->table);
 	}
 
 	function select($fields = null) {
@@ -107,6 +117,16 @@ abstract class Abstract_Model extends CI_Model {
 
 	function limit($limit, $offset) {
 		$this->db->limit($limit, $offset);
+		return $this;
+	}
+
+	function order_by() {
+		$count = func_num_args();
+		if($count > 0) {
+			$args = func_get_args();
+			for($i = 0; $i < $count; $i += 2)
+				$this->db->order_by($args[$i], $args[$i+1]);
+		}
 		return $this;
 	}
 

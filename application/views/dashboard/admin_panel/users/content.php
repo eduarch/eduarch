@@ -26,7 +26,6 @@
 				<td><?php echo $user['status'] ?></td>
 				<td>
 					<a href="admin/view_user/<?php echo $user['id'] ?>" title="View"<i class="glyphicon glyphicon-search"></i></a>&nbsp;&nbsp;
-					<a href="admin/update_user/<?php echo $user['id'] ?>" title="Update"><i class="glyphicon glyphicon-pencil"></i></a>
 				</td>
 			</tr>
 			<?php endforeach ?>

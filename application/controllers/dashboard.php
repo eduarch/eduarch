@@ -1,7 +1,5 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-require_once '_dashboard/admin_panel.php';
-
 class dashboard extends CI_Controller {
 
 	private $user;
@@ -21,7 +19,7 @@ class dashboard extends CI_Controller {
 
 	function index() {
 		switch($this->user['user_type_id']) {
-			case ADMIN_USER: $this->admin_panel(); break;
+			case ADMIN_USER: refresh('admin'); break;
 			case GENERAL_USER:
 				if($this->session->userdata('is_facilitator'))
 					$this->faci_panel();
@@ -31,20 +29,7 @@ class dashboard extends CI_Controller {
 		}
 	}
 
-	function admin_panel($module = 'index') {
-		$admin_panel = new admin_panel($this);
-
-		if(method_exists($admin_panel, $module)) {
-			$args = func_get_args();
-			array_shift($args);
-			call_user_func_array(array($admin_panel, $module), $args);
-		} else {
-			show_404();
-		}
-	}
-
-	function faci_panel($module) {
-
+	function faci_panel($module = 'index') {
 	}
 
 	function learning() {
@@ -70,6 +55,7 @@ class dashboard extends CI_Controller {
 		$this->layout->title = 'Notifications';
 		$this->layout->show();		
 	}
+
 }
 
 
