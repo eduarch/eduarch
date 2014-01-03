@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2013 at 12:10 PM
+-- Generation Time: Jan 03, 2014 at 06:22 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -394,8 +394,32 @@ CREATE TABLE IF NOT EXISTS `course_users` (
 CREATE TABLE IF NOT EXISTS `entities` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+
+--
+-- Dumping data for table `entities`
+--
+
+INSERT INTO `entities` (`id`, `name`) VALUES
+(1, 'classes'),
+(2, 'contents'),
+(3, 'countries'),
+(4, 'courses'),
+(5, 'entities'),
+(6, 'facilitators'),
+(7, 'files'),
+(8, 'logs'),
+(9, 'rates'),
+(11, 'session types'),
+(10, 'sessions'),
+(12, 'status'),
+(14, 'suggestion types'),
+(13, 'suggestions'),
+(15, 'tutorials'),
+(17, 'user types'),
+(16, 'users');
 
 -- --------------------------------------------------------
 
@@ -513,6 +537,19 @@ CREATE TABLE IF NOT EXISTS `session_types` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `session_users`
+--
+
+CREATE TABLE IF NOT EXISTS `session_users` (
+  `session_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`session_id`,`user_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `status`
 --
 
@@ -520,7 +557,31 @@ CREATE TABLE IF NOT EXISTS `status` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`id`, `name`) VALUES
+(1, 'Active'),
+(2, 'Inactive'),
+(3, 'Open'),
+(4, 'Close'),
+(5, 'Block');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status_entity`
+--
+
+CREATE TABLE IF NOT EXISTS `status_entity` (
+  `status_id` int(11) NOT NULL,
+  `entity_id` int(11) NOT NULL,
+  PRIMARY KEY (`entity_id`,`status_id`),
+  KEY `status_id` (`status_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -532,6 +593,7 @@ CREATE TABLE IF NOT EXISTS `suggestions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
   `desc` text NOT NULL,
+  `points` int(11) NOT NULL,
   `suggestion_type_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `status_id` int(11) NOT NULL,
@@ -608,14 +670,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`),
   KEY `user_type_id` (`user_type_id`,`status_id`),
   KEY `country_id` (`country_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `last_name`, `first_name`, `gender`, `image`, `created_on`, `updated_on`, `country_id`, `user_type_id`, `status_id`) VALUES
-(1, 'ryeballar@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Eballar', 'Ryan', 'Male', '', '2013-12-25', '2013-12-25', 178, 1, 1);
+(1, 'ryeballar@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Eballar', 'Ryan', 'Male', './uploads/user/avatar/raizel.jpg', '2013-12-25', '2013-12-25', 178, 2, 1),
+(2, 'suddencatharsis@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Catharsis', 'Sudden', 'Male', '', '2013-12-27', '2013-12-27', 178, 1, 1),
+(3, 'dummy1@gmail.com', '8c2753548775b4161e531c323ea24c08', 'Dummy1', 'Dummy1', 'Male', '', '2013-12-29', '2013-12-29', 171, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -720,6 +784,20 @@ ALTER TABLE `related_courses`
 --
 ALTER TABLE `sessions`
   ADD CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `session_users`
+--
+ALTER TABLE `session_users`
+  ADD CONSTRAINT `session_users_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `session_users_ibfk_1` FOREIGN KEY (`session_id`) REFERENCES `sessions` (`id`);
+
+--
+-- Constraints for table `status_entity`
+--
+ALTER TABLE `status_entity`
+  ADD CONSTRAINT `status_entity_ibfk_1` FOREIGN KEY (`entity_id`) REFERENCES `entities` (`id`),
+  ADD CONSTRAINT `status_entity_ibfk_2` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`);
 
 --
 -- Constraints for table `suggestions`

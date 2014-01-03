@@ -67,6 +67,12 @@ class dashboard_admin_panel extends CI_Controller {
 	}
 
 	function edit_entity($id) {
+		if($this->input->is_ajax_request()) {
+			$entity = $this->input->post('entity');
+			echo json_encode($entity);
+			return;
+		}
+
 		$this->load->model('entity_model');
 
 		if($this->form_validation->run('edit_entity')) {
@@ -75,13 +81,9 @@ class dashboard_admin_panel extends CI_Controller {
 				set('name', $entity['name'])->
 				where_id($entity['id'])->
 				update();
+
 			$this->layout->success('Entity Successfully Changed');
 			refresh('admin/entities');
-		}
-
-		if($this->input->is_ajax_request()) {
-			$this->layout->form_errors();
-			return;
 		}
 
 		$data = $this->entity_model->get_by_id($id);

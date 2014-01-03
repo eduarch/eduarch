@@ -31,11 +31,11 @@ $('.edit').click(function(e) {
 });
 
 $('#edit-submit').click(function(e) {
-	$.post(edit, JSON.stringify({
+	$.post(edit, {
 		'entity[id]': $('#edit-id').val(),
 		'entity[name]': $('#edit-name').val()
-	}), function(data){
-
+	}, function(data){
+		console.log(data);
 	}, 'json');
 	e.preventDefault();
 });
