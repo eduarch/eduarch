@@ -22,10 +22,8 @@ class classes extends CI_Controller {
 		$this->layout->show($user);
 	}
 
-	function view_classes() {
-		refresh_in('', false);
-		
-		$this->layout->page('classes/classes', get_header(), 'Classes');
+	function index() {
+		$this->layout->page('classes/view_classes', get_header(), 'Classes');
 		$this->layout->show();
 	}
 
