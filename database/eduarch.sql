@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2014 at 06:28 AM
+-- Generation Time: Jan 04, 2014 at 01:28 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -31,14 +31,26 @@ USE `eduarch`;
 CREATE TABLE IF NOT EXISTS `classes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-  `desc` text NOT NULL,
-  `image` int(11) NOT NULL,
-  `points` int(11) NOT NULL,
+  `desc` text,
+  `image` varchar(255) DEFAULT NULL,
+  `points` int(11) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL,
+  `course_id` int(11) NOT NULL,
   `status_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `user_id` (`user_id`),
+  KEY `course_id` (`course_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `classes`
+--
+
+INSERT INTO `classes` (`id`, `name`, `desc`, `image`, `points`, `user_id`, `course_id`, `status_id`) VALUES
+(1, 'PHP Programming', '..', '0', 200, 1, 2, 1),
+(2, 'PHP Essentials', 'whatever ', '', 200, 1, 2, 1),
+(3, 'Java Programming for Dummies', 'aahhhhhhhhh', '', 250, 2, 2, 1),
+(5, 'Testing Class', 'For Testing Purposes', NULL, 0, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -52,6 +64,14 @@ CREATE TABLE IF NOT EXISTS `class_users` (
   PRIMARY KEY (`user_id`,`class_id`),
   KEY `class_id` (`class_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `class_users`
+--
+
+INSERT INTO `class_users` (`user_id`, `class_id`) VALUES
+(1, 1),
+(1, 2);
 
 -- --------------------------------------------------------
 
@@ -368,7 +388,16 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `updated_on` date NOT NULL,
   `status_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`id`, `name`, `desc`, `image`, `created_on`, `updated_on`, `status_id`) VALUES
+(1, 'General', 'All courses that can''t be classified to a specific course yet.', '', '2014-01-04', '2014-01-04', 1),
+(2, 'Technoloy', 'Whatever technological :P', '', '2014-01-04', '2014-01-04', 1),
+(3, 'Science', 'weee', '', '2014-01-04', '2014-01-04', 1);
 
 -- --------------------------------------------------------
 
@@ -499,6 +528,14 @@ CREATE TABLE IF NOT EXISTS `related_courses` (
   PRIMARY KEY (`class_id`,`course_id`),
   KEY `course_id` (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `related_courses`
+--
+
+INSERT INTO `related_courses` (`class_id`, `course_id`) VALUES
+(1, 1),
+(1, 3);
 
 -- --------------------------------------------------------
 
@@ -672,7 +709,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`),
   KEY `user_type_id` (`user_type_id`,`status_id`),
   KEY `country_id` (`country_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `users`
@@ -681,7 +718,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `email`, `password`, `last_name`, `first_name`, `gender`, `image`, `created_on`, `updated_on`, `country_id`, `user_type_id`, `status_id`) VALUES
 (1, 'ryeballar@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Eballar', 'Ryan', 'Male', './uploads/user/avatar/raizel.jpg', '2013-12-25', '2013-12-25', 178, 2, 1),
 (2, 'suddencatharsis@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Catharsis', 'Sudden', 'Male', '', '2013-12-27', '2013-12-27', 178, 1, 1),
-(3, 'dummy1@gmail.com', '8c2753548775b4161e531c323ea24c08', 'Dummy1', 'Dummy1', 'Male', '', '2013-12-29', '2013-12-29', 171, 1, 1);
+(3, 'dummy1@gmail.com', '8c2753548775b4161e531c323ea24c08', 'Dummy1', 'Dummy1', 'Male', '', '2013-12-29', '2013-12-29', 171, 1, 1),
+(4, 'dindygomez@hotmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'Gomez', 'Jinji', 'Female', '', '2014-01-04', '2014-01-04', 178, 1, 1),
+(5, 'wilma.shockly@yahoo.com', '3a4dc1c90cbe590bee19ae952434f04c', 'Shockley', 'Wilma', 'Female', './uploads/user/avatar/998282_320537721424433_211482156_n.jpg', '2014-01-04', '2014-01-04', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -730,7 +769,8 @@ CREATE TABLE IF NOT EXISTS `works` (
 -- Constraints for table `classes`
 --
 ALTER TABLE `classes`
-  ADD CONSTRAINT `classes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `classes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `classes_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`);
 
 --
 -- Constraints for table `class_users`
