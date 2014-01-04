@@ -24,6 +24,7 @@ class tutorials extends CI_Controller {
 		$cfg['base_url'] = "tutorials/view_tutorial_info/$tutorial_id/";
 		$cfg['total_rows'] = $number_of_pages;
 		$cfg['per_page'] = 1;
+		$cfg['uri_segment'] = 4;
 
 		$this->layout->pagination_config = $cfg;
 
