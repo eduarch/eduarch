@@ -130,4 +130,19 @@ abstract class Abstract_Model extends CI_Model {
 		return $this;
 	}
 
+	function count() {
+		return $this->db->count_all_results($this->table);
+	}
+
+	function when($expression, $method) {
+		if($expression) {
+			$args = func_get_args();
+			array_shift($args);
+			array_shift($args);
+			if(method_exists($this, $method))
+				call_user_func_array(array($this, $method), $args);
+		}
+
+		return $this;
+	}
 }
