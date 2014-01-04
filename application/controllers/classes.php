@@ -6,12 +6,31 @@ class classes extends CI_Controller {
 		$this->layout->template('default');
 	}
 
-	function index($offset = 0) {
+	function index() {
+		$this->view_classes(0, 0);
+	}
+
+	function create_class() {
+		refresh_in('', false);
+		$this->load->model('country_model');
+		$this->load->library('upload');
+
+		$id = $this->session->userdata('id');
+		$user = $this->user_model->get_by_id($id);
+		$user['country'] = $this->country_model->get_by_id($user['country_id']);
+
+		$this->layout->page('classes/create_class', get_header(), 'Create Class');
+		$this->layout->show($user);
+	}
+
+	function view_classes($course_id = 0, $offset = 0) {
 		$this->load->model('related_courses');
 		$this->load->model('class_users');
 
 		$data['courses'] = $this->course_model->get();
+
 		$data['classes'] = $this->classes_model->
+			when($course_id != 0, 'where', 'course_id', $course_id)->
 			select('classes.id, classes.name, classes.desc, classes.image, classes.points,
 				users.last_name as user_lname, users.first_name as user_fname, courses.name as course')->
 				join('user_model', 'course_model')->
@@ -37,28 +56,4 @@ class classes extends CI_Controller {
 		$this->layout->show($data);
 	}
 
-	function create_class() {
-		refresh_in('', false);
-		$this->load->model('country_model');
-		$this->load->library('upload');
-
-		$id = $this->session->userdata('id');
-		$user = $this->user_model->get_by_id($id);
-		$user['country'] = $this->country_model->get_by_id($user['country_id']);
-
-		$this->layout->page('classes/create_class', get_header(), 'Create Class');
-		$this->layout->show($user);
-	}
-
-<<<<<<< HEAD
-=======
-	function view_classes() {
-		refresh_in('', false);
-		
-		$this->layout->page('classes/classes', get_header(), 'Classes');
-		$this->layout->show();
-	}
-
-
->>>>>>> 6a6140014fd519e4886054118ea2b588ac959a08
 }
