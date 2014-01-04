@@ -7,4 +7,12 @@ class classes_model extends Abstract_Model {
 		parent::__construct('classes', 'id', 'class_id');
 	}
 
+	function get_list($course_id = 0, $offset = 0) {
+		return $this->when($course_id != 0, 'where', 'course_id', $course_id)->
+			select('classes.id, classes.name, classes.desc, classes.image, classes.points,
+				users.last_name as user_lname, users.first_name as user_fname, courses.name as course')->
+				join('user_model', 'course_model')->
+			order_by('classes.points', 'desc')->limit(20, $offset)->get();
+	}
+
 }

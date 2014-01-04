@@ -28,28 +28,17 @@ class classes extends CI_Controller {
 		$this->load->model('class_users');
 
 		$data['courses'] = $this->course_model->get();
-
-		$data['classes'] = $this->classes_model->
-			when($course_id != 0, 'where', 'course_id', $course_id)->
-			select('classes.id, classes.name, classes.desc, classes.image, classes.points,
-				users.last_name as user_lname, users.first_name as user_fname, courses.name as course')->
-				join('user_model', 'course_model')->
-			order_by('classes.points', 'desc')->limit(20, $offset)->get();
+		$data['classes'] = $this->classes_model->get_list($course_id, $offset);
 
 		$length = count($data['classes']);
 		for($i = 0; $i < $length; $i++) {
 			$class = $data['classes'][$i];
-
-			$related_courses = $this->related_courses->
-				select('courses.name')->join('course_model')->
-				where('related_courses.class_id', $class['id'])->get();
+			$related_courses = $this->related_courses->get_related_courses($class['id']);
 			$courses = array();
 			foreach($related_courses as $course)
 				$courses[] = $course['name'];
 			$data['classes'][$i]['related_courses'] = $courses;
-
-			$data['classes'][$i]['users'] = $this->class_users->
-				where('class_id', $class['id'])->count();
+			$data['classes'][$i]['users'] = $this->class_users->get_user_count($class['id']);
 		}
 
 		$this->layout->page('classes/view_classes', get_header(), 'View Class');

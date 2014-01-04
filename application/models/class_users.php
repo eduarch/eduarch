@@ -9,5 +9,9 @@ class class_users extends Abstract_Model {
 	function __construct() {
 		parent::__construct('class_users', $this->id, $this->id);
 	}
+
+	function get_user_count($class_id) {
+		return $this->where('class_id', $class_id)->count();
+	}
 	
 }
