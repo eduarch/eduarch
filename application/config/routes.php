@@ -52,6 +52,8 @@ $route['forgot_password'] = 'user_general/forgot_password';
 $route['admin'] = 'dashboard_admin_panel';
 $route['admin/(:any)'] = 'dashboard_admin_panel/$1';
 $route['create_class'] = 'classes/create_class';
+$route['view_classes'] = 'classes/view_classes';
+
 $route['create_course'] = 'courses/create_course';
 
 /* End of file routes.php */
