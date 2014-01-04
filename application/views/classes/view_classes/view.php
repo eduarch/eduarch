@@ -21,5 +21,9 @@
 		Related Courses: <?php echo implode(', ', $class['related_courses']); ?>
 		<hr>
 		<?php endforeach ?>
+
+		<?php if(empty($classes)): ?>
+		<div><em>No classes in this course yet</em></div>
+		<?php endif ?>
 	</div>
 </div>
