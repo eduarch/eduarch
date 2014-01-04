@@ -11,16 +11,17 @@ class classes extends CI_Controller {
 	}
 
 	function create_class() {
-		refresh_in('', false);
-		$this->load->model('country_model');
-		$this->load->library('upload');
+		if($this->form_validation->run('create_class')) {
+			$class = $this->input->post('class');
+			$class['user_id'] = $this->session->userdata('id');
+			$this->classes_model->insert($class);
+			$this->layout->success('Class successfully created');
+			refresh('classes/view_class_info/'.$class['course_id']);
+		}
 
-		$id = $this->session->userdata('id');
-		$user = $this->user_model->get_by_id($id);
-		$user['country'] = $this->country_model->get_by_id($user['country_id']);
-
+		$data['courses'] = $this->course_model->get();
 		$this->layout->page('classes/create_class', get_header(), 'Create Class');
-		$this->layout->show($user);
+		$this->layout->show($data);
 	}
 
 	function view_classes($course_id = 0, $offset = 0) {

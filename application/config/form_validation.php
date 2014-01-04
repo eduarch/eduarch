@@ -50,3 +50,9 @@ $config['edit_entity'] = array(
 	rule('entity[id]', 'Entity ID', 'required'),
 	rule('entity[name]', 'Entity Name', 'trim|required|xss_clean|strtolower|callback__check_edit_entity')
 );
+
+$config['create_class'] = array(
+	rule('class[name]', 'Class Name', 'trim|required|xss_clean|max_length[50]'),
+	rule('class[desc]', 'Class Description', 'trim|required|xss_clean'),
+	rule('class[course_id]', 'Course', 'required')
+);
