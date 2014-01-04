@@ -59,7 +59,7 @@ class classes extends CI_Controller {
 	}
 
 	function upload_image($class_id) {
-		
+
 	}
 
 }

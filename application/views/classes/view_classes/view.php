@@ -1,6 +1,8 @@
 <br>
 <div class="maxed-width row">
 	<div class="medium-4 columns">
+		<br><br>
+		Courses<hr>
 		<ul class="side-nav">
 			<li><a href="classes">All</a></li>
 			<?php foreach($courses as $course): ?>
@@ -9,6 +11,13 @@
 		</ul>
 	</div>
 	<div class="medium-8 columns">
+		<br><br>
+		<div class="row">
+			<div class="medium-4 columns">Classes</div>
+			<div class="medium-8 columns text-right">
+				<a href="classes/create_class">New Class</a>
+			</div>
+		</div><hr>
 		<?php foreach($classes as $class): ?>
 		Class ID: <?php echo $class['id'] ?><br>
 		Class Name: <a href="classes/view_class_info/<?php echo $class['id'] ?>"><?php echo $class['name'] ?></a><br>
