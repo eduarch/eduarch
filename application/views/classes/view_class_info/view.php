@@ -5,10 +5,7 @@
 		Class ID: <?php echo $class['id'] ?><br>
 		Class Name: <?php echo $class['name'] ?><br>
 		Class Desc: <?php echo $class['desc'] ?><br>
-
-		Class Image: <?php echo $class['image'] ?> | 
-		<a href="">Change Image</a><br>
-
+		Class Image: <?php echo $class['image'] ?>
 		Class Points: <?php echo $class['points'] ?><br>
 		Mentor: <?php echo $class['user_fname'], ' ', $class['user_lname'] ?><br>
 		Course: <?php echo $class['course'] ?><br>

@@ -56,6 +56,10 @@ class classes extends CI_Controller {
 
 		$this->layout->page('classes/view_class_info', get_header(), 'View Class Info');
 		$this->layout->show($data);
-	}	
+	}
+
+	function upload_image($class_id) {
+		
+	}
 
 }
