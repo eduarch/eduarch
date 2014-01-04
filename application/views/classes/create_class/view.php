@@ -1,5 +1,3 @@
-
-
 <div class="row">
 	<div class="medium-12 medium-centered boxed columns">
 		<h4><strong>Create Class</strong></h4>

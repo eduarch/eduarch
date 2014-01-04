@@ -3,15 +3,13 @@
 class works extends CI_Controller {
 	function __construct() {
 		parent::__construct();
-		$this->layout->set(array(
-			'template' => 'default',
-			'directory' => 'works',
-			'header' => get_header(),
-			'title' => 'Works'
-		));
+		$this->layout->template = 'default';
+		$this->layout->header = get_header();
 	}
 
 	function index() {
+		$this->layout->directory = 'works/view_works/';
+		$this->layout->title = 'View Works';
 		$this->layout->show();
 	}
 }

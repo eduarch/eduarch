@@ -28,11 +28,7 @@
 	<label class="label">Entity ID</label>
 	<input type="text" id="edit-id" readonly>
 	<label class="label">Entity Name</label>
-	<input type="text" id="edit-name" placeholder="50 Characters Maximum" 
-		title="50 Characters Maximum" maxlength="40" required autofocus>
-	<a id="edit-submit" class="small radius tiny button"><i class="glyphicon glyphicon-pencil"></i> Change Entity Name</a>
-	<a class="button tiny radius other-close" style="background: orange;"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
-	<div id="edit-messages"></div>
+	<input type="text" id="edit-name" placeholderkikiki
 	<a class="close-reveal-modal">&#215;</a>
 </div>
 

@@ -39,6 +39,7 @@ a.bg-green:hover {color: white;}
 .success-text {color: green;}
 .info-text {color: blue;}
 .warning-text {color: orange;}
+.maxed-width {max-width: 100%;}
 
 div.data {
 	border: 1px solid #aaa;
