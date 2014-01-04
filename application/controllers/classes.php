@@ -50,4 +50,15 @@ class classes extends CI_Controller {
 		$this->layout->show($user);
 	}
 
+<<<<<<< HEAD
+=======
+	function view_classes() {
+		refresh_in('', false);
+		
+		$this->layout->page('classes/classes', get_header(), 'Classes');
+		$this->layout->show();
+	}
+
+
+>>>>>>> 6a6140014fd519e4886054118ea2b588ac959a08
 }
