@@ -4,6 +4,7 @@
 	</div>
 	<div class="medium-10 columns">
 		<br>
+		Teaching<hr>
 		<div id="main_content">
 			<?php foreach($classes as $class): ?>
 			Class ID: <?php echo $class['id'] ?><br>
@@ -11,10 +12,13 @@
 			Class Desc: <?php echo $class['desc'] ?><br>
 			Class Image: <?php echo $class['image'] ?><br>
 			Class Points: <?php echo $class['points'] ?><br>
-			Mentor: <?php echo $class['first_name'], ' ', $class['last_name'] ?><br>
+			Number of Users: <?php echo $class['users'] ?><br>
 			Course: <?php echo $class['course'] ?><br>
-			Related Courses: <?php echo implode(', ', $class['related_courses']) ?>
-			<hr>
+			Related Courses:
+				<?php foreach($class['related_courses'] as $course): ?>
+					<a class="label" href="classes/view_classes/<?php echo $course['id'] ?>"><?php echo $course['name'] ?></a>
+				<?php endforeach ?>
+				<hr>
 			<?php endforeach ?>
 		</div>
 	</div>

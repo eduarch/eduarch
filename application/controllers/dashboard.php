@@ -43,11 +43,17 @@ class dashboard extends CI_Controller {
 			where('user_id', $this->session->userdata('id'))->
 			get_list();
 
+		$length = count($classes);
+		for($i = 0; $i < $length; $i++) {
+			$classes[$i]['related_courses'] = $this->related_courses->get_related_courses($classes[$i]['id']);
+			$classes[$i]['users'] = $this->class_users->get_user_count($classes[$i]['id']);
+		}
+
 		$data['classes'] = $classes;
 
 		$this->layout->directory = 'dashboard/teaching/';
 		$this->layout->title = 'Teaching';
-		$this->layout->show($data);	
+		$this->layout->show($data);
 	}
 
 	function sessions() {
