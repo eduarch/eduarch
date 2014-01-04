@@ -11,7 +11,7 @@
 	<div class="medium-8 columns">
 		<?php foreach($classes as $class): ?>
 		Class ID: <?php echo $class['id'] ?><br>
-		Class Name: <?php echo $class['name'] ?><br>
+		Class Name: <a href="classes/view_class_info/<?php echo $class['id'] ?>"><?php echo $class['name'] ?></a><br>
 		CLass Desc: <?php echo $class['desc'] ?><br>
 		Class Image: <?php echo $class['image'] ?><br>
 		Class Points: <?php echo $class['points'] ?><br>

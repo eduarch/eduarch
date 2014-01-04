@@ -15,4 +15,11 @@ class classes_model extends Abstract_Model {
 			order_by('classes.points', 'desc')->limit(20, $offset)->get();
 	}
 
+	function get_class($class_id) {
+		return $this->select('classes.id, classes.name, classes.desc, classes.image, classes.points,
+				users.first_name as user_fname, users.last_name as user_lname, courses.name as course')->
+			join('user_model', 'course_model')->
+			get_by_id($class_id);
+	}
+
 }

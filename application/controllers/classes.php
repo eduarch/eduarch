@@ -24,9 +24,6 @@ class classes extends CI_Controller {
 	}
 
 	function view_classes($course_id = 0, $offset = 0) {
-		$this->load->model('related_courses');
-		$this->load->model('class_users');
-
 		$data['courses'] = $this->course_model->get();
 		$data['classes'] = $this->classes_model->get_list($course_id, $offset);
 
@@ -44,5 +41,20 @@ class classes extends CI_Controller {
 		$this->layout->page('classes/view_classes', get_header(), 'View Class');
 		$this->layout->show($data);
 	}
+
+	function view_class_info($class_id) {
+		$class = $this->classes_model->get_class($class_id);
+		$raw_related_courses = $this->related_courses->get_related_courses($class_id);
+
+		$related_courses = array();
+		foreach($raw_related_courses as $related_course)
+			$related_courses[] = $related_course['name'];
+
+		$class['related_courses'] = $related_courses;
+		$data['class'] = $class;
+
+		$this->layout->page('classes/view_class_info', get_header(), 'View Class Info');
+		$this->layout->show($data);
+	}	
 
 }
