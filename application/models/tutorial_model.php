@@ -1,8 +1,9 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-class tutorial_model extends CI_Model {
+require_once 'Abstract_Model.php';
+
+class tutorial_model extends Abstract_Model {
 	function __construct() {
 		parent::__construct('tutorials', 'id', 'tutorial_id');
 	}
-
 }

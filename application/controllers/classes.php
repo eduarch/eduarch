@@ -44,13 +44,14 @@ class classes extends CI_Controller {
 		$class = $this->classes_model->get_class($class_id);
 		$class['related_courses'] = $this->related_courses->get_related_courses($class_id);
 		$class['users'] = $this->class_users->get_user_count($class_id);
+		$class['tutorials'] = $this->tutorial_model->where('class_id', $class_id)->get();
 
 		$this->layout->page('classes/view_class_info', get_header(), 'View Class Info');
 		$this->layout->show($class);		
 	}
 
 	function upload_image($class_id) {
-		
+
 	}
 
 }

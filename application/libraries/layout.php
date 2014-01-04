@@ -17,6 +17,8 @@ class Layout {
 	public $header;
 	public $title;
 
+	public $pagination_config;
+
 	function __construct() {
 		$this->CI = & get_instance();
 	}
@@ -115,4 +117,9 @@ class Layout {
 		));
 	}
 
+	function pagination() {
+		$this->CI->load->library('pagination');
+		$this->CI->pagination->initialize($this->pagination_config);
+		echo $this->CI->pagination->create_links();
+	}
 }

@@ -23,5 +23,4 @@ class classes_model extends Abstract_Model {
 			get_by_id($class_id);
 	}
 
-
 }
