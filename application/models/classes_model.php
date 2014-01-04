@@ -8,7 +8,8 @@ class classes_model extends Abstract_Model {
 	}
 
 	function get_list($course_id = 0, $offset = 0) {
-		return $this->when($course_id != 0, 'where', 'course_id', $course_id)->
+		return $this->
+			when($course_id != 0, 'where', 'course_id', $course_id)->
 			select('classes.id, classes.name, classes.desc, classes.image, classes.points,
 				users.last_name as user_lname, users.first_name as user_fname, courses.name as course')->
 				join('user_model', 'course_model')->
@@ -21,5 +22,6 @@ class classes_model extends Abstract_Model {
 			join('user_model', 'course_model')->
 			get_by_id($class_id);
 	}
+
 
 }

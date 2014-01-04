@@ -11,7 +11,8 @@ class related_courses extends Abstract_Model {
 	}
 
 	function get_related_courses($class_id) {
-		return $this->select('courses.name')->join('course_model')->
+		$courses = $this->select('courses.id, courses.name')->join('course_model')->
 			where('class_id', $class_id)->get();
+		return $courses;
 	}
 }

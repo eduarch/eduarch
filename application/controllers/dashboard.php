@@ -39,9 +39,15 @@ class dashboard extends CI_Controller {
 	}
 
 	function teaching() {
+		$classes = $this->classes_model->
+			where('user_id', $this->session->userdata('id'))->
+			get_list();
+
+		$data['classes'] = $classes;
+
 		$this->layout->directory = 'dashboard/teaching/';
 		$this->layout->title = 'Teaching';
-		$this->layout->show();	
+		$this->layout->show($data);	
 	}
 
 	function sessions() {

@@ -32,15 +32,21 @@ class classes extends CI_Controller {
 		for($i = 0; $i < $length; $i++) {
 			$class = $data['classes'][$i];
 			$related_courses = $this->related_courses->get_related_courses($class['id']);
-			$courses = array();
-			foreach($related_courses as $course)
-				$courses[] = $course['name'];
-			$data['classes'][$i]['related_courses'] = $courses;
+			$data['classes'][$i]['related_courses'] = $related_courses;
 			$data['classes'][$i]['users'] = $this->class_users->get_user_count($class['id']);
 		}
 
 		$this->layout->page('classes/view_classes', get_header(), 'View Class');
 		$this->layout->show($data);
+	}
+
+	function view_class_info($class_id) {
+		$class = $this->classes_model->get_class($class_id);
+		$class['related_courses'] = $this->related_courses->get_related_courses($class_id);
+		$class['users'] = $this->class_users->get_user_count($class_id);
+
+		$this->layout->page('classes/view_class_info', get_header(), 'View Class Info');
+		$this->layout->show($class);		
 	}
 
 	function upload_image($class_id) {

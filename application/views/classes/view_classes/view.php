@@ -1,5 +1,4 @@
 <!-- Designed and Coded by Jinji Gomez-->
-
     <div class="large-3 medium-4 small-6 columns">
       <div class="thumbnail panel panel-default">
       	<!-- Image here-->
@@ -31,8 +30,6 @@
         </div><!--.caption-->
       </div><!--.thumbnail-->
     </div><!--.responsiveness-->
-
-
 <!--
 <br>
 <div class="maxed-width row">
@@ -63,7 +60,7 @@
 		Mentor: <?php echo $class['user_fname'], ' ', $class['user_lname'] ?><br>
 		Course: <?php echo $class['course'] ?><br>
 		Number of Users: <?php echo $class['users'] ?><br>
-		Related Courses: <?php echo implode(', ', $class['related_courses']); ?>
+
 		<hr>
 		<?php endforeach ?>
 
