@@ -16,12 +16,15 @@ $('.view').click(function(e) {
 	e.preventDefault();
 });
 
-var search = null;
+$('#edit-modal').bind('opened', function() {
+	$('#edit-name').focus();
+});
 var edit = null;
-
+var search = null;
 $('.edit').click(function(e) {
 	search = $('.view').attr('href');
 	edit = $(this).attr('href');
+
 	$.post(search, function(data) {
 		$('#edit-id').val(data.id);
 		$('#edit-name').val(data.name);

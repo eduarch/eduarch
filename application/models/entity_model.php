@@ -8,4 +8,12 @@ class entity_model extends Abstract_Model {
 		parent::__construct('entities', 'id', 'entity_id');
 	}
 
+	function get_entity_list($limit, $offset) {
+		return $this->order_by('id', 'asc')->limit($limit, $offset)->get();
+	}
+
+	function exists($entity_name) {
+		return !empty($this->entity_model->where('name', $entity_name)->get_single());
+	}
+
 }

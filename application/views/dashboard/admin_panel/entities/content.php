@@ -1,36 +1,10 @@
 <br>
 
-<div id="remove-modal" class="reveal-modal" data-reveal>
-	<h2 class="warning-text"><i class="glyphicon glyphicon-warning-sign"></i> Warning Message</h2>
-	<p class="lead">Are you sure you want to remove this record?</p>
-	<ul class="inline-list">
-		<li><h4><a id="remove-link" href=""><i class="success-text glyphicon glyphicon-ok"></i> Ok</a></h4></li>
-		<li><h4><a id="remove-close"><i class="danger-text glyphicon glyphicon-remove"></i> Cancel</a></h4></li>
-	</ul>
-	<a class="close-reveal-modal">&#215;</a>
-</div>
-
-<div id="view-modal" class="reveal-modal" data-reveal>
-	<div class="small-6 columns"><h4>Entity View</h4></div>
-	<hr>
-	<span class="label">Entity ID</span>
-	<div class="data" id="view-id"></div><br>
-	<span class="label">Entity Name</span>
-	<div class="data" id="view-name"></div><br>
-	<a id="edit-link" data-href="admin/edit_entity/"><i class="glyphicon glyphicon-pencil"></i> Edit</a> &nbsp; 
-	<a id="remove-link" class="other-close" data-href="admin/remove_entity/"><i class="glyphicon glyphicon-remove danger-text"></i> Remove</a>
-	<a class="close-reveal-modal">&#215;</a>
-</div>
-
-<div id="edit-modal" class="reveal-modal" data-reveal>
-	<h4><strong>Change Entity Name</strong></h4>
-	<hr>
-	<label class="label">Entity ID</label>
-	<input type="text" id="edit-id" readonly>
-	<label class="label">Entity Name</label>
-	<input type="text" id="edit-name" placeholderkikiki
-	<a class="close-reveal-modal">&#215;</a>
-</div>
+<?php 
+	$this->layout->view('modal_view');
+	$this->layout->view('modal_remove');
+	$this->layout->view('modal_edit');
+?>
 
 <div style="overflow-x: scroll">
 	<span class="label">Entities</span>
@@ -64,11 +38,8 @@
 	</table>
 </div>
 
-<div class="row" style="font-size: 15px">
-	<div class="small-6 small-centered columns">
-		<a href="admin/entities/<?php echo $previous ?>"><i class="glyphicon glyphicon-arrow-left"></i> Previous</a>
-		<a href="admin/entities/<?php echo $next ?>" class="right"><i class="glyphicon glyphicon-arrow-right"></i> Next</a>
-	</div>
+<div class="text-center">
+<?php $this->layout->pagination() ?>
 </div>
 
 <br><br>

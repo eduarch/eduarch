@@ -24,17 +24,16 @@ class dashboard_admin_panel extends CI_Controller {
 		$this->layout->directory = 'dashboard/admin_panel/entities/';
 		$this->layout->title = 'Dashboard | Admin Panel | Entities';
 
-		$this->load->model('entity_model');
+		$cfg['base_url'] = 'admin/entities/';
+		$cfg['total_rows'] = $this->entity_model->count();
+		$cfg['per_page'] = 10;
 
-		$data['entities'] = $this->entity_model->order_by('id', 'asc')->limit(10, $offset)->get();
+		$cfg['prev_link'] = '<i class="glyphicon glyphicon-chevron-left"></i>';
+		$cfg['next_link'] = '<i class="glyphicon glyphicon-chevron-right"></i>';
 
-		$data['previous'] = $data['next'] = $offset;
-		if($offset > 0)
-			$data['previous'] = $offset - 10;
+		$this->layout->pagination_config = $cfg;
 
-		if(!empty($data['entities']) && count($data['entities']) == 10)
-			$data['next'] = $offset + 10;
-
+		$data['entities'] = $this->entity_model->get_entity_list(10, $offset);
 		$this->layout->show($data);
 	}
 
@@ -67,12 +66,6 @@ class dashboard_admin_panel extends CI_Controller {
 	}
 
 	function edit_entity($id) {
-		if($this->input->is_ajax_request()) {
-			$entity = $this->input->post('entity');
-			echo json_encode($entity);
-			return;
-		}
-
 		$this->load->model('entity_model');
 
 		if($this->form_validation->run('edit_entity')) {
@@ -82,8 +75,19 @@ class dashboard_admin_panel extends CI_Controller {
 				where_id($entity['id'])->
 				update();
 
+			if($this->input->is_ajax_request()) {
+				return json_encode(array(
+					'success' => true,
+					'message' => 'Entity Successfully Changed'
+				));
+			}
+
 			$this->layout->success('Entity Successfully Changed');
 			refresh('admin/entities');
+		}
+
+		if($this->input->is_ajax_request()) {
+			
 		}
 
 		$data = $this->entity_model->get_by_id($id);
