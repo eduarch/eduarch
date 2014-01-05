@@ -113,7 +113,7 @@ $autoload['model'] = array(
 	'user_model', 'course_model', 
 	'classes_model', 'related_courses', 
 	'class_users', 'tutorial_model',
-	'tutorial_page_model');
+	'tutorial_page_model', 'entity_model');
 
 
 /* End of file autoload.php */

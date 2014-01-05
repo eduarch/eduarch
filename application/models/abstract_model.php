@@ -5,6 +5,8 @@ abstract class Abstract_Model extends CI_Model {
 	private $field_id;
 	private $ref_id;
 
+	private $others = array();
+
 	function __construct($table, $field_id, $ref_id) {
 		parent::__construct();
 		$this->table = $table;
@@ -145,4 +147,11 @@ abstract class Abstract_Model extends CI_Model {
 
 		return $this;
 	}
+
+	function get_entity() {
+		if(!isset($others['entity']))
+			$others['entity'] = $this->entity_model->where('name', $this->table)->get_single();
+		return $others['entity'];
+	}
+
 }

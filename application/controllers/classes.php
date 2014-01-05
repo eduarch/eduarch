@@ -54,4 +54,14 @@ class classes extends CI_Controller {
 
 	}
 
+	function rate($class_id) {
+		if($this->input->is_ajax_request()) {
+			if($this->user_rated_entity_model->has_saved($entity_id, $class_id, $user_id)) {
+				$entity = $this->classes_model->get_entity();
+				$user_id = $this->session->userdata('id');
+				$this->user_rated_entity_model->save($entity['id'], $class_id, $user_id);
+			}
+		}
+	}
+
 }

@@ -5,7 +5,6 @@ class courses extends CI_Controller {
 		parent::__construct();
 		$this->layout->template('default');
 	}
-
 	
 
 	function create_course() {
