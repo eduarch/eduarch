@@ -21,8 +21,6 @@
 
 	/*define('ENVIRONMENT', 'development');*/
 
-print_r($_SERVER);
-
 // Switch environment based on global var
 if (isset($_SERVER['PLATFORM']))
 {
@@ -38,11 +36,6 @@ else
 {
     define('ENVIRONMENT', 'development');
 }
-
-echo $_SERVER['PLATFORM'];
-
-exit;
-
 
 /*
  *---------------------------------------------------------------
