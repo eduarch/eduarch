@@ -4,10 +4,20 @@
 	$this->layout->view('modal_view');
 	$this->layout->view('modal_remove');
 	$this->layout->view('modal_edit');
+	$this->layout->view('modal_add');
 ?>
 
 <div style="overflow-x: scroll">
-	<span class="label">Entities</span>
+	<div class="row">
+		<div class="small-3 columns">
+			<span class="label">Entities</span>
+		</div>
+		<div class="small-9 columns text-right">
+			<a data-reveal-id="add-modal" class="label success">
+				<i class="glyphicon glyphicon-plus"></i> Add New Entity
+			</a>
+		</div>
+	</div>
 	<table class="admin-table" style="width: 100%; padding: 0; margin: 0">
 		<thead>
 			<th>ID</th>
@@ -40,25 +50,5 @@
 
 <div class="text-center">
 <?php $this->layout->pagination() ?>
-</div>
-
-<br><br>
-<h5><strong>Add Entity</strong></h5>
-<div class="sticky-label">
-<form action="admin/add_entity" method="post" accept-charset="utf-8" style="max-width: 350px">
-	<label class="label">Entity Name</label>
-	<div class="row collapse">
-		<div class="row collapse">
-	        <div class="small-9 columns">
-	          <input type="text" name="entity[name]" placeholder="Enter Entity Name"
-	          	maxlength="50" title="50 Characters maximum" required>
-	        </div>
-	        <div class="small-3 columns">
-	          <button class="button postfix">Add Entity</button>
-	        </div>
-      </div>
-	</div>
-	<?php $this->layout->form_errors() ?>
-</form>
 </div>
 

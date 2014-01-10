@@ -15,7 +15,7 @@
 </head>
 <body>
 <?php $this->layout->view_header() ?>
-<?php $this->layout->view_message() ?>
+<div id="system-message"><?php $this->layout->view_message() ?></div>
 <?php $this->layout->view_contents() ?>
 <?php $this->layout->view_footer() ?>
 <?php $this->load->view('common/chat'); ?>

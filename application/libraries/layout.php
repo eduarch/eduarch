@@ -91,7 +91,10 @@ class Layout {
 	function form_errors() {
 		$this->CI->form_validation->set_error_delimiters(
 			self::ERROR_DELIMITER_OPEN, self::ERROR_DELIMITER_CLOSE);
-		echo validation_errors();
+		if($this->CI->input->is_ajax_request())
+			return validation_errors();
+		else
+			echo validation_errors();
 	}
 
 	function patch_avatar(&$user) {

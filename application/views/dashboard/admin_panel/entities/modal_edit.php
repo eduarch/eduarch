@@ -1,4 +1,4 @@
-<div id="edit-modal" class="reveal-modal" data-reveal="edit">
+<div id="edit-modal" class="reveal-modal" data-reveal>
 	<h4><strong>Change Entity Name</strong></h4>
 	<hr>
 	<label class="label">Entity ID</label>
@@ -9,6 +9,8 @@
 	<a id="edit-submit" class="button small radius tiny">
 		<i class="glyphicon glyphicon-pencil"></i> Change Entity Name
 	</a>
+
+	<div id="edit-errors"></div>
 
 	<a class="close-reveal-modal">&#215;</a>
 </div>

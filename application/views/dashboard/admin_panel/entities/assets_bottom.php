@@ -2,6 +2,22 @@
 
 (function() {
 
+$('#add-submit').click(function(e){
+	var href = $(this).data('href');
+	$.post(href, {'entity[name]': $('#add-name').val()},
+	function(data) {
+		if(data['success']) {
+			location.reload();
+		} else {
+			for(var e in data['errors'])
+				$('#' + e).append('<small class="error">' + e + '</small>');
+			$(document).foundation();
+		}
+	}, 'json');
+
+	e.preventDefault();
+});
+
 $('.remove').click(function(e) {
 	var href = $(this).data('href');
 	$('#remove-link').attr('href', href);
@@ -19,8 +35,14 @@ $('.view').click(function(e) {
 $('#edit-modal').bind('opened', function() {
 	$('#edit-name').focus();
 });
+
+$('#add-modal').bind('opened', function() {
+	$('#add-name').focus();
+});
+
 var edit = null;
 var search = null;
+
 $('.edit').click(function(e) {
 	search = $('.view').attr('href');
 	edit = $(this).attr('href');
@@ -38,7 +60,12 @@ $('#edit-submit').click(function(e) {
 		'entity[id]': $('#edit-id').val(),
 		'entity[name]': $('#edit-name').val()
 	}, function(data){
-		console.log(data);
+		if(data['success']) {
+			location.reload();
+		} else {
+			$('#edit-errors').html(data['errors']);
+			$(document).foundation();
+		}
 	}, 'json');
 	e.preventDefault();
 });

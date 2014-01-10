@@ -38,14 +38,21 @@ class dashboard_admin_panel extends CI_Controller {
 	}
 
 	function add_entity() {
-		$this->load->model('entity_model');
-
 		if($this->form_validation->run('add_entity')) {
-			exit;
 			$entity = $this->input->post('entity');
 			$this->entity_model->insert($entity);
 			$this->layout->success('New Entity Added');
+			if($this->input->is_ajax_request()) {
+				echo json_encode(array('success' => true));
+				return;
+			}
 			refresh('admin/entities');
+		}
+
+		if($this->input->is_ajax_request()) {
+			echo json_encode(array('success' => false,
+				'errors' => $this->form_validation->error_array()));
+			return;
 		}
 
 		$this->entities();
@@ -75,19 +82,24 @@ class dashboard_admin_panel extends CI_Controller {
 				where_id($entity['id'])->
 				update();
 
+			$this->layout->success('Entity Successfully Changed');
 			if($this->input->is_ajax_request()) {
-				return json_encode(array(
-					'success' => true,
-					'message' => 'Entity Successfully Changed'
+				echo json_encode(array(
+					'success' => true
 				));
+				return;
 			}
 
-			$this->layout->success('Entity Successfully Changed');
+			
 			refresh('admin/entities');
 		}
 
 		if($this->input->is_ajax_request()) {
-			
+			echo json_encode(array(
+				'success' => false,
+				'errors' => $this->layout->form_errors()
+			));
+			return;
 		}
 
 		$data = $this->entity_model->get_by_id($id);

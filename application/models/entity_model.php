@@ -13,7 +13,8 @@ class entity_model extends Abstract_Model {
 	}
 
 	function exists($entity_name) {
-		return !empty($this->entity_model->where('name', $entity_name)->get_single());
+		$entity = $this->entity_model->where('name', $entity_name)->get_single();
+		return empty($entity) == false;
 	}
 
 }

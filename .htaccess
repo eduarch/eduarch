@@ -1,3 +1,3 @@
 RewriteEngine on
 RewriteCond $1 !^(index\.php|js|css|less|fonts|img|uploads|robots\.txt)
-RewriteRule ^(.*)$ /eduarch/index.php/$1 [L]
+RewriteRule ^(.*)$ index.php/$1 [L]
