@@ -17,6 +17,32 @@
 .label-margin > div {margin: 10px 0 10px 0}
 
 /* Overrides */
+
+.top-bar {box-shadow: 0 0 25px #111}
+.move-right a.exit-off-canvas{background: rgba(255,255,255,0)}
+.left-off-canvas-menu, .right-off-canvas-menu{
+	background: black;
+}
+
+
+ul.off-canvas-list li label{
+	background:#007FFF;
+	color:white;
+}
+
+ul.off-canvas-list li a{
+	color:white;
+	border-bottom: 0;
+}
+
+ul.off-canvas-list li a:hover{
+	background: #222;
+}
+
+.move-right a.exit-off-canvas {
+	box-shadow: 0 0 0 rgba(0,0,0,0.5),0 0 0 rgba(0,0,0,0.5);
+}
+
 .top-bar-section>ul>.divider, .top-bar-section>ul>[role="separator"] {border-right: 1px solid white}
 
 .top-bar, 

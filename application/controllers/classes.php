@@ -10,6 +10,7 @@ class classes extends CI_Controller {
 		$this->view_classes(0, 0);
 	}
 
+
 	function create_class() {
 		if($this->form_validation->run('create_class')) {
 			$class = $this->input->post('class');

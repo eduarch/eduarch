@@ -3,7 +3,7 @@
   <div class="inner-wrap">
     <nav class="tab-bar">
       <section class="left-small text-center">
-        <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+        <a class="left-off-canvas-toggle menu-icon"><span></span></a>
       </section>
 
       <section class="middle tab-bar-section">
@@ -25,7 +25,7 @@
       </ul>
     </aside> -->
 
-    <section id="canvas-content" style="min-height: 400px; padding-left: 10px;">
+    <section id="canvas-content" style="min-height: 500px; padding-left: 10px;">
     </section>
 
   <a class="exit-off-canvas"></a>
