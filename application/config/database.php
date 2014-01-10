@@ -66,11 +66,10 @@ $db['default']['stricton'] = FALSE;*/
 
 $active_record = TRUE;
  
-$db['production']['hostname'] = "tunnel.pagodabox.com";
+$db['production']['hostname'] = "tunnel.pagodabox.com:3306";
 $db['production']['username'] = "stephenie";
 $db['production']['password'] = "8SiDrzvl";
 $db['production']['database'] = "eduarch";
-$db['production']['port']     = "3306";
 $db['production']['dbdriver'] = "mysql";
 $db['production']['dbprefix'] = "";
 $db['production']['pconnect'] = TRUE;
