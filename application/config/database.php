@@ -107,7 +107,6 @@ switch (ENVIRONMENT) {
     break;
  
     // add additional cases for more environments
- 
     default:
         $active_group = 'development';
     break;
