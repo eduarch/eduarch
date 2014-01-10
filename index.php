@@ -21,6 +21,9 @@
 
 	/*define('ENVIRONMENT', 'development');*/
 
+var_dump($_SERVER);
+exit;
+
 // Switch environment based on global var
 if (isset($_SERVER['PLATFORM']))
 {
