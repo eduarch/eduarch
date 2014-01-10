@@ -37,6 +37,10 @@ else
     define('ENVIRONMENT', 'development');
 }
 
+echo $_SERVER['PLATFORM'];
+
+exit;
+
 
 /*
  *---------------------------------------------------------------
