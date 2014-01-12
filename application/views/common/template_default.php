@@ -9,7 +9,9 @@
 	<link rel="stylesheet" href="css/bootstrap-glyphicons.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/foundation.min.css">
+	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/app.css">
+
 	<script src="js/modernizr.js"></script>
 <?php $this->layout->view_top() ?>
 </head>
