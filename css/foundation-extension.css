@@ -1,0 +1,910 @@
+@keyframes icon-round-hover {
+  /* line 5, ../eduarch_foundation/scss/foundation-extension.scss */
+  from {
+    border-radius: 10px 5px;
+  }
+
+  /* line 6, ../eduarch_foundation/scss/foundation-extension.scss */
+  to {
+    border-radius: 10px;
+  }
+}
+
+/* line 9, ../eduarch_foundation/scss/foundation-extension.scss */
+.label, .button, button, .panel, .lbl {
+  /* ============= Foreground ========== */
+}
+/* line 10, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.icon-round, .button.icon-round, button.icon-round, .panel.icon-round, .lbl.icon-round {
+  border-radius: 10px 5px;
+  padding: 4px 8px;
+  -webkit-transition: border-radius 0.2s;
+  -moz-transition: border-radius 0.2s;
+  -o-transition: border-radius 0.2s;
+  transition: border-radius 0.2s;
+}
+/* line 13, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.hover-icon-round:hover .icon-round, .button.hover-icon-round:hover .icon-round, button.hover-icon-round:hover .icon-round, .panel.hover-icon-round:hover .icon-round, .lbl.hover-icon-round:hover .icon-round {
+  border-radius: 15px 7px;
+}
+/* line 18, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.hover-icon-round:hover .icon-round, .label.hover:hover, .button.hover-icon-round:hover .icon-round, .button.hover:hover, button.hover-icon-round:hover .icon-round, button.hover:hover, .panel.hover-icon-round:hover .icon-round, .panel.hover:hover, .lbl.hover-icon-round:hover .icon-round, .lbl.hover:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  opacity: 0.75;
+}
+/* line 22, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-snow, .button.bg-snow, button.bg-snow, .panel.bg-snow, .lbl.bg-snow {
+  background-color: #FFFAFA;
+}
+/* line 25, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-denim, .button.bg-denim, button.bg-denim, .panel.bg-denim, .lbl.bg-denim {
+  background-color: #1560BD;
+}
+/* line 26, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-dodger-blue, .button.bg-dodger-blue, button.bg-dodger-blue, .panel.bg-dodger-blue, .lbl.bg-dodger-blue {
+  background-color: #1E90FF;
+}
+/* line 27, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-duke-blue, .button.bg-duke-blue, button.bg-duke-blue, .panel.bg-duke-blue, .lbl.bg-duke-blue {
+  background-color: #00009C;
+}
+/* line 28, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-electric-indigo, .button.bg-electric-indigo, button.bg-electric-indigo, .panel.bg-electric-indigo, .lbl.bg-electric-indigo {
+  background-color: #6F00FF;
+}
+/* line 29, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-electric-ultramarine, .button.bg-electric-ultramarine, button.bg-electric-ultramarine, .panel.bg-electric-ultramarine, .lbl.bg-electric-ultramarine {
+  background-color: #3F00FF;
+}
+/* line 30, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-electric-violet, .button.bg-electric-violet, button.bg-electric-violet, .panel.bg-electric-violet, .lbl.bg-electric-violet {
+  background-color: #8F00FF;
+}
+/* line 31, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-french-blue, .button.bg-french-blue, button.bg-french-blue, .panel.bg-french-blue, .lbl.bg-french-blue {
+  background-color: #0072BB;
+}
+/* line 32, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-french-sky-blue, .button.bg-french-sky-blue, button.bg-french-sky-blue, .panel.bg-french-sky-blue, .lbl.bg-french-sky-blue {
+  background-color: #77B5FE;
+}
+/* line 33, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-glacucous, .button.bg-glacucous, button.bg-glacucous, .panel.bg-glacucous, .lbl.bg-glacucous {
+  background-color: #6082B6;
+}
+/* line 34, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-grape, .button.bg-grape, button.bg-grape, .panel.bg-grape, .lbl.bg-grape {
+  background-color: #6F2DA8;
+}
+/* line 35, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-gray-blue, .button.bg-gray-blue, button.bg-gray-blue, .panel.bg-gray-blue, .lbl.bg-gray-blue {
+  background-color: #8C92AC;
+}
+/* line 36, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-han-blue, .button.bg-han-blue, button.bg-han-blue, .panel.bg-han-blue, .lbl.bg-han-blue {
+  background-color: #446CCF;
+}
+/* line 37, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-han-purple, .button.bg-han-purple, button.bg-han-purple, .panel.bg-han-purple, .lbl.bg-han-purple {
+  background-color: #5218FA;
+}
+/* line 38, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-honolulu-blue, .button.bg-honolulu-blue, button.bg-honolulu-blue, .panel.bg-honolulu-blue, .lbl.bg-honolulu-blue {
+  background-color: #006DB0;
+}
+/* line 39, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-ice-berge, .button.bg-ice-berge, button.bg-ice-berge, .panel.bg-ice-berge, .lbl.bg-ice-berge {
+  background-color: #71A6D2;
+}
+/* line 40, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-internationl-klein-blue, .button.bg-internationl-klein-blue, button.bg-internationl-klein-blue, .panel.bg-internationl-klein-blue, .lbl.bg-internationl-klein-blue {
+  background-color: #002FA7;
+}
+/* line 41, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-iris, .button.bg-iris, button.bg-iris, .panel.bg-iris, .lbl.bg-iris {
+  background-color: #5A4FCF;
+}
+/* line 42, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-jordy-blue, .button.bg-jordy-blue, button.bg-jordy-blue, .panel.bg-jordy-blue, .lbl.bg-jordy-blue {
+  background-color: #8AB9F1;
+}
+/* line 43, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-lapis-lazuli, .button.bg-lapis-lazuli, button.bg-lapis-lazuli, .panel.bg-lapis-lazuli, .lbl.bg-lapis-lazuli {
+  background-color: #26619C;
+}
+/* line 44, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-lavender-blue, .button.bg-lavender-blue, button.bg-lavender-blue, .panel.bg-lavender-blue, .lbl.bg-lavender-blue {
+  background-color: #CCCCFF;
+}
+/* line 45, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-lavender-indigo, .button.bg-lavender-indigo, button.bg-lavender-indigo, .panel.bg-lavender-indigo, .lbl.bg-lavender-indigo {
+  background-color: #9457EB;
+}
+/* line 46, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-lavender-purple, .button.bg-lavender-purple, button.bg-lavender-purple, .panel.bg-lavender-purple, .lbl.bg-lavender-purple {
+  background-color: #967BB6;
+}
+/* line 47, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-light-pastel-purple, .button.bg-light-pastel-purple, button.bg-light-pastel-purple, .panel.bg-light-pastel-purple, .lbl.bg-light-pastel-purple {
+  background-color: #B19CD9;
+}
+/* line 48, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-light-sky-blue, .button.bg-light-sky-blue, button.bg-light-sky-blue, .panel.bg-light-sky-blue, .lbl.bg-light-sky-blue {
+  background-color: #87CEFA;
+}
+/* line 49, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-light-steel-blue, .button.bg-light-steel-blue, button.bg-light-steel-blue, .panel.bg-light-steel-blue, .lbl.bg-light-steel-blue {
+  background-color: #B0C4DE;
+}
+/* line 50, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-livid, .button.bg-livid, button.bg-livid, .panel.bg-livid, .lbl.bg-livid {
+  background-color: #6699CC;
+}
+/* line 51, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-majorelle-blue, .button.bg-majorelle-blue, button.bg-majorelle-blue, .panel.bg-majorelle-blue, .lbl.bg-majorelle-blue {
+  background-color: #6050DC;
+}
+/* line 52, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-palatinate-blue, .button.bg-palatinate-blue, button.bg-palatinate-blue, .panel.bg-palatinate-blue, .lbl.bg-palatinate-blue {
+  background-color: #273BE2;
+}
+/* line 53, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-royal-azure, .button.bg-royal-azure, button.bg-royal-azure, .panel.bg-royal-azure, .lbl.bg-royal-azure {
+  background-color: #0038A8;
+}
+/* line 54, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-royal-blue, .button.bg-royal-blue, button.bg-royal-blue, .panel.bg-royal-blue, .lbl.bg-royal-blue {
+  background-color: #4169E1;
+}
+/* line 55, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-slate-blue, .button.bg-slate-blue, button.bg-slate-blue, .panel.bg-slate-blue, .lbl.bg-slate-blue {
+  background-color: #6A5ACD;
+}
+/* line 56, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-spanish-sky-blue, .button.bg-spanish-sky-blue, button.bg-spanish-sky-blue, .panel.bg-spanish-sky-blue, .lbl.bg-spanish-sky-blue {
+  background-color: #00AAE4;
+}
+/* line 57, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-star-command-blue, .button.bg-star-command-blue, button.bg-star-command-blue, .panel.bg-star-command-blue, .lbl.bg-star-command-blue {
+  background-color: #007BB8;
+}
+/* line 58, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-steel-blue, .button.bg-steel-blue, button.bg-steel-blue, .panel.bg-steel-blue, .lbl.bg-steel-blue {
+  background-color: #4682B4;
+}
+/* line 59, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-toolbox, .button.bg-toolbox, button.bg-toolbox, .panel.bg-toolbox, .lbl.bg-toolbox {
+  background-color: #746CC0;
+}
+/* line 60, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-true-blue, .button.bg-true-blue, button.bg-true-blue, .panel.bg-true-blue, .lbl.bg-true-blue {
+  background-color: #0073CF;
+}
+/* line 61, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-ultramarine-blue, .button.bg-ultramarine-blue, button.bg-ultramarine-blue, .panel.bg-ultramarine-blue, .lbl.bg-ultramarine-blue {
+  background-color: #4166F5;
+}
+/* line 62, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-united-nations-blue, .button.bg-united-nations-blue, button.bg-united-nations-blue, .panel.bg-united-nations-blue, .lbl.bg-united-nations-blue {
+  background-color: #5B92E5;
+}
+/* line 63, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-veronica, .button.bg-veronica, button.bg-veronica, .panel.bg-veronica, .lbl.bg-veronica {
+  background-color: #A020F0;
+}
+/* line 64, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-violet, .button.bg-violet, button.bg-violet, .panel.bg-violet, .lbl.bg-violet {
+  background-color: #8F00FF;
+}
+/* line 65, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-vivid-violet, .button.bg-vivid-violet, button.bg-vivid-violet, .panel.bg-vivid-violet, .lbl.bg-vivid-violet {
+  background-color: #9F00FF;
+}
+/* line 66, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-wild-blue-yonder, .button.bg-wild-blue-yonder, button.bg-wild-blue-yonder, .panel.bg-wild-blue-yonder, .lbl.bg-wild-blue-yonder {
+  background-color: #A2ADD0;
+}
+/* line 69, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-ferari-red, .button.bg-ferari-red, button.bg-ferari-red, .panel.bg-ferari-red, .lbl.bg-ferari-red {
+  background-color: #FF2800;
+}
+/* line 70, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-giants-orange, .button.bg-giants-orange, button.bg-giants-orange, .panel.bg-giants-orange, .lbl.bg-giants-orange {
+  background-color: #FE5A1D;
+}
+/* line 71, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-international-orange, .button.bg-international-orange, button.bg-international-orange, .panel.bg-international-orange, .lbl.bg-international-orange {
+  background-color: #FF4F00;
+}
+/* line 72, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-ku-crimson, .button.bg-ku-crimson, button.bg-ku-crimson, .panel.bg-ku-crimson, .lbl.bg-ku-crimson {
+  background-color: #E8000D;
+}
+/* line 73, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-lava, .button.bg-lava, button.bg-lava, .panel.bg-lava, .lbl.bg-lava {
+  background-color: #CF1020;
+}
+/* line 74, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-lust, .button.bg-lust, button.bg-lust, .panel.bg-lust, .lbl.bg-lust {
+  background-color: #E62020;
+}
+/* line 75, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-mango-tango, .button.bg-mango-tango, button.bg-mango-tango, .panel.bg-mango-tango, .lbl.bg-mango-tango {
+  background-color: #FF8243;
+}
+/* line 76, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-orange-peel, .button.bg-orange-peel, button.bg-orange-peel, .panel.bg-orange-peel, .lbl.bg-orange-peel {
+  background-color: #FF9F00;
+}
+/* line 77, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-orange-red, .button.bg-orange-red, button.bg-orange-red, .panel.bg-orange-red, .lbl.bg-orange-red {
+  background-color: #FF4500;
+}
+/* line 78, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-orioles-orange, .button.bg-orioles-orange, button.bg-orioles-orange, .panel.bg-orioles-orange, .lbl.bg-orioles-orange {
+  background-color: #FB4F14;
+}
+/* line 79, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-outrageous-orange, .button.bg-outrageous-orange, button.bg-outrageous-orange, .panel.bg-outrageous-orange, .lbl.bg-outrageous-orange {
+  background-color: #FF6E4A;
+}
+/* line 80, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-pastel-red, .button.bg-pastel-red, button.bg-pastel-red, .panel.bg-pastel-red, .lbl.bg-pastel-red {
+  background-color: #FF6961;
+}
+/* line 81, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-rose-madder, .button.bg-rose-madder, button.bg-rose-madder, .panel.bg-rose-madder, .lbl.bg-rose-madder {
+  background-color: #E32626;
+}
+/* line 82, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-rosso-corsa, .button.bg-rosso-corsa, button.bg-rosso-corsa, .panel.bg-rosso-corsa, .lbl.bg-rosso-corsa {
+  background-color: #D40000;
+}
+/* line 83, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-ruddy, .button.bg-ruddy, button.bg-ruddy, .panel.bg-ruddy, .lbl.bg-ruddy {
+  background-color: #FF0028;
+}
+/* line 84, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-rusty-red, .button.bg-rusty-red, button.bg-rusty-red, .panel.bg-rusty-red, .lbl.bg-rusty-red {
+  background-color: #DA2C43;
+}
+/* line 85, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-safety-orange, .button.bg-safety-orange, button.bg-safety-orange, .panel.bg-safety-orange, .lbl.bg-safety-orange {
+  background-color: #FF6700;
+}
+/* line 86, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-sapphire, .button.bg-sapphire, button.bg-sapphire, .panel.bg-sapphire, .lbl.bg-sapphire {
+  background-color: #0F52BA;
+}
+/* line 87, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-shadow-blue, .button.bg-shadow-blue, button.bg-shadow-blue, .panel.bg-shadow-blue, .lbl.bg-shadow-blue {
+  background-color: #778BA5;
+}
+/* line 88, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-silver-lake-blue, .button.bg-silver-lake-blue, button.bg-silver-lake-blue, .panel.bg-silver-lake-blue, .lbl.bg-silver-lake-blue {
+  background-color: #5D89BA;
+}
+/* line 89, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-sinopia, .button.bg-sinopia, button.bg-sinopia, .panel.bg-sinopia, .lbl.bg-sinopia {
+  background-color: #CB410B;
+}
+/* line 90, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-spanish-orange, .button.bg-spanish-orange, button.bg-spanish-orange, .panel.bg-spanish-orange, .lbl.bg-spanish-orange {
+  background-color: #E86100;
+}
+/* line 91, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-sunset-orange, .button.bg-sunset-orange, button.bg-sunset-orange, .panel.bg-sunset-orange, .lbl.bg-sunset-orange {
+  background-color: #FD5E53;
+}
+/* line 92, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-tangelo, .button.bg-tangelo, button.bg-tangelo, .panel.bg-tangelo, .lbl.bg-tangelo {
+  background-color: #F94D00;
+}
+/* line 93, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-tangerine, .button.bg-tangerine, button.bg-tangerine, .panel.bg-tangerine, .lbl.bg-tangerine {
+  background-color: #F28500;
+}
+/* line 94, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-tomato, .button.bg-tomato, button.bg-tomato, .panel.bg-tomato, .lbl.bg-tomato {
+  background-color: #FF6347;
+}
+/* line 95, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-willpower-orange, .button.bg-willpower-orange, button.bg-willpower-orange, .panel.bg-willpower-orange, .lbl.bg-willpower-orange {
+  background-color: #FD5800;
+}
+/* line 98, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-dark-pastel-green, .button.bg-dark-pastel-green, button.bg-dark-pastel-green, .panel.bg-dark-pastel-green, .lbl.bg-dark-pastel-green {
+  background-color: #03C03C;
+}
+/* line 99, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-go-green, .button.bg-go-green, button.bg-go-green, .panel.bg-go-green, .lbl.bg-go-green {
+  background-color: #00AB66;
+}
+/* line 100, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-harlequin, .button.bg-harlequin, button.bg-harlequin, .panel.bg-harlequin, .lbl.bg-harlequin {
+  background-color: #3FFF00;
+}
+/* line 101, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-islamic-green, .button.bg-islamic-green, button.bg-islamic-green, .panel.bg-islamic-green, .lbl.bg-islamic-green {
+  background-color: #009000;
+}
+/* line 102, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-jade, .button.bg-jade, button.bg-jade, .panel.bg-jade, .lbl.bg-jade {
+  background-color: #00A86B;
+}
+/* line 103, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-jungle-green, .button.bg-jungle-green, button.bg-jungle-green, .panel.bg-jungle-green, .lbl.bg-jungle-green {
+  background-color: #29AB87;
+}
+/* line 104, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-kelly-green, .button.bg-kelly-green, button.bg-kelly-green, .panel.bg-kelly-green, .lbl.bg-kelly-green {
+  background-color: #4CBB17;
+}
+/* line 105, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-la-salle-green, .button.bg-la-salle-green, button.bg-la-salle-green, .panel.bg-la-salle-green, .lbl.bg-la-salle-green {
+  background-color: #087830;
+}
+/* line 106, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-lawn-green, .button.bg-lawn-green, button.bg-lawn-green, .panel.bg-lawn-green, .lbl.bg-lawn-green {
+  background-color: #7CFC00;
+}
+/* line 107, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-lime, .button.bg-lime, button.bg-lime, .panel.bg-lime, .lbl.bg-lime {
+  background-color: #87CEFA;
+}
+/* line 108, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-lime-green, .button.bg-lime-green, button.bg-lime-green, .panel.bg-lime-green, .lbl.bg-lime-green {
+  background-color: #32CD32;
+}
+/* line 109, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-malachite, .button.bg-malachite, button.bg-malachite, .panel.bg-malachite, .lbl.bg-malachite {
+  background-color: #0BDA51;
+}
+/* line 110, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-keppel, .button.bg-keppel, button.bg-keppel, .panel.bg-keppel, .lbl.bg-keppel {
+  background-color: #3AB09E;
+}
+/* line 113, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-gold, .button.bg-gold, button.bg-gold, .panel.bg-gold, .lbl.bg-gold {
+  background-color: #FFD700;
+}
+/* line 114, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-golden-poppy, .button.bg-golden-poppy, button.bg-golden-poppy, .panel.bg-golden-poppy, .lbl.bg-golden-poppy {
+  background-color: #FFD700;
+}
+/* line 115, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-golden-yellow, .button.bg-golden-yellow, button.bg-golden-yellow, .panel.bg-golden-yellow, .lbl.bg-golden-yellow {
+  background-color: #FFDF00;
+}
+/* line 116, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-jonquil, .button.bg-jonquil, button.bg-jonquil, .panel.bg-jonquil, .lbl.bg-jonquil {
+  background-color: #F4CA16;
+}
+/* line 117, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-laser-lemon, .button.bg-laser-lemon, button.bg-laser-lemon, .panel.bg-laser-lemon, .lbl.bg-laser-lemon {
+  background-color: #FFFF66;
+}
+/* line 118, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-lemon, .button.bg-lemon, button.bg-lemon, .panel.bg-lemon, .lbl.bg-lemon {
+  background-color: #FFF700;
+}
+/* line 119, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-safety-yellow, .button.bg-safety-yellow, button.bg-safety-yellow, .panel.bg-safety-yellow, .lbl.bg-safety-yellow {
+  background-color: #EED202;
+}
+/* line 120, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-selective-yellow, .button.bg-selective-yellow, button.bg-selective-yellow, .panel.bg-selective-yellow, .lbl.bg-selective-yellow {
+  background-color: #FFBA00;
+}
+/* line 121, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-jasmine, .button.bg-jasmine, button.bg-jasmine, .panel.bg-jasmine, .lbl.bg-jasmine {
+  background-color: #F8DE7E;
+}
+/* line 124, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-jet, .button.bg-jet, button.bg-jet, .panel.bg-jet, .lbl.bg-jet {
+  background-color: #343434;
+}
+/* line 125, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-kombu-green, .button.bg-kombu-green, button.bg-kombu-green, .panel.bg-kombu-green, .lbl.bg-kombu-green {
+  background-color: #354230;
+}
+/* line 126, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.bg-licorice, .button.bg-licorice, button.bg-licorice, .panel.bg-licorice, .lbl.bg-licorice {
+  background-color: #1A1110;
+}
+/* line 130, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-snow, .button.fg-snow, button.fg-snow, .panel.fg-snow, .lbl.fg-snow {
+  color: #FFFAFA;
+}
+/* line 133, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-denim, .button.fg-denim, button.fg-denim, .panel.fg-denim, .lbl.fg-denim {
+  color: #1560BD;
+}
+/* line 134, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-dodger-blue, .button.fg-dodger-blue, button.fg-dodger-blue, .panel.fg-dodger-blue, .lbl.fg-dodger-blue {
+  color: #1E90FF;
+}
+/* line 135, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-duke-blue, .button.fg-duke-blue, button.fg-duke-blue, .panel.fg-duke-blue, .lbl.fg-duke-blue {
+  color: #00009C;
+}
+/* line 136, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-electric-indigo, .button.fg-electric-indigo, button.fg-electric-indigo, .panel.fg-electric-indigo, .lbl.fg-electric-indigo {
+  color: #6F00FF;
+}
+/* line 137, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-electric-ultramarine, .button.fg-electric-ultramarine, button.fg-electric-ultramarine, .panel.fg-electric-ultramarine, .lbl.fg-electric-ultramarine {
+  color: #3F00FF;
+}
+/* line 138, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-electric-violet, .button.fg-electric-violet, button.fg-electric-violet, .panel.fg-electric-violet, .lbl.fg-electric-violet {
+  color: #8F00FF;
+}
+/* line 139, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-french-blue, .button.fg-french-blue, button.fg-french-blue, .panel.fg-french-blue, .lbl.fg-french-blue {
+  color: #0072BB;
+}
+/* line 140, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-french-sky-blue, .button.fg-french-sky-blue, button.fg-french-sky-blue, .panel.fg-french-sky-blue, .lbl.fg-french-sky-blue {
+  color: #77B5FE;
+}
+/* line 141, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-glacucous, .button.fg-glacucous, button.fg-glacucous, .panel.fg-glacucous, .lbl.fg-glacucous {
+  color: #6082B6;
+}
+/* line 142, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-grape, .button.fg-grape, button.fg-grape, .panel.fg-grape, .lbl.fg-grape {
+  color: #6F2DA8;
+}
+/* line 143, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-gray-blue, .button.fg-gray-blue, button.fg-gray-blue, .panel.fg-gray-blue, .lbl.fg-gray-blue {
+  color: #8C92AC;
+}
+/* line 144, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-han-blue, .button.fg-han-blue, button.fg-han-blue, .panel.fg-han-blue, .lbl.fg-han-blue {
+  color: #446CCF;
+}
+/* line 145, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-han-purple, .button.fg-han-purple, button.fg-han-purple, .panel.fg-han-purple, .lbl.fg-han-purple {
+  color: #5218FA;
+}
+/* line 146, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-honolulu-blue, .button.fg-honolulu-blue, button.fg-honolulu-blue, .panel.fg-honolulu-blue, .lbl.fg-honolulu-blue {
+  color: #006DB0;
+}
+/* line 147, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-ice-berge, .button.fg-ice-berge, button.fg-ice-berge, .panel.fg-ice-berge, .lbl.fg-ice-berge {
+  color: #71A6D2;
+}
+/* line 148, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-internationl-klein-blue, .button.fg-internationl-klein-blue, button.fg-internationl-klein-blue, .panel.fg-internationl-klein-blue, .lbl.fg-internationl-klein-blue {
+  color: #002FA7;
+}
+/* line 149, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-iris, .button.fg-iris, button.fg-iris, .panel.fg-iris, .lbl.fg-iris {
+  color: #5A4FCF;
+}
+/* line 150, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-jordy-blue, .button.fg-jordy-blue, button.fg-jordy-blue, .panel.fg-jordy-blue, .lbl.fg-jordy-blue {
+  color: #8AB9F1;
+}
+/* line 151, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-lapis-lazuli, .button.fg-lapis-lazuli, button.fg-lapis-lazuli, .panel.fg-lapis-lazuli, .lbl.fg-lapis-lazuli {
+  color: #26619C;
+}
+/* line 152, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-lavender-blue, .button.fg-lavender-blue, button.fg-lavender-blue, .panel.fg-lavender-blue, .lbl.fg-lavender-blue {
+  color: #CCCCFF;
+}
+/* line 153, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-lavender-indigo, .button.fg-lavender-indigo, button.fg-lavender-indigo, .panel.fg-lavender-indigo, .lbl.fg-lavender-indigo {
+  color: #9457EB;
+}
+/* line 154, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-lavender-purple, .button.fg-lavender-purple, button.fg-lavender-purple, .panel.fg-lavender-purple, .lbl.fg-lavender-purple {
+  color: #967BB6;
+}
+/* line 155, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-light-pastel-purple, .button.fg-light-pastel-purple, button.fg-light-pastel-purple, .panel.fg-light-pastel-purple, .lbl.fg-light-pastel-purple {
+  color: #B19CD9;
+}
+/* line 156, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-light-sky-blue, .button.fg-light-sky-blue, button.fg-light-sky-blue, .panel.fg-light-sky-blue, .lbl.fg-light-sky-blue {
+  color: #87CEFA;
+}
+/* line 157, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-light-steel-blue, .button.fg-light-steel-blue, button.fg-light-steel-blue, .panel.fg-light-steel-blue, .lbl.fg-light-steel-blue {
+  color: #B0C4DE;
+}
+/* line 158, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-livid, .button.fg-livid, button.fg-livid, .panel.fg-livid, .lbl.fg-livid {
+  color: #6699CC;
+}
+/* line 159, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-majorelle-blue, .button.fg-majorelle-blue, button.fg-majorelle-blue, .panel.fg-majorelle-blue, .lbl.fg-majorelle-blue {
+  color: #6050DC;
+}
+/* line 160, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-palatinate-blue, .button.fg-palatinate-blue, button.fg-palatinate-blue, .panel.fg-palatinate-blue, .lbl.fg-palatinate-blue {
+  color: #273BE2;
+}
+/* line 161, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-royal-azure, .button.fg-royal-azure, button.fg-royal-azure, .panel.fg-royal-azure, .lbl.fg-royal-azure {
+  color: #0038A8;
+}
+/* line 162, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-royal-blue, .button.fg-royal-blue, button.fg-royal-blue, .panel.fg-royal-blue, .lbl.fg-royal-blue {
+  color: #4169E1;
+}
+/* line 163, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-slate-blue, .button.fg-slate-blue, button.fg-slate-blue, .panel.fg-slate-blue, .lbl.fg-slate-blue {
+  color: #6A5ACD;
+}
+/* line 164, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-spanish-sky-blue, .button.fg-spanish-sky-blue, button.fg-spanish-sky-blue, .panel.fg-spanish-sky-blue, .lbl.fg-spanish-sky-blue {
+  color: #00AAE4;
+}
+/* line 165, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-star-command-blue, .button.fg-star-command-blue, button.fg-star-command-blue, .panel.fg-star-command-blue, .lbl.fg-star-command-blue {
+  color: #007BB8;
+}
+/* line 166, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-steel-blue, .button.fg-steel-blue, button.fg-steel-blue, .panel.fg-steel-blue, .lbl.fg-steel-blue {
+  color: #4682B4;
+}
+/* line 167, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-toolbox, .button.fg-toolbox, button.fg-toolbox, .panel.fg-toolbox, .lbl.fg-toolbox {
+  color: #746CC0;
+}
+/* line 168, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-true-blue, .button.fg-true-blue, button.fg-true-blue, .panel.fg-true-blue, .lbl.fg-true-blue {
+  color: #0073CF;
+}
+/* line 169, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-ultramarine-blue, .button.fg-ultramarine-blue, button.fg-ultramarine-blue, .panel.fg-ultramarine-blue, .lbl.fg-ultramarine-blue {
+  color: #4166F5;
+}
+/* line 170, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-united-nations-blue, .button.fg-united-nations-blue, button.fg-united-nations-blue, .panel.fg-united-nations-blue, .lbl.fg-united-nations-blue {
+  color: #5B92E5;
+}
+/* line 171, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-veronica, .button.fg-veronica, button.fg-veronica, .panel.fg-veronica, .lbl.fg-veronica {
+  color: #A020F0;
+}
+/* line 172, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-violet, .button.fg-violet, button.fg-violet, .panel.fg-violet, .lbl.fg-violet {
+  color: #8F00FF;
+}
+/* line 173, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-vivid-violet, .button.fg-vivid-violet, button.fg-vivid-violet, .panel.fg-vivid-violet, .lbl.fg-vivid-violet {
+  color: #9F00FF;
+}
+/* line 174, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-wild-blue-yonder, .button.fg-wild-blue-yonder, button.fg-wild-blue-yonder, .panel.fg-wild-blue-yonder, .lbl.fg-wild-blue-yonder {
+  color: #A2ADD0;
+}
+/* line 177, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-ferari-red, .button.fg-ferari-red, button.fg-ferari-red, .panel.fg-ferari-red, .lbl.fg-ferari-red {
+  color: #FF2800;
+}
+/* line 178, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-giants-orange, .button.fg-giants-orange, button.fg-giants-orange, .panel.fg-giants-orange, .lbl.fg-giants-orange {
+  color: #FE5A1D;
+}
+/* line 179, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-international-orange, .button.fg-international-orange, button.fg-international-orange, .panel.fg-international-orange, .lbl.fg-international-orange {
+  color: #FF4F00;
+}
+/* line 180, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-ku-crimson, .button.fg-ku-crimson, button.fg-ku-crimson, .panel.fg-ku-crimson, .lbl.fg-ku-crimson {
+  color: #E8000D;
+}
+/* line 181, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-lava, .button.fg-lava, button.fg-lava, .panel.fg-lava, .lbl.fg-lava {
+  color: #CF1020;
+}
+/* line 182, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-lust, .button.fg-lust, button.fg-lust, .panel.fg-lust, .lbl.fg-lust {
+  color: #E62020;
+}
+/* line 183, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-mango-tango, .button.fg-mango-tango, button.fg-mango-tango, .panel.fg-mango-tango, .lbl.fg-mango-tango {
+  color: #FF8243;
+}
+/* line 184, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-orange-peel, .button.fg-orange-peel, button.fg-orange-peel, .panel.fg-orange-peel, .lbl.fg-orange-peel {
+  color: #FF9F00;
+}
+/* line 185, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-orange-red, .button.fg-orange-red, button.fg-orange-red, .panel.fg-orange-red, .lbl.fg-orange-red {
+  color: #FF4500;
+}
+/* line 186, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-orioles-orange, .button.fg-orioles-orange, button.fg-orioles-orange, .panel.fg-orioles-orange, .lbl.fg-orioles-orange {
+  color: #FB4F14;
+}
+/* line 187, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-outrageous-orange, .button.fg-outrageous-orange, button.fg-outrageous-orange, .panel.fg-outrageous-orange, .lbl.fg-outrageous-orange {
+  color: #FF6E4A;
+}
+/* line 188, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-pastel-red, .button.fg-pastel-red, button.fg-pastel-red, .panel.fg-pastel-red, .lbl.fg-pastel-red {
+  color: #FF6961;
+}
+/* line 189, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-rose-madder, .button.fg-rose-madder, button.fg-rose-madder, .panel.fg-rose-madder, .lbl.fg-rose-madder {
+  color: #E32626;
+}
+/* line 190, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-rosso-corsa, .button.fg-rosso-corsa, button.fg-rosso-corsa, .panel.fg-rosso-corsa, .lbl.fg-rosso-corsa {
+  color: #D40000;
+}
+/* line 191, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-ruddy, .button.fg-ruddy, button.fg-ruddy, .panel.fg-ruddy, .lbl.fg-ruddy {
+  color: #FF0028;
+}
+/* line 192, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-rusty-red, .button.fg-rusty-red, button.fg-rusty-red, .panel.fg-rusty-red, .lbl.fg-rusty-red {
+  color: #DA2C43;
+}
+/* line 193, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-safety-orange, .button.fg-safety-orange, button.fg-safety-orange, .panel.fg-safety-orange, .lbl.fg-safety-orange {
+  color: #FF6700;
+}
+/* line 194, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-sapphire, .button.fg-sapphire, button.fg-sapphire, .panel.fg-sapphire, .lbl.fg-sapphire {
+  color: #0F52BA;
+}
+/* line 195, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-shadow-blue, .button.fg-shadow-blue, button.fg-shadow-blue, .panel.fg-shadow-blue, .lbl.fg-shadow-blue {
+  color: #778BA5;
+}
+/* line 196, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-silver-lake-blue, .button.fg-silver-lake-blue, button.fg-silver-lake-blue, .panel.fg-silver-lake-blue, .lbl.fg-silver-lake-blue {
+  color: #5D89BA;
+}
+/* line 197, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-sinopia, .button.fg-sinopia, button.fg-sinopia, .panel.fg-sinopia, .lbl.fg-sinopia {
+  color: #CB410B;
+}
+/* line 198, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-spanish-orange, .button.fg-spanish-orange, button.fg-spanish-orange, .panel.fg-spanish-orange, .lbl.fg-spanish-orange {
+  color: #E86100;
+}
+/* line 199, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-sunset-orange, .button.fg-sunset-orange, button.fg-sunset-orange, .panel.fg-sunset-orange, .lbl.fg-sunset-orange {
+  color: #FD5E53;
+}
+/* line 200, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-tangelo, .button.fg-tangelo, button.fg-tangelo, .panel.fg-tangelo, .lbl.fg-tangelo {
+  color: #F94D00;
+}
+/* line 201, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-tangerine, .button.fg-tangerine, button.fg-tangerine, .panel.fg-tangerine, .lbl.fg-tangerine {
+  color: #F28500;
+}
+/* line 202, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-tomato, .button.fg-tomato, button.fg-tomato, .panel.fg-tomato, .lbl.fg-tomato {
+  color: #FF6347;
+}
+/* line 203, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-willpower-orange, .button.fg-willpower-orange, button.fg-willpower-orange, .panel.fg-willpower-orange, .lbl.fg-willpower-orange {
+  color: #FD5800;
+}
+/* line 206, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-dark-pastel-green, .button.fg-dark-pastel-green, button.fg-dark-pastel-green, .panel.fg-dark-pastel-green, .lbl.fg-dark-pastel-green {
+  color: #03C03C;
+}
+/* line 207, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-go-green, .button.fg-go-green, button.fg-go-green, .panel.fg-go-green, .lbl.fg-go-green {
+  color: #00AB66;
+}
+/* line 208, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-harlequin, .button.fg-harlequin, button.fg-harlequin, .panel.fg-harlequin, .lbl.fg-harlequin {
+  color: #3FFF00;
+}
+/* line 209, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-islamic-green, .button.fg-islamic-green, button.fg-islamic-green, .panel.fg-islamic-green, .lbl.fg-islamic-green {
+  color: #009000;
+}
+/* line 210, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-jade, .button.fg-jade, button.fg-jade, .panel.fg-jade, .lbl.fg-jade {
+  color: #00A86B;
+}
+/* line 211, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-jungle-green, .button.fg-jungle-green, button.fg-jungle-green, .panel.fg-jungle-green, .lbl.fg-jungle-green {
+  color: #29AB87;
+}
+/* line 212, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-kelly-green, .button.fg-kelly-green, button.fg-kelly-green, .panel.fg-kelly-green, .lbl.fg-kelly-green {
+  color: #4CBB17;
+}
+/* line 213, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-la-salle-green, .button.fg-la-salle-green, button.fg-la-salle-green, .panel.fg-la-salle-green, .lbl.fg-la-salle-green {
+  color: #087830;
+}
+/* line 214, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-lawn-green, .button.fg-lawn-green, button.fg-lawn-green, .panel.fg-lawn-green, .lbl.fg-lawn-green {
+  color: #7CFC00;
+}
+/* line 215, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-lime, .button.fg-lime, button.fg-lime, .panel.fg-lime, .lbl.fg-lime {
+  color: #87CEFA;
+}
+/* line 216, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-lime-green, .button.fg-lime-green, button.fg-lime-green, .panel.fg-lime-green, .lbl.fg-lime-green {
+  color: #32CD32;
+}
+/* line 217, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-malachite, .button.fg-malachite, button.fg-malachite, .panel.fg-malachite, .lbl.fg-malachite {
+  color: #0BDA51;
+}
+/* line 218, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-keppel, .button.fg-keppel, button.fg-keppel, .panel.fg-keppel, .lbl.fg-keppel {
+  color: #3AB09E;
+}
+/* line 221, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-gold, .button.fg-gold, button.fg-gold, .panel.fg-gold, .lbl.fg-gold {
+  color: #FFD700;
+}
+/* line 222, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-golden-poppy, .button.fg-golden-poppy, button.fg-golden-poppy, .panel.fg-golden-poppy, .lbl.fg-golden-poppy {
+  color: #FFD700;
+}
+/* line 223, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-golden-yellow, .button.fg-golden-yellow, button.fg-golden-yellow, .panel.fg-golden-yellow, .lbl.fg-golden-yellow {
+  color: #FFDF00;
+}
+/* line 224, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-jonquil, .button.fg-jonquil, button.fg-jonquil, .panel.fg-jonquil, .lbl.fg-jonquil {
+  color: #F4CA16;
+}
+/* line 225, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-laser-lemon, .button.fg-laser-lemon, button.fg-laser-lemon, .panel.fg-laser-lemon, .lbl.fg-laser-lemon {
+  color: #FFFF66;
+}
+/* line 226, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-lemon, .button.fg-lemon, button.fg-lemon, .panel.fg-lemon, .lbl.fg-lemon {
+  color: #FFF700;
+}
+/* line 227, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-safety-yellow, .button.fg-safety-yellow, button.fg-safety-yellow, .panel.fg-safety-yellow, .lbl.fg-safety-yellow {
+  color: #EED202;
+}
+/* line 228, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-selective-yellow, .button.fg-selective-yellow, button.fg-selective-yellow, .panel.fg-selective-yellow, .lbl.fg-selective-yellow {
+  color: #FFBA00;
+}
+/* line 231, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-jet, .button.fg-jet, button.fg-jet, .panel.fg-jet, .lbl.fg-jet {
+  color: #343434;
+}
+/* line 232, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-kombu-green, .button.fg-kombu-green, button.fg-kombu-green, .panel.fg-kombu-green, .lbl.fg-kombu-green {
+  color: #354230;
+}
+/* line 233, ../eduarch_foundation/scss/foundation-extension.scss */
+.label.fg-licorice, .button.fg-licorice, button.fg-licorice, .panel.fg-licorice, .lbl.fg-licorice {
+  color: #1A1110;
+}
+
+/* line 237, ../eduarch_foundation/scss/foundation-extension.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 238, ../eduarch_foundation/scss/foundation-extension.scss */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* line 239, ../eduarch_foundation/scss/foundation-extension.scss */
+.lowercase {
+  text-transform: lowercase;
+}
+
+/* line 240, ../eduarch_foundation/scss/foundation-extension.scss */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* line 242, ../eduarch_foundation/scss/foundation-extension.scss */
+.mg-topless {
+  margin-top: 0;
+}
+
+/* line 243, ../eduarch_foundation/scss/foundation-extension.scss */
+.mg-leftless {
+  margin-left: 0;
+}
+
+/* line 244, ../eduarch_foundation/scss/foundation-extension.scss */
+.mg-rightless {
+  margin-right: 0;
+}
+
+/* line 245, ../eduarch_foundation/scss/foundation-extension.scss */
+.mg-bottomless {
+  margin-bottom: 0;
+}
+
+/* line 246, ../eduarch_foundation/scss/foundation-extension.scss */
+.mg-less {
+  margin: 0;
+}
+
+/* line 248, ../eduarch_foundation/scss/foundation-extension.scss */
+.pd-topless {
+  padding-top: 0;
+}
+
+/* line 249, ../eduarch_foundation/scss/foundation-extension.scss */
+.pd-leftless {
+  padding-left: 0;
+}
+
+/* line 250, ../eduarch_foundation/scss/foundation-extension.scss */
+.pd-rightless {
+  padding-right: 0;
+}
+
+/* line 251, ../eduarch_foundation/scss/foundation-extension.scss */
+.pd-bottomless {
+  padding-bottom: 0;
+}
+
+/* line 252, ../eduarch_foundation/scss/foundation-extension.scss */
+.pd-less {
+  padding: 0;
+}
+
+/* line 254, ../eduarch_foundation/scss/foundation-extension.scss */
+.bd-topless {
+  border-top: 0;
+}
+
+/* line 255, ../eduarch_foundation/scss/foundation-extension.scss */
+.bd-leftless {
+  border-left: 0;
+}
+
+/* line 256, ../eduarch_foundation/scss/foundation-extension.scss */
+.bd-rightless {
+  border-right: 0;
+}
+
+/* line 257, ../eduarch_foundation/scss/foundation-extension.scss */
+.bd-bottomless {
+  border-bottom: 0;
+}
+
+/* line 258, ../eduarch_foundation/scss/foundation-extension.scss */
+.bd-less {
+  border: 0;
+}
+
+/* line 260, ../eduarch_foundation/scss/foundation-extension.scss */
+.maxed-width {
+  max-width: 100%;
+}
+
+/* line 261, ../eduarch_foundation/scss/foundation-extension.scss */
+.maxed-height {
+  max-height: 100%;
+}
+
+/* line 262, ../eduarch_foundation/scss/foundation-extension.scss */
+.perfect-width {
+  width: 100%;
+}
+
+/* line 263, ../eduarch_foundation/scss/foundation-extension.scss */
+.perfect-height {
+  height: 100%;
+}
+
+/* line 265, ../eduarch_foundation/scss/foundation-extension.scss */
+.bd {
+  border: 1px solid black;
+}

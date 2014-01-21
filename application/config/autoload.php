@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database', 'session', 'form_validation', 'layout');
+$autoload['libraries'] = array('database', 'session', 'page', 'form_validation');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database', 'session', 'form_validation', 'layout
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('my', 'url', 'form');
+$autoload['helper'] = array('my', 'url');
 
 
 /*
@@ -109,11 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array(
-	'user_model', 'course_model', 
-	'classes_model', 'related_courses', 
-	'class_users', 'tutorial_model',
-	'tutorial_page_model', 'entity_model');
+$autoload['model'] = array('table_user', 'table_country');
 
 
 /* End of file autoload.php */

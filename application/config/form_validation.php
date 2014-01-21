@@ -10,19 +10,19 @@ function rule($field, $label,$rule) {
 
 $config = array();
 
-$config['sign_up'] = array(
+$config['user/sign_up'] = array(
 	rule('user[first_name]', 'First Name', 'trim|required|xss_clean|max_length[50]'),
 	rule('user[last_name]', 'Last Name', 'trim|required|xss_clean|max_length[50]'),
 	rule('user[gender]', 'Gender', 'required'),
 	rule('user[country_id]', 'Country', 'required'),
-	rule('user[email]', 'Email Address', 'trim|required|xss_clean|valid_email|callback__check_email'),
+	rule('user[email]', 'Email Address', 'trim|required|xss_clean|valid_email|callback__sign_up_check_email'),
 	rule('user[password]', 'Password', 'required|min_length[5]|max_length[32]|md5'),
-	rule('confirm_password', 'Confirm Password', 'required|max_length[32]|md5|callback__check_password')
+	rule('retype_password', 'Retype Password', 'required|max_length[32]|md5|callback__sign_up_check_password')
 );
 
-$config['login'] = array(
-	rule('user[email]', 'Email Address', 'trim|required|xss_clean|valid_email'),
-	rule('user[password]', 'Password', 'required|md5|callback__check_login')
+$config['user/login'] = array(
+	rule('user[email]', 'Email Address', 'trim|required|xss_clean|valid_email|callback__login_check_email'),
+	rule('user[password]', 'Password', 'required|md5|callback__login_check_credentials')
 );
 
 $config['change_password'] = array(
